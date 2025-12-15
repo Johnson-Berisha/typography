@@ -41,7 +41,7 @@ export default function Home() {
       <span ref={pillRef} className="pill" />
       <section className="nav-section">
         <h2>typo.graphy</h2>
-        <p>Documentation</p>
+        <p>Documentation and guide on typography.</p>
       </section>
       <section className="nav-section">
         <Link href="#">Home</Link>
@@ -55,6 +55,11 @@ export default function Home() {
       </section>
     </nav>
       <div className="content">
+      
+      <div className="desc">
+      <h1>Look down!</h1>
+      <p>Compare the thumbnails above. Which one catches your eye?</p>
+      <p>You probably said the left one haven't you? So can you tell how much typography can make UI look sooo much better! Here we will talk more about how You can make UI's 10x better.</p>
       <div className="videos">
       <div className="video video1">
         <div className="img"></div>
@@ -84,10 +89,6 @@ export default function Home() {
         </div>
       </div>
       </div>
-      <div className="desc">
-      <h1>Look up!</h1>
-      <p>Compare the thumbnails above. Which one catches your eye?</p>
-      <p>You probably said the left one haven't you? So can you tell how much typography can make UI look sooo much better! Here we will talk more about how You can make UI's 10x better.</p>
       <p>By just adding some <code>color</code>, <code>font-weight</code> and <code>line-height</code> you can make text look a lot better, e.g:</p>
       
       <div className="flex">
