@@ -58,7 +58,7 @@ export default function Home() {
       
       <div className="desc">
       <h1>Look down!</h1>
-      <p>Compare the thumbnails above. Which one catches your eye?</p>
+      <p>Compare the thumbnails below. Which one catches your eye?</p>
       <p>You probably said the left one haven't you? So can you tell how much typography can make UI look sooo much better! Here we will talk more about how You can make UI's 10x better.</p>
       <div className="videos">
       <div className="video video1">
