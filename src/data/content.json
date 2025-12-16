@@ -1,0 +1,32 @@
+[
+  {
+    "id": "font-families",
+    "title": "Font Families",
+    "category": "Fundamentals",
+    "excerpt": "Choose fonts that complement your design and enhance readability.",
+    "examples": [
+      {
+        "label": "System + Inter",
+        "code": "font-family: \"Inter\", system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif;"
+      }
+    ]
+  },
+  {
+    "id": "type-scale",
+    "title": "Type Scale",
+    "category": "Hierarchy",
+    "excerpt": "Establish visual hierarchy with a consistent type scale.",
+    "examples": [
+      { "label": "Major third", "code": "scale: 1rem, 1.2rem, 1.44rem, 1.728rem;" }
+    ]
+  },
+  {
+    "id": "line-height",
+    "title": "Line Height & Spacing",
+    "category": "Readability",
+    "excerpt": "Proper spacing improves readability and visual flow.",
+    "examples": [
+      { "label": "Readable", "code": "line-height: 1.6;" }
+    ]
+  }
+]
