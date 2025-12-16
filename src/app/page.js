@@ -1,11 +1,14 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { useContent } from "../context/ContentProvider";
 
 export default function Home() {
 
     const navRef = useRef(null);
   const pillRef = useRef(null);
+  const { actions } = useContent();
+  const content = actions.getContent();
 
   useEffect(() => {
     const nav = navRef.current;
@@ -56,10 +59,23 @@ export default function Home() {
     </nav>
       <div className="content">
       
-      <div className="desc">
-      <h1>Look down!</h1>
-      <p>Compare the thumbnails below. Which one catches your eye?</p>
-      <p>You probably said the left one haven't you? So can you tell how much typography can make UI look sooo much better! Here we will talk more about how You can make UI's 10x better.</p>
+      <div className="guides-demo">
+        <div className="guides" style={{marginTop: 12}}>
+          {content && content[0] && (
+            <article key={content[0].id} className="guide-card">
+              <div className="guide-header">
+                <h1 style={{margin:0}}>{content[0].title}</h1>
+                <span className="tag">{content[0].category}</span>
+              </div>
+              <p className="guide-intro">{content[0].excerpt}</p>
+              {content[0].content.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </article>
+          )}
+        </div>
+      </div>
+
       <div className="videos">
       <div className="video video1">
         <div className="img"></div>
@@ -89,7 +105,8 @@ export default function Home() {
         </div>
       </div>
       </div>
-      <p>By just adding some <code>color</code>, <code>font-weight</code> and <code>line-height</code> you can make text look a lot better, e.g:</p>
+
+      {/* <p>By just adding some <code>color</code>, <code>font-weight</code> and <code>line-height</code> you can make text look a lot better, e.g:</p>
       
       <div className="flex">
         <div className="card before">
@@ -102,11 +119,28 @@ export default function Home() {
           <h1>typo.graphy</h1>
           <p>Documentation</p>
         </div>
+      </div> */}
+
+      <div className="guides-demo">
+        <div className="guides" style={{marginTop: 12}}>
+          {content && content.slice(1).map(item => (
+            <article key={item.id} className="guide-card">
+              <div className="guide-header">
+                <h1 style={{margin:0}}>{item.title}</h1>
+                <span className="tag">{item.category}</span>
+              </div>
+              <p className="guide-intro">{item.excerpt}</p>
+              {item.content.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+
+            </article>
+          ))}
+        </div>
       </div>
 
       {/* everthing goes up /\ */}
       </div>
-    </div>
     </div>
   );
 }
