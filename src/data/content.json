@@ -9,9 +9,25 @@
     ]
   },
   {
-    "id": "demo",
+    "id": "continuation",
+    "excerpt": "Let me show how this works.",
     "content": [
-        "You probably said the left one haven't you? So can you tell how much typography can make UI look sooo much better! Here we will talk more about how You can make UI's 10x better."
+      [
+        { "type": "text", "text": "By just adding some " },
+        { "type": "code", "text": "color" },
+        { "type": "text", "text": ", " },
+        { "type": "code", "text": "font-weight" },
+        { "type": "text", "text": " and " },
+        { "type": "code", "text": "line-height" },
+        { "type": "text", "text": " you can make text look a lot better." }
+      ]
+    ]
+  },
+  {
+    "id": "more-to-come",
+    "excerpt": "More content coming soon...",
+    "content": [
+      "Stay tuned for more tips and tricks on typography!"
     ]
   }
 ]

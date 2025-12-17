@@ -47,14 +47,16 @@ export default function Home() {
         <p>Documentation and guide on typography.</p>
       </section>
       <section className="nav-section">
-        <Link href="#">Home</Link>
+        <p>Foundation</p>
+        <Link href="#">Introduction</Link>
         <Link href="#">Colors</Link>
-        <Link href="#">Hierarchy</Link>
+        <Link href="#">Scale</Link>
       </section>
       <section className="nav-section">
-        <Link href="#">Demo</Link>
-        <Link href="#">More text</Link>
-        <Link href="#">Demo Next</Link>
+        <p>Structure</p>
+        <Link href="#">Hierarchy</Link>
+        <Link href="#">Spacing</Link>
+        <Link href="#">Contrast</Link>
       </section>
     </nav>
       <div className="content">
@@ -68,9 +70,21 @@ export default function Home() {
                 <span className="tag">{content[0].category}</span>
               </div>
               <p className="guide-intro">{content[0].excerpt}</p>
-              {content[0].content.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
+              {content[0].content.map((p, i) => {
+                if (typeof p === "string") return <p key={i}>{p}</p>;
+                if (Array.isArray(p)) {
+                  return (
+                    <p key={i}>
+                      {p.map((node, j) => {
+                        if (node.type === "code") return <code key={j}>{node.text}</code>;
+                        if (node.type === "text") return <span key={j}>{node.text}</span>;
+                        return null;
+                      })}
+                    </p>
+                  );
+                }
+                return null;
+              })}
             </article>
           )}
         </div>
@@ -120,19 +134,89 @@ export default function Home() {
           <p>Documentation</p>
         </div>
       </div> */}
+      <div className="guides-demo">
+        <div className="guides" style={{marginTop: 12}}>
+          {content && content[2] && (
+            <article key={content[2].id} className="guide-card">
+              <div className="guide-header">
+                <h1 style={{margin:0}}>{content[2].title}</h1>
+                <span className="tag">{content[2].category}</span>
+              </div>
+              <p className="guide-intro">{content[2].excerpt}</p>
+              {content[2].content.map((p, i) => {
+                if (typeof p === "string") return <p key={i}>{p}</p>;
+                if (Array.isArray(p)) {
+                  return (
+                    <p key={i}>
+                      {p.map((node, j) => {
+                        if (node.type === "code") return <code key={j}>{node.text}</code>;
+                        if (node.type === "text") return <span key={j}>{node.text}</span>;
+                        return null;
+                      })}
+                    </p>
+                  );
+                }
+                return null;
+              })}
+            </article>
+          )}
+        </div>
+      </div>
+
+      <div className="videos">
+      <div className="video video1">
+        <div className="img"></div>
+        <div className="text">
+          <div className="text-img">
+            <span className="circle"></span>
+          </div>
+          <div className="text-info">
+            <h3>Check out my crazyy video now!!!!!</h3>
+            <p>Mr. Random</p>
+            <p>23.4M views  3 months ago</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="video video2">
+        <div className="img"></div>
+        <div className="text">
+          <div className="text-img">
+            <span className="circle"></span>
+          </div>
+          <div className="text-info">
+            <h3>Check out my crazyy video now!!!!!</h3>
+            <p>Mr. Random</p>
+            <p>23.4M views  3 months ago</p>
+          </div>
+        </div>
+      </div>
+      </div>
 
       <div className="guides-demo">
         <div className="guides" style={{marginTop: 12}}>
-          {content && content.slice(1).map(item => (
+          {content && content.slice(1, 2).map(item => (
             <article key={item.id} className="guide-card">
               <div className="guide-header">
                 <h1 style={{margin:0}}>{item.title}</h1>
                 <span className="tag">{item.category}</span>
               </div>
               <p className="guide-intro">{item.excerpt}</p>
-              {item.content.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
+              {item.content.map((p, i) => {
+                if (typeof p === "string") return <p key={i}>{p}</p>;
+                if (Array.isArray(p)) {
+                  return (
+                    <p key={i}>
+                      {p.map((node, j) => {
+                        if (node.type === "code") return <code key={j}>{node.text}</code>;
+                        if (node.type === "text") return <span key={j}>{node.text}</span>;
+                        return null;
+                      })}
+                    </p>
+                  );
+                }
+                return null;
+              })}
 
             </article>
           ))}

@@ -78,7 +78,7 @@ nav {
 .nav-section {
   display: flex;
   flex-direction: column;
-  gap: calc(var(--spacing) / 2);
+  gap: calc(var(--spacing) / 3);
   margin-bottom: var(--spacing);
   padding-bottom: var(--spacing);
 }
