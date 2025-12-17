@@ -114,6 +114,9 @@ nav {
   color: var(--foreground);
   text-decoration: none;
   font: var(--p);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 /* content */
@@ -242,4 +245,20 @@ h3 {
   border-radius: 4px;
   font-size: 0.75rem;
   font-weight: bold;
+}
+
+/* css.gg ad */
+.cssgg {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  padding: 2px 7px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: var(--gray70);
+  font-family: var(--ff);
+}
+.cssgg a {
+  color: var(--primary);
+  text-decoration: none;
 }

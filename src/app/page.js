@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { useContent } from "../context/ContentProvider";
 
@@ -48,15 +49,63 @@ export default function Home() {
       </section>
       <section className="nav-section">
         <p>Foundation</p>
-        <Link href="#">Introduction</Link>
-        <Link href="#">Colors</Link>
-        <Link href="#">Scale</Link>
+        <Link href="#">
+        <Image
+          src="/home-alt.svg"
+          alt="Introduction"
+          width={20}
+          height={20}
+        />
+        <span>Introduction</span>
+        </Link>
+        <Link href="#">
+        <Image
+          src="/color-bucket.svg"
+          alt="Introduction"
+          width={20}
+          height={20}
+        />
+        <span>Colors</span>
+        </Link>
+        <Link href="#">
+        <Image
+          src="/ruler.svg"
+          alt="Introduction"
+          width={20}
+          height={20}
+        />
+        <span>Scale</span>
+        </Link>
       </section>
       <section className="nav-section">
         <p>Structure</p>
-        <Link href="#">Hierarchy</Link>
-        <Link href="#">Spacing</Link>
-        <Link href="#">Contrast</Link>
+        <Link href="#">
+        <Image
+          src="/push-up.svg"
+          alt="Introduction"
+          width={20}
+          height={20}
+        />
+        <span>Hierarchy</span>
+        </Link>
+        <Link href="#">
+        <Image
+          src="/font-spacing.svg"
+          alt="Introduction"
+          width={20}
+          height={20}
+        />
+        <span>Spacing</span>
+        </Link>
+        <Link href="#">
+        <Image
+          src="/edit-contrast.svg"
+          alt="Introduction"
+          width={20}
+          height={20}
+        />
+        <span>Contrast</span>
+        </Link>
       </section>
     </nav>
       <div className="content">
@@ -223,6 +272,8 @@ export default function Home() {
         </div>
       </div>
 
+      {/* css.gg ad */}
+      <div className="cssgg">Icons by <Link href={"https://css.gg/"}>css.gg</Link></div>
       {/* everthing goes up /\ */}
       </div>
     </div>
