@@ -5,15 +5,9 @@
     "category": "Introduction",
     "excerpt": "Compare the thumbnails below. Which one catches your eye?",
     "content": [
-        "You probably said the left one haven't you? So can you tell how much typography can make UI look sooo much better! Here we will talk more about how You can make UI's 10x better."
-    ]
-  },
-  {
-    "id": "continuation",
-    "excerpt": "Let me show how this works.",
-    "content": [
-      [
-        { "type": "text", "text": "By just adding some " },
+        "You probably said the left one haven't you? So can you tell how much typography can make UI look sooo much better! Here we will talk more about how You can make UI's 10x better.",
+        [
+      { "type": "text", "text": "By just adding some " },
         { "type": "code", "text": "color" },
         { "type": "text", "text": ", " },
         { "type": "code", "text": "font-weight" },
@@ -23,11 +17,49 @@
       ]
     ]
   },
+  
   {
-    "id": "more-to-come",
-    "excerpt": "More content coming soon...",
+    "id": "Colors",
+    "title": "Colors",
+    "category": "Foundation",
     "content": [
-      "Stay tuned for more tips and tricks on typography!"
+      "Color in typography isn’t decoration, it’s function. Text color defines priority, mood, and readability. Primary text should always have the highest contrast against the background, while secondary and tertiary text should step down gradually.",
+      "Overusing bright or saturated colors for body text reduces comfort and focus. Good typography uses color to guide the eye, not distract it."
     ]
+  },
+  {
+    "id": "scale",
+    "title": "Scaling",
+    "category": "Foundation",
+    "content": [
+      "Scale defines the relationship between text sizes. A consistent scale creates rhythm and predictability, while random sizes create noise.",
+      "Headings, subheadings, and body text should follow a clear progression, often based on ratios. Good scale makes content feel intentional and structured. Bad scale makes even good fonts feel wrong."
+    ]
+  },
+  {
+    "id": "hierarchy",
+    "title": "Hierarchy",
+    "category": "Structure",
+    "content": [
+      "Hierarchy organizes content by importance. It guides readers through information, helping them understand what to focus on first.",
+      "Effective hierarchy uses size, weight, color, and spacing to differentiate elements. Clear hierarchy improves comprehension and retention."
+    ]
+  },
+  {
+    "id": "spacing",
+    "title": "Spacing & Rythm",
+    "category": "Structure",
+    "content": [
+      "Spacing controls how text breathes. Line-height, margins, and paragraph spacing affect readability more than font choice. Tight spacing feels aggressive; loose spacing feels calm.",
+      "Consistent vertical rhythm helps users scan content naturally. If spacing is inconsistent, the design feels chaotic, even if everything else is correct."
+    ]
+  },
+  {
+  "id": "contrast",
+  "title": "Contrast & Emphasis",
+  "category": "Structure",
+  "content": [
+    "Contrast is what makes text readable and meaningful. This includes color contrast, weight contrast, and size contrast. Emphasis should be used sparingly to highlight key information. When everything is emphasized, nothing is. Strong typography uses contrast with intention, allowing important content to stand out without shouting."
+  ]
   }
 ]
