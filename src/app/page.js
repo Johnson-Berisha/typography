@@ -189,7 +189,7 @@ export default function Home() {
       <div className="guides-demo">
         <div className="guides" style={{marginTop: 12}}>
           {content && content.slice(1).map(item => (
-            <article key={item.id} className="guide-card">
+            <article key={item.id} id={item.id} className="guide-card">
               <div className="guide-header">
                 <h1 style={{margin:0}}>{item.title}</h1>
                 <span className="tag">{item.category}</span>
