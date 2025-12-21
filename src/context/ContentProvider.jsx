@@ -11,7 +11,7 @@ export function ContentProvider({ children }) {
   useEffect(() => {
     const fetchContent = async () => {
       try {
-        const fileNames = ["test", "colors3"];
+        const fileNames = ["test", "colors3", "hierarchy", "scale"];
         const posts = await Promise.all(
           fileNames.map(fileName =>
             fetch(
