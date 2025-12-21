@@ -49,7 +49,7 @@ export default function Home() {
       </section>
       <section className="nav-section">
         <p>Foundation</p>
-        <Link href="#">
+        <Link href="#test">
         <Image
           src="/home-alt.svg"
           alt="Introduction"
@@ -58,7 +58,7 @@ export default function Home() {
         />
         <span>Introduction</span>
         </Link>
-        <Link href="#">
+        <Link href="#colors3">
         <Image
           src="/color-bucket.svg"
           alt="Introduction"
@@ -67,7 +67,7 @@ export default function Home() {
         />
         <span>Colors</span>
         </Link>
-        <Link href="#">
+        <Link href="#hierarchy2">
         <Image
           src="/ruler.svg"
           alt="Introduction"
@@ -79,7 +79,7 @@ export default function Home() {
       </section>
       <section className="nav-section">
         <p>Structure</p>
-        <Link href="#">
+        <Link href="#scale">
         <Image
           src="/push-up.svg"
           alt="Introduction"
@@ -107,13 +107,24 @@ export default function Home() {
         <span>Contrast</span>
         </Link>
       </section>
+      <section className="nav-section code-snippets">
+        <Link href="#">
+        <Image 
+          src="/shortcut.svg"
+          alt="Code Snippets"
+          width={20}
+          height={20}
+        />
+        <span>Code Snippets</span>
+        </Link>
+      </section>
     </nav>
       <div className="content">
       
       <div className="guides-demo">
         <div className="guides" style={{marginTop: 12}}>
           {content && content[0] && (
-            <article key={content[0].id} className="guide-card">
+            <article key={content[0].id} id={content[0].id} className="guide-card">
               <div className="guide-header">
                 <h1 style={{margin:0}}>{content[0].title}</h1>
                 <span className="tag">{content[0].category}</span>
@@ -185,12 +196,54 @@ export default function Home() {
           <p>Documentation</p>
         </div>
       </div> */}
+ <div className="guides-demo">
+        <div className="guides" style={{marginTop: 12}}>
+          {content && content[1] && (
+            <article key={content[1].id} id={content[1].id} className="guide-card">
+              <div className="guide-header">
+                <h1 style={{margin:1}}>{content[1].title}</h1>
+                <span className="tag">{content[1].category}</span>
+              </div>
+              <p className="guide-intro">{content[1].excerpt}</p>
+              {content[1].content.map((p, i) => {
+                if (typeof p === "string") return <p key={i}>{p}</p>;
+                if (Array.isArray(p)) {
+                  return (
+                    <p key={i}>
+                      {p.map((node, j) => {
+                        if (node.type === "code") return <code key={j}>{node.text}</code>;
+                        if (node.type === "text") return <span key={j}>{node.text}</span>;
+                        return null;
+                      })}
+                    </p>
+                  );
+                }
+                return null;
+              })}
+            </article>
+          )}
+        </div>
+      </div>
+      <div className="colors-example">
+        <div className="color-card good">
+          <div className="do">Do!</div>
+          <h1>typo.graphy</h1>
+          <p>Documentation</p>
+          <span>Foundation</span>
+        </div>
+        <div className="color-card bad">
+          <div className="dont">Don't!</div>
+          <h1>typo.graphy</h1>
+          <p>Documentation</p>
+          <span>Foundation</span>
+        </div>
+      </div>
 
   
 
       <div className="guides-demo">
         <div className="guides" style={{marginTop: 12}}>
-          {content && content.slice(1).map(item => (
+          {content && content.slice(2).map(item => (
             <article key={item.id} id={item.id} className="guide-card">
               <div className="guide-header">
                 <h1 style={{margin:0}}>{item.title}</h1>

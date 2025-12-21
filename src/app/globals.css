@@ -25,6 +25,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -128,6 +132,10 @@ nav {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.nav-section.code-snippets a {
+  color: var(--primary);
 }
 
 /* content */
@@ -267,6 +275,47 @@ h3 {
   color: var(--gray30);
   transform: translateY(-9px) translateX(5px);
 }
+
+/* colors example */
+.colors-example {
+  position: relative;
+  display: flex;
+  gap: var(--spacing);
+  margin-bottom: var(--spacing);
+  background-color: hsl(0, 0%, 10%);
+  width: fit-content;
+  border-radius: var(--spacing);
+  padding: var(--spacing);
+  box-shadow: inset  0 1px 2px #ffffff70,
+  0 2px 4px #00000030,
+  0 4px 8px #00000015;
+}
+
+.color-card span {
+  color: var(--primary);
+  display: inline-block;
+  font-size: 0.75rem;
+  transform: translateY(-5px);
+}
+
+.color-card h1 {
+  line-height: 1.2em;
+}
+
+.color-card p {
+  color: var(--gray50);
+}
+
+.color-card.bad p, .color-card.bad span {
+  color: var(--foreground);
+}
+
+.color-card.bad {
+  border-left: 1px solid var(--gray30);
+  padding-left: var(--spacing);
+}
+
+
 
 /* content manager */
 

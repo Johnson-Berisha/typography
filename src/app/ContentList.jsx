@@ -10,7 +10,7 @@ export default function ContentList() {
   return (
     <div className="guides">
       {items.map((item) => (
-        <article key={item.id} className="guide-card">
+        <article key={item.id} id={item.id} className="guide-card">
           <div className="guide-header">
             <h2>{item.title}</h2>
             <span className="tag">{item.category}</span>
