@@ -276,7 +276,6 @@ h3 {
   text-decoration: none;
 }
 
-#hierarchy {
-  /* margin-top: calc(var(--spacing) * 4); */
-  background-color: blue;
-}
+/* #hierarchy {
+  margin-top: calc(var(--spacing) * 4);
+} */
