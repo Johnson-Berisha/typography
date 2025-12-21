@@ -141,6 +141,7 @@ export default function Home() {
 
       <div className="videos">
       <div className="video video1">
+        <div className="do">Do!</div>
         <div className="img"></div>
         <div className="text">
           <div className="text-img">
@@ -155,6 +156,7 @@ export default function Home() {
       </div>
 
       <div className="video video2">
+        <div className="dont">Don't!</div>
         <div className="img"></div>
         <div className="text">
           <div className="text-img">
