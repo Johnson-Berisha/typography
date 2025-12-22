@@ -108,7 +108,7 @@ export default function Home() {
         </Link>
       </section>
       <section className="nav-section code-snippets">
-        <Link href="#">
+        <Link href="/code-snippet-app">
         <Image 
           src="/shortcut.svg"
           alt="Code Snippets"
