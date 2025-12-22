@@ -3,7 +3,8 @@
 import React from 'react'
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef } from "react"; 
+import { useEffect, useRef } from "react";
+import "./codeSnippetApp.css";
 
 export default function CodeSnippetApp() {
     const navRef = useRef(null);
@@ -37,14 +38,14 @@ export default function CodeSnippetApp() {
       }, []);
   return (
     <div className="container">
-        <nav ref={navRef} className="nav">
+        <nav ref={navRef} className="nav code-snippet-nav">
       <span ref={pillRef} className="pill" />
       <section className="nav-section">
         <h2>typo.graphy</h2>
         <p>Code Snippets</p>
       </section>
       <section className="nav-section">
-        <Link href="#test">
+        <Link href="/" className='home-link'>
         <Image
           src="/home-alt.svg"
           alt="Introduction"
@@ -58,12 +59,30 @@ export default function CodeSnippetApp() {
         <p>Categories</p>
         <Link href="#scale">
         <Image
-          src="/push-up.svg"
+          src="/format-text.svg"
           alt="Introduction"
           width={20}
           height={20}
         />
         <span>Font Setup</span>
+        </Link>
+        <Link href="#">
+        <Image
+          src="/ruler.svg"
+          alt="Introduction"
+          width={20}
+          height={20}
+        />
+        <span>Scale & Sizing</span>
+        </Link>
+        <Link href="#">
+        <Image
+          src="/push-up.svg"
+          alt="Introduction"
+          width={20}
+          height={20}
+        />
+        <span>Hierarchy</span>
         </Link>
         <Link href="#">
         <Image
@@ -76,15 +95,45 @@ export default function CodeSnippetApp() {
         </Link>
         <Link href="#">
         <Image
+          src="/eye.svg"
+          alt="Introduction"
+          width={20}
+          height={20}
+        />
+        <span>Readability</span>
+        </Link>
+        <Link href="#">
+        <Image
           src="/edit-contrast.svg"
           alt="Introduction"
           width={20}
           height={20}
         />
-        <span>Contrast</span>
+        <span>Emphasis</span>
         </Link>
       </section>
     </nav>
+
+    <div className="content">
+        <div className="snippets-grid">
+            <div className="snippet"></div>
+            <div className="snippet"></div>
+            <div className="snippet"></div>
+            <div className="snippet"></div>
+            <div className="snippet"></div>
+            <div className="snippet"></div>
+            <div className="snippet"></div>
+            <div className="snippet"></div>
+            <div className="snippet"></div>
+            <div className="snippet"></div>
+            <div className="snippet"></div>
+            <div className="snippet"></div>
+            <div className="snippet"></div>
+            <div className="snippet"></div>
+            <div className="snippet"></div>
+            <div className="snippet"></div>
+        </div>
+    </div>
     </div>
   )
 }
