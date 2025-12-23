@@ -41,7 +41,7 @@ export default function CodeSnippetApp() {
         <nav ref={navRef} className="nav code-snippet-nav">
       <span ref={pillRef} className="pill" />
       <section className="nav-section">
-        <h2>typo.graphy</h2>
+        <h1>typo.graphy</h1>
         <p>Code Snippets</p>
       </section>
       <section className="nav-section">
