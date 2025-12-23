@@ -43,9 +43,16 @@ h1 {
   font: var(--h1);
   color: var(--foreground);
 }
+
+h2 {
+  font: var(--h2);
+  color: var(--foreground);
+}
+
 h3 {
-  line-height: 30px;
+  /* line-height: 30px; */
   font-size:16px;
+  font-weight: initial;
 }
 
 p {
@@ -53,6 +60,10 @@ p {
   color: var(--gray80);
   max-width: 800px;
   margin-bottom: calc(var(--spacing) / 4);
+}
+p.p2 {
+  font: var(--p2);
+  color: var(--gray70);
 }
 
 code {
@@ -107,8 +118,9 @@ nav {
   border-bottom: 1px solid var(--gray30);
 }
 
-.nav-section h2 {
+.nav-section h1 {
   font-family: monospace;
+  line-height: 1;
 }
 .nav-section p {
   font: var(--p2);
@@ -218,6 +230,10 @@ article {
   line-height: .7em;
 }
 
+.video h3 {
+  font-weight: 700;
+}
+
 .video2 {
     border-left: 1px solid var(--gray30);
 }
@@ -299,6 +315,7 @@ article {
   gap: var(--spacing);
   margin-bottom: var(--spacing);
   background-color: hsl(0, 0%, 10%);
+  transform: translateY(-20px);
   width: fit-content;
   border-radius: var(--spacing);
   padding: var(--spacing);
@@ -331,7 +348,33 @@ article {
   padding-left: var(--spacing);
 }
 
+/* scale example */
 
+.scale-example {
+  margin-bottom: var(--spacing);
+  background-color: hsl(0, 0%, 10%);
+  width: fit-content;
+  border-radius: var(--spacing);
+  transform: translateY(-20px);
+  padding: var(--spacing);
+  box-shadow: inset  0 1px 2px #ffffff70,
+  0 2px 4px #00000030,
+  0 4px 8px #00000015;
+}
+
+.scale-example span {
+  color: var(--gray50);
+  font-size: 1rem;
+}
+
+.scale-example p {
+  margin-bottom: 0;
+}
+
+.codeSnippetAd {transform:translateY(-20px);}
+.codeSnippetAd.code-snippets a {
+  color: var(--primary);
+}
 
 /* content manager */
 

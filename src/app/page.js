@@ -44,7 +44,7 @@ export default function Home() {
      <nav ref={navRef} className="nav">
       <span ref={pillRef} className="pill" />
       <section className="nav-section">
-        <h2>typo.graphy</h2>
+        <h1>typo.graphy</h1>
         <p>Documentation and guide on typography.</p>
       </section>
       <section className="nav-section">
@@ -238,12 +238,50 @@ export default function Home() {
           <span>Foundation</span>
         </div>
       </div>
+      <div className="guides-demo">
+        <div className="guides" style={{marginTop: 12}}>
+          {content && content[2] && (
+            <article key={content[2].id} id={content[2].id} className="guide-card">
+              <div className="guide-header">
+                <h1 style={{margin:1}}>{content[2].title}</h1>
+                <span className="tag">{content[2].category}</span>
+              </div>
+              <p className="guide-intro">{content[2].excerpt}</p>
+              {content[2].content.map((p, i) => {
+                if (typeof p === "string") return <p key={i}>{p}</p>;
+                if (Array.isArray(p)) {
+                  return (
+                    <p key={i}>
+                      {p.map((node, j) => {
+                        if (node.type === "code") return <code key={j}>{node.text}</code>;
+                        if (node.type === "text") return <span key={j}>{node.text}</span>;
+                        return null;
+                      })}
+                    </p>
+                  );
+                }
+                return null;
+              })}
+            </article>
+          )}
+        </div>
+      </div>
+      <div className="scale-example">
+        <p>Try to keep the same sizes for all same elements.</p>
+        <h1>Heading <span>- 1.325rem</span></h1>
+        <h2>Heading 2 <span>- 1rem</span></h2>
+        <h3>Heading 3 <span>- 1rem</span></h3>
+        <p>Paragraph <span>- 1rem</span></p>
+        <p className="p2">Paragraph 2 <span>- 0.875rem</span></p>
+      </div>
+      <div className="codeSnippetAd code-snippets">The code for this is in the <Link href="/code-snippet-app"> Code Snippets</Link></div>
+
 
   
 
       <div className="guides-demo">
         <div className="guides" style={{marginTop: 12}}>
-          {content && content.slice(2).map(item => (
+          {content && content.slice(3).map(item => (
             <article key={item.id} id={item.id} className="guide-card">
               <div className="guide-header">
                 <h1 style={{margin:0}}>{item.title}</h1>
