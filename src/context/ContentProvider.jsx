@@ -23,8 +23,14 @@ export function ContentProvider({ children }) {
         // Transform PagesCMS data to app format
         const transformed = posts.map(post => ({
           ...post,
-          // Map 'body' to 'content' array format
-          content: post.content || (post.body ? [post.body] : []),
+          // Map 'body' to 'content' array format and split on "\n\n"
+          content: (post.content || (post.body ? [post.body] : [])).flatMap(item => {
+            if (typeof item === 'string') {
+              // Split string content on "\n\n" to create separate paragraphs
+              return item.split('\n\n').filter(paragraph => paragraph.trim());
+            }
+            return item;
+          }),
           // Set default excerpt if missing
           excerpt: post.excerpt || post.title || "",
           // Set default id if missing
