@@ -267,7 +267,7 @@ export default function Home() {
         </div>
       </div>
       <div className="scale-example">
-        <p>Try to keep the same sizes for all same elements.</p>
+        <p>Keep identical elements the same <code>font-size</code>.</p>
         <h1>Heading <span>- 1.325rem</span></h1>
         <h2>Heading 2 <span>- 1rem</span></h2>
         <h3>Heading 3 <span>- 1rem</span></h3>
