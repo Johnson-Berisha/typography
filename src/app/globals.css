@@ -66,13 +66,7 @@ p.p2 {
   color: var(--gray70);
 }
 
-code {
-  font-family: monospace;
-  background-color: var(--background);
-  color: rgb(93, 185, 238);
-  padding: 2px 4px;
-  border-radius: 4px;
-}
+
 
 .container {
   display: flex;
@@ -180,6 +174,25 @@ nav {
   border: 1px solid var(--gray30);
 }
 
+/* === Code Block Preset === */
+.code-container {
+  background-color: hsl(0, 0%, 10%);
+  display:block;
+  border: 1px solid hsl(0, 0%, 30%);
+  border-radius: 8px;
+  overflow: hidden;
+  width:fit-content;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  margin: 20px 0;
+  padding: var(--spacing);
+}
+code {
+  /* padding:var(--spacing); */
+ color: #d4d4d4;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  white-space: pre;
+}
 
 /* videos */
 

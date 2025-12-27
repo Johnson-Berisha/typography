@@ -25,7 +25,7 @@ export default function ContentList() {
                 }
                 if (contentItem.type === 'codeblock') {
                   return (
-                    <pre key={i} style={{ background: 'var(--gray30)', padding: '12px', borderRadius: '4px', overflowX: 'auto', margin: '12px 0' }}>
+                    <pre key={i} className="code-container">
                       <code>{contentItem.code}</code>
                     </pre>
                   );
