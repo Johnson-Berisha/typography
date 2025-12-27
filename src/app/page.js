@@ -41,7 +41,7 @@ export default function Home() {
 
   return (
     <div className="container">
-     <nav ref={navRef} className="nav">
+     <nav ref={navRef} className="nav example">{/* only .example cause it uses the same styles */}
       <span ref={pillRef} className="pill" />
       <section className="nav-section">
         <h1>typo.graphy</h1>
@@ -150,7 +150,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="videos">
+      <div className="videos example">
       <div className="video video1">
         <div className="do">Do!</div>
         <div className="img"></div>
@@ -224,7 +224,7 @@ export default function Home() {
           )}
         </div>
       </div>
-      <div className="colors-example">
+      <div className="colors-example example">
         <div className="color-card good">
           <div className="do">Do!</div>
           <h1>typo.graphy</h1>
@@ -266,7 +266,7 @@ export default function Home() {
           )}
         </div>
       </div>
-      <div className="scale-example">
+      <div className="scale-example example">
         <p>Keep identical elements the same <code>font-size</code>.</p>
         <h1>Heading <span>- 1.325rem</span></h1>
         <h2>Heading 2 <span>- 1rem</span></h2>
