@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
   --spacing: 20px; /* everything based pn this */
   --background:hsl(0, 0%, 5%);
@@ -182,13 +184,12 @@ nav {
   border-radius: 8px;
   overflow: hidden;
   width:fit-content;
-  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-family: 'Courier Prime', monospace;
   margin: 20px 0;
   padding: var(--spacing);
 }
 code {
-  /* padding:var(--spacing); */
- color: #d4d4d4;
+  color: #d4d4d4;
   line-height: 1.5;
   font-size: 0.9rem;
   white-space: pre;
