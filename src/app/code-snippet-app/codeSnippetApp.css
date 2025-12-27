@@ -1,5 +1,12 @@
 nav.code-snippet-nav {
     height: calc(600px - var(--spacing) * 3.5);
+    transition: height 0.3s ease;
+    /* other */
+    overflow: hidden;
+}
+
+nav.code-snippet-nav.has-active {
+    height: calc(800px + var(--spacing) / 2);
 }
 
 nav.code-snippet-nav a:not(.home-link) {
@@ -20,6 +27,7 @@ nav.code-snippet-nav a:not(.home-link) {
     background-color: hsl(0, 0%, 10%);
     border-radius: var(--spacing);
   padding: var(--spacing);
+  cursor: pointer;
 
   transition: box-shadow 0.3s ease, transform 0.3s ease, border 0.3s ease;
   box-shadow: inset  0 1px 2px #ffffff70,
@@ -28,6 +36,13 @@ nav.code-snippet-nav a:not(.home-link) {
 }
 
 .snippet:hover {
+    box-shadow: inset  0 1px 2px var(--primary),
+    0px 4px 2px rgba(255, 110, 97, 0.048),
+    0 8px 16px #97979725;
+    transform: scale(1.01);
+}
+
+.snippet.active {
     box-shadow: inset  0 1px 4px var(--primary),
     0px 8px 4px rgba(255, 110, 97, 0.048),
     0 16px 32px #97979725;

@@ -3,12 +3,27 @@
 import React from 'react'
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./codeSnippetApp.css";
 
 export default function CodeSnippetApp() {
     const navRef = useRef(null);
     const pillRef = useRef(null);
+    const [activeSnippet, setActiveSnippet] = useState(null);
+
+    // testing out the ui
+    const codeSnippet = `:root {
+  --font-size-h1: 1.325rem;
+  --font-size-h2: 1rem;
+  --font-size-h3: 1rem;
+  --font-size-p:  1rem;
+  --font-size-p2: 0.875rem;
+}
+
+/* Usage Example */
+h1 { font-size: var(--font-size-h1); }
+p  { font-size: var(--font-size-p); }`;
+
 
     useEffect(() => {
     const nav = navRef.current;
@@ -38,7 +53,7 @@ export default function CodeSnippetApp() {
       }, []);
   return (
     <div className="container">
-        <nav ref={navRef} className="nav code-snippet-nav">
+        <nav ref={navRef} className={`nav code-snippet-nav example ${activeSnippet !== null ? 'has-active' : ''}`}>
       <span ref={pillRef} className="pill" />
       <section className="nav-section">
         <h1>typo.graphy</h1>
@@ -112,26 +127,22 @@ export default function CodeSnippetApp() {
         <span>Emphasis</span>
         </Link>
       </section>
+
+      {/* code snippet info */}
+      <section className="snippet-info">
+        <pre className='code-container'><code>{codeSnippet}</code></pre>
+      </section>
     </nav>
 
     <div className="content">
         <div className="snippets-grid">
-            <div className="snippet"></div>
-            <div className="snippet"></div>
-            <div className="snippet"></div>
-            <div className="snippet"></div>
-            <div className="snippet"></div>
-            <div className="snippet"></div>
-            <div className="snippet"></div>
-            <div className="snippet"></div>
-            <div className="snippet"></div>
-            <div className="snippet"></div>
-            <div className="snippet"></div>
-            <div className="snippet"></div>
-            <div className="snippet"></div>
-            <div className="snippet"></div>
-            <div className="snippet"></div>
-            <div className="snippet"></div>
+            {[...Array(16)].map((_, index) => (
+              <div
+                key={index}
+                className={`snippet ${activeSnippet === index ? 'active' : ''}`}
+                onClick={() => setActiveSnippet(activeSnippet === index ? null : index)}
+              />
+            ))}
         </div>
     </div>
     </div>
