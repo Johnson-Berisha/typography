@@ -132,6 +132,7 @@ export default function Home() {
               <p className="guide-intro">{content[0].excerpt}</p>
               {content[0].content.map((p, i) => {
                 if (typeof p === "string") return <p key={i}>{p}</p>;
+                if (p.type === "codeblock") return <pre key={i} style={{ background: 'var(--gray30)', padding: '12px', borderRadius: '4px', overflowX: 'auto', margin: '12px 0' }}><code>{p.code}</code></pre>;
                 if (Array.isArray(p)) {
                   return (
                     <p key={i}>
@@ -207,6 +208,7 @@ export default function Home() {
               <p className="guide-intro">{content[1].excerpt}</p>
               {content[1].content.map((p, i) => {
                 if (typeof p === "string") return <p key={i}>{p}</p>;
+                if (p.type === "codeblock") return <pre key={i} style={{ background: 'var(--gray30)', padding: '12px', borderRadius: '4px', overflowX: 'auto', margin: '12px 0' }}><code>{p.code}</code></pre>;
                 if (Array.isArray(p)) {
                   return (
                     <p key={i}>
@@ -249,6 +251,7 @@ export default function Home() {
               <p className="guide-intro">{content[2].excerpt}</p>
               {content[2].content.map((p, i) => {
                 if (typeof p === "string") return <p key={i}>{p}</p>;
+                if (p.type === "codeblock") return <pre key={i} style={{ background: 'var(--gray30)', padding: '12px', borderRadius: '4px', overflowX: 'auto', margin: '12px 0' }}><code>{p.code}</code></pre>;
                 if (Array.isArray(p)) {
                   return (
                     <p key={i}>
@@ -290,6 +293,7 @@ export default function Home() {
               <p className="guide-intro">{item.excerpt}</p>
               {item.content.map((p, i) => {
                 if (typeof p === "string") return <p key={i}>{p}</p>;
+                if (p.type === "codeblock") return <pre key={i} style={{ background: 'var(--gray30)', padding: '12px', borderRadius: '4px', overflowX: 'auto', margin: '12px 0' }}><code>{p.code}</code></pre>;
                 if (Array.isArray(p)) {
                   return (
                     <p key={i}>
