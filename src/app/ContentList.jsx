@@ -19,20 +19,31 @@ export default function ContentList() {
 
           {item.content && (
             <div>
-              {item.content.map((contentItem, i) => (
-                typeof contentItem === 'string' ? (
-                  <p key={i}>{contentItem}</p>
-                ) : (
-                  <div key={i} className="code-block">
-                    {Array.isArray(contentItem) && contentItem.map((ex, j) => (
-                      <div key={j}>
-                        {ex.type === 'code' && <code>{ex.text}</code>}
-                        {ex.type === 'text' && <span>{ex.text}</span>}
-                      </div>
-                    ))}
-                  </div>
-                )
-              ))}
+              {item.content.map((contentItem, i) => {
+                if (typeof contentItem === 'string') {
+                  return <p key={i}>{contentItem}</p>;
+                }
+                if (contentItem.type === 'codeblock') {
+                  return (
+                    <pre key={i} style={{ background: 'var(--gray30)', padding: '12px', borderRadius: '4px', overflowX: 'auto', margin: '12px 0' }}>
+                      <code>{contentItem.code}</code>
+                    </pre>
+                  );
+                }
+                if (Array.isArray(contentItem)) {
+                  return (
+                    <p key={i}>
+                      {contentItem.map((ex, j) => (
+                        <React.Fragment key={j}>
+                          {ex.type === 'code' && <code>{ex.text}</code>}
+                          {ex.type === 'text' && <span>{ex.text}</span>}
+                        </React.Fragment>
+                      ))}
+                    </p>
+                  );
+                }
+                return null;
+              })}
             </div>
           )}
 

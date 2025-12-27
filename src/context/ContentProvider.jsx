@@ -11,7 +11,7 @@ export function ContentProvider({ children }) {
   useEffect(() => {
     const fetchContent = async () => {
       try {
-        const fileNames = ["test", "colors3", "scale", "hierarchy2", "spacing", "contrast"];
+        const fileNames = ["test", "colors3", "scale", "hierarchy2", "spacing", "contrast", "testcodeblock"];
         const posts = await Promise.all(
           fileNames.map(fileName =>
             fetch(
@@ -26,8 +26,46 @@ export function ContentProvider({ children }) {
           // Map 'body' to 'content' array format and split on "\n\n"
           content: (post.content || (post.body ? [post.body] : [])).flatMap(item => {
             if (typeof item === 'string') {
-              // Split string content on "\n\n" to create separate paragraphs
-              return item.split('\n\n').filter(paragraph => paragraph.trim());
+              // First split on code blocks ```...```
+              const parts = [];
+              let lastIndex = 0;
+
+              // Find all code blocks
+              const matches = [];
+              const codeBlockRegex = /```([\s\S]*?)```/g;
+              let match;
+              while ((match = codeBlockRegex.exec(item)) !== null) {
+                matches.push({ index: match.index, end: codeBlockRegex.lastIndex, code: match[1].trim() });
+              }
+
+              if (matches.length === 0) {
+                // No code blocks, just split on "\n\n"
+                return item.split('\n\n').filter(paragraph => paragraph.trim());
+              }
+
+              // Process text and code blocks
+              for (const codeMatch of matches) {
+                // Add text before code block
+                if (codeMatch.index > lastIndex) {
+                  const textBefore = item.substring(lastIndex, codeMatch.index).trim();
+                  if (textBefore) {
+                    parts.push(...textBefore.split('\n\n').filter(p => p.trim()));
+                  }
+                }
+                // Add code block
+                parts.push({ type: 'codeblock', code: codeMatch.code });
+                lastIndex = codeMatch.end;
+              }
+
+              // Add remaining text after last code block
+              if (lastIndex < item.length) {
+                const textAfter = item.substring(lastIndex).trim();
+                if (textAfter) {
+                  parts.push(...textAfter.split('\n\n').filter(p => p.trim()));
+                }
+              }
+
+              return parts.length > 0 ? parts : [item];
             }
             return item;
           }),
