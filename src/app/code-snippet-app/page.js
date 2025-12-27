@@ -129,8 +129,9 @@ p  { font-size: var(--font-size-p); }`;
       </section>
 
       {/* code snippet info */}
-      <section className="snippet-info">
+      <section className="snippet-info" style={{marginTop: 25 + `px`}}>
         <pre className='code-container'><code>{codeSnippet}</code></pre>
+        <Link href="#">Copy</Link>
       </section>
     </nav>
 
@@ -140,8 +141,15 @@ p  { font-size: var(--font-size-p); }`;
               <div
                 key={index}
                 className={`snippet ${activeSnippet === index ? 'active' : ''}`}
-                onClick={() => setActiveSnippet(activeSnippet === index ? null : index)}
-              />
+                onClick={() => setActiveSnippet(activeSnippet === index ? null : index)} >
+                  <h1>Heading <span>- 1.325rem</span></h1>
+                  <h2>Heading 2 <span>- 1rem</span></h2>
+                  <h3>Heading 3 <span>- 1rem</span></h3>
+                  <p>Paragraph <span>- 1rem</span></p>
+                  <p className="p2">Paragraph 2 <span>- 0.875rem</span></p>
+
+                  <span className="cto">Click to get code!</span>
+                </div>
             ))}
         </div>
     </div>

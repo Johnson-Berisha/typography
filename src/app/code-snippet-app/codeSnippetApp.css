@@ -1,17 +1,40 @@
 nav.code-snippet-nav {
-    height: calc(600px - var(--spacing) * 3.5);
+    height: calc(600px - var(--spacing) * 5);
     transition: height 0.3s ease;
     /* other */
     overflow: hidden;
 }
 
+nav.code-snippet-nav .nav-section {
+    margin-bottom: calc(var(--spacing) / 2);
+}
+
 nav.code-snippet-nav.has-active {
-    height: calc(800px + var(--spacing) / 2);
+    height: 100%;
 }
 
 nav.code-snippet-nav a:not(.home-link) {
   opacity: 0.6;
   font-size: .875rem;
+}
+
+nav.code-snippet-nav pre {
+  width: 100%;
+}
+
+nav.code-snippet-nav .snippet-info a {
+  color: white;
+  text-decoration: none;
+  padding: 7px 15px;
+  background-color: hsl(0, 0%, 20%);
+  border: 1px solid hsl(0, 0%, 40%);
+  border-radius: 8px;
+  transition: all .1s ease;
+}
+
+nav.code-snippet-nav .snippet-info a:hover {
+  background-color: hsl(0, 0%, 30%);
+  border-color: hsl(0, 0%, 60%);
 }
 
 .snippets-grid {
@@ -22,17 +45,18 @@ nav.code-snippet-nav a:not(.home-link) {
 }
 
 .snippet {
+    position: relative;
     height: 250px;
     width: 100%;
     background-color: hsl(0, 0%, 10%);
     border-radius: var(--spacing);
-  padding: var(--spacing);
-  cursor: pointer;
+    padding: var(--spacing);
+    cursor: pointer;
 
-  transition: box-shadow 0.3s ease, transform 0.3s ease, border 0.3s ease;
-  box-shadow: inset  0 1px 2px #ffffff70,
-  0 2px 4px #00000030,
-  0 4px 8px #00000015;
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border 0.3s ease;
+    box-shadow: inset  0 1px 2px #ffffff70,
+    0 2px 4px #00000030,
+    0 4px 8px #00000015;
 }
 
 .snippet:hover {
@@ -47,4 +71,11 @@ nav.code-snippet-nav a:not(.home-link) {
     0px 8px 4px rgba(255, 110, 97, 0.048),
     0 16px 32px #97979725;
     transform: scale(1.01);
+}
+
+.cto {
+    position: absolute;
+    font-size: 0.875rem;
+    opacity: 0.3;
+    bottom: 10px;
 }
