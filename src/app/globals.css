@@ -247,6 +247,7 @@ article {
 .video p{
   color: hsl(0, 0%, 60%);
   line-height: .7em;
+  margin-top: 5px;
 }
 
 .video h3 {
@@ -352,6 +353,7 @@ article {
 
 .color-card p {
   color: var(--gray50);
+  margin-top: 0;
 }
 
 .color-card.bad p, .color-card.bad span {
@@ -380,6 +382,7 @@ article {
 
 .scale-example p {
   margin-bottom: 0;
+  margin-top: 0;
 }
 
 .codeSnippetAd {transform:translateY(-20px);}
@@ -403,7 +406,7 @@ article {
 }
 
 .guide-card:not(.intro) {
-  width: 50%;
+  max-width: 60%;
   border-top: 1px solid var(--gray30);
   margin-top: 45px;
   padding-top: 45px;
