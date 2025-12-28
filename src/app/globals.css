@@ -61,7 +61,7 @@ p {
   font: var(--p);
   color: var(--gray80);
   max-width: 800px;
-  margin-bottom: calc(var(--spacing) / 4);
+  margin-top: var(--spacing);
 }
 p.p2 {
   font: var(--p2);
@@ -113,10 +113,15 @@ nav {
 .nav-section h1 {
   font-family: monospace;
   line-height: 1;
+
+  display: flex;
+  align-items: center;
+  gap:5px;
 }
 .nav-section p {
   font: var(--p2);
   color: var(--gray50);
+  margin-top: 0;
 }
 
 .pill {
@@ -397,6 +402,12 @@ article {
   padding: 0;
 }
 
+.guide-card:not(.intro) {
+  width: 50%;
+  border-top: 1px solid var(--gray30);
+  margin-top: 45px;
+  padding-top: 45px;
+}
 
 /* css.gg ad */
 .cssgg {

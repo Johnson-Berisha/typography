@@ -48,7 +48,12 @@ export default function Home() {
      <nav ref={navRef} className="nav example">{/* only .example cause it uses the same styles */}
       <span ref={pillRef} className="pill" />
       <section className="nav-section">
-        <h1>typo.graphy</h1>
+        <h1><Image
+          src="/logo-32-transparent.svg"
+          alt="Typography Logo"
+          width={32}
+          height={32} 
+        /> typo.graphy</h1>
         <p>Documentation and guide on typography.</p>
       </section>
       <section className="nav-section">
@@ -128,7 +133,7 @@ export default function Home() {
       <div className="guides-demo">
         <div className="guides" style={{marginTop: 12}}>
           {content && content[0] && (
-            <article key={content[0].id} id={content[0].id} className="guide-card">
+            <article key={content[0].id} id={content[0].id} className="guide-card intro">
               <div className="guide-header">
                 <h1 style={{margin:0}}>{content[0].title}</h1>
                 <span className="tag">{content[0].category}</span>

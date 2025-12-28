@@ -56,7 +56,12 @@ p  { font-size: var(--font-size-p); }`;
         <nav ref={navRef} className={`nav code-snippet-nav example ${activeSnippet !== null ? 'has-active' : ''}`}>
       <span ref={pillRef} className="pill" />
       <section className="nav-section">
-        <h1>typo.graphy</h1>
+        <h1><Image
+                  src="/logo-32-transparent.svg"
+                  alt="Typography Logo"
+                  width={32}
+                  height={32} 
+                /> typo.graphy</h1>
         <p>Code Snippets</p>
       </section>
       <section className="nav-section">
