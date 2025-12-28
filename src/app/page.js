@@ -1,15 +1,19 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useContent } from "../context/ContentProvider";
 
 export default function Home() {
-
-    const navRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const navRef = useRef(null);
   const pillRef = useRef(null);
   const { actions } = useContent();
   const content = actions.getContent();
+
+  useEffect(() => {
+    setIsLoading(false); // content is ready
+  }, []);
 
   useEffect(() => {
     const nav = navRef.current;
