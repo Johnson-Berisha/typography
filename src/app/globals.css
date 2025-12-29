@@ -499,6 +499,13 @@ article {
   max-width: 50%;
 }
 
+ul {
+  margin-top: 16px;
+  margin-left: calc(var(--spacing) * 1.5);
+  list-style-type: "-  ";
+  color: var(--gray80);
+}
+
 @media (max-width:1024px){
   .guide-card{
     max-width: 90%;
