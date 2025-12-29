@@ -11,6 +11,59 @@ export default function Home() {
   const { actions } = useContent();
   const content = actions.getContent();
 
+  const renderContent = (arr) => {
+    if (!arr) return null;
+    const out = [];
+    let idx = 0;
+    while (idx < arr.length) {
+      const node = arr[idx];
+      if (typeof node === 'string') {
+        out.push(<p key={`p-${idx}`}>{node}</p>);
+        idx++;
+        continue;
+      }
+      if (node.type === 'codeblock') {
+        out.push(
+          <pre className="code-container" key={`code-${idx}`}>
+            <code>{node.code}</code>
+          </pre>
+        );
+        idx++;
+        continue;
+      }
+      if (Array.isArray(node)) {
+        out.push(
+          <p key={`mix-${idx}`}>
+            {node.map((n, j) => {
+              if (n.type === 'code') return <code key={j}>{n.text}</code>;
+              if (n.type === 'text') return <span key={j}>{n.text}</span>;
+              return null;
+            })}
+          </p>
+        );
+        idx++;
+        continue;
+      }
+      if (node.type === 'li') {
+        const items = [];
+        while (idx < arr.length && arr[idx] && arr[idx].type === 'li') {
+          items.push(arr[idx].content);
+          idx++;
+        }
+        out.push(
+          <ul key={`list-${idx}`}>
+            {items.map((it, j) => (
+              <li key={j}>{it}</li>
+            ))}
+          </ul>
+        );
+        continue;
+      }
+      idx++;
+    }
+    return out;
+  };
+
   useEffect(() => {
     setIsLoading(false); // content is ready
   }, []);
@@ -132,29 +185,14 @@ export default function Home() {
       
       <div className="guides-demo">
         <div className="guides" style={{marginTop: 12}}>
-          {content && content[0] && (
+              {content && content[0] && (
             <article key={content[0].id} id={content[0].id} className="guide-card intro">
               <div className="guide-header">
                 <h1 style={{margin:0}}>{content[0].title}</h1>
                 <span className="tag">{content[0].category}</span>
               </div>
               <p className="guide-intro">{content[0].excerpt}</p>
-              {content[0].content.map((p, i) => {
-                if (typeof p === "string") return <p key={i}>{p}</p>;
-                if (p.type === "codeblock") return <pre className="code-container" key={i}><code>{p.code}</code></pre>;
-                if (Array.isArray(p)) {
-                  return (
-                    <p key={i}>
-                      {p.map((node, j) => {
-                        if (node.type === "code") return <code key={j}>{node.text}</code>;
-                        if (node.type === "text") return <span key={j}>{node.text}</span>;
-                        return null;
-                      })}
-                    </p>
-                  );
-                }
-                return null;
-              })}
+              {renderContent(content[0].content)}
             </article>
           )}
         </div>
@@ -215,22 +253,7 @@ export default function Home() {
                 <span className="tag">{content[1].category}</span>
               </div>
               <p className="guide-intro">{content[1].excerpt}</p>
-              {content[1].content.map((p, i) => {
-                if (typeof p === "string") return <p key={i}>{p}</p>;
-                if (p.type === "codeblock") return <pre className="code-container" key={i}><code>{p.code}</code></pre>;
-                if (Array.isArray(p)) {
-                  return (
-                    <p key={i}>
-                      {p.map((node, j) => {
-                        if (node.type === "code") return <code key={j}>{node.text}</code>;
-                        if (node.type === "text") return <span key={j}>{node.text}</span>;
-                        return null;
-                      })}
-                    </p>
-                  );
-                }
-                return null;
-              })}
+              {renderContent(content[1].content)}
             </article>
           )}
         </div>
@@ -258,22 +281,7 @@ export default function Home() {
                 <span className="tag">{content[2].category}</span>
               </div>
               <p className="guide-intro">{content[2].excerpt}</p>
-              {content[2].content.map((p, i) => {
-                if (typeof p === "string") return <p key={i}>{p}</p>;
-                if (p.type === "codeblock") return <pre className="code-container" key={i}><code>{p.code}</code></pre>;
-                if (Array.isArray(p)) {
-                  return (
-                    <p key={i}>
-                      {p.map((node, j) => {
-                        if (node.type === "code") return <code key={j}>{node.text}</code>;
-                        if (node.type === "text") return <span key={j}>{node.text}</span>;
-                        return null;
-                      })}
-                    </p>
-                  );
-                }
-                return null;
-              })}
+              {renderContent(content[2].content)}
             </article>
           )}
         </div>
@@ -300,22 +308,7 @@ export default function Home() {
                 <span className="tag">{item.category}</span>
               </div>
               <p className="guide-intro">{item.excerpt}</p>
-              {item.content.map((p, i) => {
-                if (typeof p === "string") return <p key={i}>{p}</p>;
-                if (p.type === "codeblock") return <pre className="code-container" key={i}><code>{p.code}</code></pre>;
-                if (Array.isArray(p)) {
-                  return (
-                    <p key={i}>
-                      {p.map((node, j) => {
-                        if (node.type === "code") return <code key={j}>{node.text}</code>;
-                        if (node.type === "text") return <span key={j}>{node.text}</span>;
-                        return null;
-                      })}
-                    </p>
-                  );
-                }
-                return null;
-              })}
+              {renderContent(item.content)}
 
             </article>
           ))}

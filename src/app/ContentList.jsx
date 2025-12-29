@@ -19,31 +19,67 @@ export default function ContentList() {
 
           {item.content && (
             <div>
-              {item.content.map((contentItem, i) => {
-                if (typeof contentItem === 'string') {
-                  return <p key={i}>{contentItem}</p>;
+              {(() => {
+                const out = [];
+                const content = item.content;
+                let idx = 0;
+                while (idx < content.length) {
+                  const node = content[idx];
+                  // render plain string
+                  if (typeof node === 'string') {
+                    out.push(<p key={`p-${idx}`}>{node}</p>);
+                    idx++;
+                    continue;
+                  }
+
+                  // render code block
+                  if (node.type === 'codeblock') {
+                    out.push(
+                      <pre key={`code-${idx}`} className="code-container">
+                        <code>{node.code}</code>
+                      </pre>
+                    );
+                    idx++;
+                    continue;
+                  }
+
+                  // render arrays of mixed parts
+                  if (Array.isArray(node)) {
+                    out.push(
+                      <p key={`mix-${idx}`}>
+                        {node.map((ex, j) => (
+                          <React.Fragment key={j}>
+                            {ex.type === 'code' && <code>{ex.text}</code>}
+                            {ex.type === 'text' && <span>{ex.text}</span>}
+                          </React.Fragment>
+                        ))}
+                      </p>
+                    );
+                    idx++;
+                    continue;
+                  }
+
+                  // collect consecutive li nodes
+                  if (node.type === 'li') {
+                    const items = [];
+                    while (idx < content.length && content[idx] && content[idx].type === 'li') {
+                      items.push(content[idx].content);
+                      idx++;
+                    }
+                    out.push(
+                      <ul key={`list-${idx}`}>
+                        {items.map((it, j) => (
+                          <li key={j}>{it}</li>
+                        ))}
+                      </ul>
+                    );
+                    continue;
+                  }
+
+                  idx++;
                 }
-                if (contentItem.type === 'codeblock') {
-                  return (
-                    <pre key={i} className="code-container">
-                      <code>{contentItem.code}</code>
-                    </pre>
-                  );
-                }
-                if (Array.isArray(contentItem)) {
-                  return (
-                    <p key={i}>
-                      {contentItem.map((ex, j) => (
-                        <React.Fragment key={j}>
-                          {ex.type === 'code' && <code>{ex.text}</code>}
-                          {ex.type === 'text' && <span>{ex.text}</span>}
-                        </React.Fragment>
-                      ))}
-                    </p>
-                  );
-                }
-                return null;
-              })}
+                return out;
+              })()}
             </div>
           )}
 

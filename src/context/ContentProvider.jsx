@@ -65,9 +65,9 @@ export function ContentProvider({ children }) {
               }
 
               if (matches.length === 0) {
-                // No code blocks: split on "\n\n" and parse paragraphs for bullets
+                // No code blocks: split on blank lines (may contain spaces) and parse paragraphs for bullets
                 return item
-                  .split('\n\n')
+                  .split(/\n\s*\n/)
                   .filter(paragraph => paragraph.trim())
                   .flatMap(paragraph => parseParagraph(paragraph));
               }
@@ -78,7 +78,7 @@ export function ContentProvider({ children }) {
                 if (codeMatch.index > lastIndex) {
                   const textBefore = item.substring(lastIndex, codeMatch.index).trim();
                   if (textBefore) {
-                    parts.push(...textBefore.split('\n\n').filter(p => p.trim()).flatMap(p => parseParagraph(p)));
+                    parts.push(...textBefore.split(/\n\s*\n/).filter(p => p.trim()).flatMap(p => parseParagraph(p)));
                   }
                 }
                 // Add code block
@@ -90,7 +90,7 @@ export function ContentProvider({ children }) {
               if (lastIndex < item.length) {
                 const textAfter = item.substring(lastIndex).trim();
                 if (textAfter) {
-                  parts.push(...textAfter.split('\n\n').filter(p => p.trim()).flatMap(p => parseParagraph(p)));
+                  parts.push(...textAfter.split(/\n\s*\n/).filter(p => p.trim()).flatMap(p => parseParagraph(p)));
                 }
               }
 
