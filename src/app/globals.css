@@ -8,7 +8,7 @@
 
   --ff: "Inter", sans-serif;
   --h1: bold 36px/1em var(--ff);
-  --h2: bold 24px/1.4em var(--ff);
+  --h2: bold 24px/1em var(--ff);
   --p: 1rem/1.5em var(--ff);
   --p2: 0.875rem/1.4em var(--ff);
 
@@ -125,8 +125,9 @@ nav {
   border-bottom: 1px solid var(--gray30);
 }
 
-.nav-section h1 {
-  font-family: monospace;
+.nav-section h2 {
+  font-family: 'Courier Prime', monospace;
+  color: var(--primary);
   line-height: 1;
 
   display: flex;
@@ -254,8 +255,8 @@ article {
   :root {
     --spacing: 16px;
     --nav-space: 260px;
-    --h1: bold 1.2rem/1.3em var(--ff);
-    --h2: bold 0.95rem/1.3em var(--ff);
+    --h1: bold 24px/1.3em var(--ff);
+    --h2: bold 1rem/1.3em var(--ff);
   }
 
   .code-container {
@@ -268,8 +269,8 @@ article {
   :root {
     --spacing: 12px;
     --nav-space: 0px;
-    --h1: bold 1.15rem/1.3em var(--ff);
-    --h2: bold 0.95rem/1.3em var(--ff);
+    --h1: bold 24px/1.3em var(--ff);
+    --h2: bold 1rem/1.3em var(--ff);
   }
 
   body {

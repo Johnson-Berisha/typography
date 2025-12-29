@@ -48,12 +48,12 @@ export default function Home() {
      <nav ref={navRef} className="nav example">{/* only .example cause it uses the same styles */}
       <span ref={pillRef} className="pill" />
       <section className="nav-section">
-        <h1><Image
+        <h2><Image
           src="/logo-32-transparent.svg"
           alt="Typography Logo"
           width={32}
           height={32} 
-        /> Fontiq</h1>
+        /> Fontiq</h2>
         <p>Documentation and guide on typography.</p>
       </section>
       <section className="nav-section">
@@ -211,7 +211,7 @@ export default function Home() {
           {content && content[1] && (
             <article key={content[1].id} id={content[1].id} className="guide-card">
               <div className="guide-header">
-                <h1 style={{margin:1}}>{content[1].title}</h1>
+                <h2 style={{margin:1}}>{content[1].title}</h2>
                 <span className="tag">{content[1].category}</span>
               </div>
               <p className="guide-intro">{content[1].excerpt}</p>
@@ -254,7 +254,7 @@ export default function Home() {
           {content && content[2] && (
             <article key={content[2].id} id={content[2].id} className="guide-card">
               <div className="guide-header">
-                <h1 style={{margin:1}}>{content[2].title}</h1>
+                <h2 style={{margin:1}}>{content[2].title}</h2>
                 <span className="tag">{content[2].category}</span>
               </div>
               <p className="guide-intro">{content[2].excerpt}</p>
@@ -296,7 +296,7 @@ export default function Home() {
           {content && content.slice(3).map(item => (
             <article key={item.id} id={item.id} className="guide-card">
               <div className="guide-header">
-                <h1 style={{margin:0}}>{item.title}</h1>
+                <h2 style={{margin:0}}>{item.title}</h2>
                 <span className="tag">{item.category}</span>
               </div>
               <p className="guide-intro">{item.excerpt}</p>
