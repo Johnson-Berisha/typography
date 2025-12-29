@@ -11,7 +11,7 @@ export function ContentProvider({ children }) {
   useEffect(() => {
     const fetchContent = async () => {
       try {
-        const fileNames = ["test", "colors3", "scale", "hierarchy2", "spacing", "contrast", "testcodeblock"];
+        const fileNames = ["test", "colors3", "scale", "hierarchy2", "spacing", "contrast", "clamps"];
         const posts = await Promise.all(
           fileNames.map(fileName =>
             fetch(
@@ -26,6 +26,32 @@ export function ContentProvider({ children }) {
           // Map 'body' to 'content' array format and split on "\n\n"
           content: (post.content || (post.body ? [post.body] : [])).flatMap(item => {
             if (typeof item === 'string') {
+              // Helper: parse a paragraph into strings and `li` objects
+              const parseParagraph = (paragraph) => {
+                const lines = paragraph.split('\n').map(l => l.trim()).filter(Boolean);
+                const isBullet = (l) => /^([-*•]\s+|\d+[.)]\s+)/.test(l);
+                const out = [];
+                let i = 0;
+                while (i < lines.length) {
+                  if (isBullet(lines[i])) {
+                    const items = [];
+                    while (i < lines.length && isBullet(lines[i])) {
+                      items.push(lines[i].replace(/^([-*•]\s+|\d+[.)]\s+)/, '').trim());
+                      i++;
+                    }
+                    for (const it of items) out.push({ type: 'li', content: it });
+                  } else {
+                    const textLines = [];
+                    while (i < lines.length && !isBullet(lines[i])) {
+                      textLines.push(lines[i]);
+                      i++;
+                    }
+                    out.push(textLines.join(' '));
+                  }
+                }
+                return out.length ? out : [paragraph];
+              };
+
               // First split on code blocks ```...```
               const parts = [];
               let lastIndex = 0;
@@ -39,17 +65,20 @@ export function ContentProvider({ children }) {
               }
 
               if (matches.length === 0) {
-                // No code blocks, just split on "\n\n"
-                return item.split('\n\n').filter(paragraph => paragraph.trim());
+                // No code blocks: split on "\n\n" and parse paragraphs for bullets
+                return item
+                  .split('\n\n')
+                  .filter(paragraph => paragraph.trim())
+                  .flatMap(paragraph => parseParagraph(paragraph));
               }
 
               // Process text and code blocks
               for (const codeMatch of matches) {
-                // Add text before code block
+                // Add text before code block (parsed)
                 if (codeMatch.index > lastIndex) {
                   const textBefore = item.substring(lastIndex, codeMatch.index).trim();
                   if (textBefore) {
-                    parts.push(...textBefore.split('\n\n').filter(p => p.trim()));
+                    parts.push(...textBefore.split('\n\n').filter(p => p.trim()).flatMap(p => parseParagraph(p)));
                   }
                 }
                 // Add code block
@@ -57,11 +86,11 @@ export function ContentProvider({ children }) {
                 lastIndex = codeMatch.end;
               }
 
-              // Add remaining text after last code block
+              // Add remaining text after last code block (parsed)
               if (lastIndex < item.length) {
                 const textAfter = item.substring(lastIndex).trim();
                 if (textAfter) {
-                  parts.push(...textAfter.split('\n\n').filter(p => p.trim()));
+                  parts.push(...textAfter.split('\n\n').filter(p => p.trim()).flatMap(p => parseParagraph(p)));
                 }
               }
 
