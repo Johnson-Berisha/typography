@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Typography Matters!",
+  title: "Fontiq | Learn Typography for your UI",
   description: "Learn how to make your UI better with typography.",
 };
 

@@ -53,7 +53,7 @@ export default function Home() {
           alt="Typography Logo"
           width={32}
           height={32} 
-        /> typo.graphy</h1>
+        /> Fontiq</h1>
         <p>Documentation and guide on typography.</p>
       </section>
       <section className="nav-section">

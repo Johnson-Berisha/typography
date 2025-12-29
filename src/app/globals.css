@@ -7,8 +7,8 @@
   --primary:#ff6f61;
 
   --ff: "Inter", sans-serif;
-  --h1: bold 1.325rem/1.4em var(--ff);
-  --h2: bold 1rem/1.4em var(--ff);
+  --h1: bold 36px/1em var(--ff);
+  --h2: bold 24px/1.4em var(--ff);
   --p: 1rem/1.5em var(--ff);
   --p2: 0.875rem/1.4em var(--ff);
 
@@ -478,7 +478,7 @@ article {
 
 .tag {
   color: var(--primary);
-  margin-bottom: calc(var(--spacing) / 3);
+  /* margin-bottom: calc(var(--spacing) / 3); */
   display: inline-block;
   font-size: 0.75rem;
   transform: translateY(-5px);
@@ -486,6 +486,7 @@ article {
 
 .guide-header {
   padding: 0;
+  transform: translateY(10px);
 }
 
 .guide-card:not(.intro) {
