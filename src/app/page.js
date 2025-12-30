@@ -7,6 +7,7 @@ import { useContent } from "../context/ContentProvider";
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const navRef = useRef(null);
+  const navOpenRef = useRef(false);
   const pillRef = useRef(null);
   const { actions } = useContent();
   const content = actions.getContent();
@@ -96,10 +97,40 @@ export default function Home() {
     nav.addEventListener("mouseleave", () => move(active));
   }, []);
 
+// open nav on click hamburger
+  useEffect (() => {
+    const hamburger = document.querySelector(".hamburger");
+    const nav = navRef.current;
+
+    const toggleNav = () => {
+      if (navOpenRef.current === false) {
+        nav.style.top = "0";
+        navOpenRef.current = true;
+      } else{
+        nav.style.top = "-100%";
+        navOpenRef.current = false;
+      }
+    }
+
+    hamburger.addEventListener("click", toggleNav);
+
+  // Cleanup to avoid memory leaks
+  return () => {
+    hamburger.removeEventListener("click", toggleNav);
+  };
+  }, []);
+
+
   return (
     <div className="container">
+      <span className="hamburger">
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+      </span>
      <nav ref={navRef} className="nav example">{/* only .example cause it uses the same styles */}
       <span ref={pillRef} className="pill" />
+      
       <section className="nav-section">
         <h2><Image
           src="/logo-32-transparent.svg"
