@@ -8,7 +8,7 @@ body{
 }
 
 nav {
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,10 +17,14 @@ nav {
     animation: none;
     transform: translateX(0);
     position: static;
+    padding: 10px 50px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hn-title {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -30,7 +34,8 @@ nav {
 
 nav ul {
     display: flex;
-    gap: var(--spacing);
+    align-items: center;
+    margin: 0;
 }
 
 nav ul li {
