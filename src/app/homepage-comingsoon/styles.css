@@ -1,0 +1,54 @@
+.container {
+    display: block;
+}
+
+body{
+    margin: 0;
+    padding: 0 !important;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--gray30);
+    border-radius: 50px;
+    animation: none;
+    transform: translateX(0);
+    position: static;
+}
+
+.hn-title {
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap:5px;
+    color:var(--primary)
+}
+
+nav ul {
+    display: flex;
+    gap: var(--spacing);
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: hsl(0, 0, 70%);
+    /* font-weight: 600; */
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+nav ul li a.active-link {
+    color: white;
+}
+nav ul li a.codeSnippetsAdLink {
+    color: var(--primary);
+}

@@ -211,6 +211,17 @@ export default function Home() {
         <span>Code Snippets</span>
         </Link>
       </section>
+      <section className="nav-section code-snippets">
+        <Link href="/homepage-comingsoon">
+        <Image 
+          src="/shortcut.svg"
+          alt="Code Snippets"
+          width={20}
+          height={20}
+        />
+        <span>Coming soon homepage</span>
+        </Link>
+      </section>
     </nav>
       <div className="content">
       
