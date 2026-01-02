@@ -155,3 +155,230 @@ ul li .nav-link:hover { color: white; }
     gap: 16px;
     margin-bottom: 80px;
 }
+
+/* visualss */
+
+.hero-cards-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 350px; /* Fixed height to contain the absolute elements */
+    margin: 0 auto;
+    /* outline: 1px dashed red; */ 
+}
+
+/* Base styles for all 3 cards */
+.visual-card {
+    position: absolute;
+    border-radius: 16px;
+    border: 1px solid #333333;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-align: left;
+}
+
+/* Styles for the two background cards */
+.card-side {
+    width: 320px;
+    height: 220px;
+    background: #121212;
+    top: 0; /* Higher up vertically */
+    z-index: 1; /* Behind main card */
+    opacity: 0.6; /* Faded */
+    filter: blur(1px); /* Subtle blur for depth */
+}
+
+.card-left {
+    left: 5%;
+    /* Slight tilt and pushed back */
+    transform: perspective(1000px) rotateY(15deg) rotateZ(-2deg) scale(0.9);
+}
+
+.card-right {
+    right: 5%;
+    /* Slight tilt opposite way and pushed back */
+    transform: perspective(1000px) rotateY(-15deg) rotateZ(2deg) scale(0.9);
+}
+
+/* Styles for the Main front card */
+.card-main {
+    width: 450px;
+    height: 280px;
+    background: #171717;
+    z-index: 10; /* In front */
+    /* Centered horizontally */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0; /* Lower down vertically */
+    border-color: rgba(255, 111, 97, 0.3); /* Subtle accent border */
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4), 0 0 20px rgba(255, 111, 97, 0.15); /* Stronger shadow + glow */
+}
+
+/* Hover effect: bring side cards forward slightly */
+.hero-cards-container:hover .card-side {
+    opacity: 0.8;
+    filter: blur(0);
+    transform: perspective(1000px) rotateY(0) rotateZ(0) scale(0.95);
+    top: 20px; /* Move down slightly on hover */
+}
+.hero-cards-container:hover .card-main {
+    transform: translateX(-50%) translateY(-10px); /* Lift main card */
+}
+
+
+
+.card-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid #333333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px; /* Enforce height */
+    background: rgba(255,255,255,0.02);
+}
+.card-header span {font-weight: 600;}
+
+/* Fix for the dots alignment */
+.window-controls {
+    display: flex;
+    gap: 8px; /* Space between dots */
+    align-items: center;
+}
+
+.dot { 
+    width: 10px; 
+    height: 10px; 
+    border-radius: 50%; 
+    display: block;
+}
+
+.bg-red { background: #ff5f56; } 
+.bg-yellow { background: #ffbd2e; } 
+.bg-green { background: #27c93f; }
+.bg-muted { background: #333333; }
+
+.card-body { 
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+}
+.card-body h3 {font-weight: 700; font-size: 1.5rem;}
+
+.card-body p {color: var(--gray70); margin-top: 10px;}
+/* Fix for Broken Text (Left Card) */
+.minimal-ui {
+    font-size: 0.8rem;
+    color: var(--gray70);
+}
+
+.ui-group {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ui-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ui-input {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid #333333;
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: white;
+    font-family: sans-serif;
+}
+
+/* Slider Styles */
+.ui-slider-track { 
+    height: 4px; 
+    background: #333333; 
+    border-radius: 4px; 
+    position: relative; 
+    margin-top: 5px;
+    width: 100%;
+}
+
+.ui-slider-thumb { 
+    position: absolute; 
+    left: 20%; 
+    top: -4px; 
+    width: 12px; 
+    height: 12px; 
+    background: var(--primary); 
+    border-radius: 50%; 
+    box-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
+}
+
+/* Right Card Specifics */
+.ui-block { 
+    background: rgba(255,255,255,0.05); 
+    padding: 8px; 
+    border-radius: 6px; 
+    font-size: 0.75rem; 
+    margin-bottom: 10px; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ui-code { 
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 0.8rem; 
+    color: var(--gray70); 
+    line-height: 1.5; 
+}
+
+/* Main Card (Center) Specifics */
+.badge-sm {
+    background: rgba(255, 111, 97, 0.15); 
+    color: var(--primary);
+    font-size: 0.7rem; 
+    padding: 2px 8px; 
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.main-preview h3 {
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.ui-controls-row { 
+    display: flex; 
+    gap: 8px;
+    align-items: center;
+    margin-top: auto; /* Push to bottom if flex container has height */
+    padding-top: 20px;
+}
+
+.ui-pill { 
+    background: #333333; 
+    padding: 4px 12px; 
+    border-radius: 20px; 
+    font-size: 0.75rem; 
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.ui-pill.active { 
+    background: white; 
+    color: black; 
+}
+
+.color-pill { 
+    width: 24px; 
+    height: 24px; 
+    padding: 0;
+    background: var(--primary); 
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
