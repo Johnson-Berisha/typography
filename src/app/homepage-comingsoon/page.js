@@ -28,6 +28,19 @@ export default function ComingSoonPage() {
                  </div>
                  </div>
             </nav>
+            <header className="hero">
+                <div className="hero-content">
+                    <h1>Typography guide for the<br /> <span className="gradient-text">moder web developer.</span></h1>
+                    <p className="sub-text">
+                        Fontiq helps developers and designers test, pair, and deploy fonts 10x faster. 
+                Stop guessing and start designing with precision. (fake text)
+                    </p>
+                    <div className="herp-buttons">
+                        <Link href={"#"} className="btn btn-primary">Check out Code Snippets</Link>
+                        <Link href={"#"} className="btn btn-secondary">Read Documentation</Link>
+                    </div>
+                </div>
+            </header>
         </div>
     );
 }

@@ -86,3 +86,36 @@ ul li .nav-link:hover { color: white; }
     font-weight: 600;
     font-size: 1.25rem;
 }
+
+/* btns */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #fff;
+    border: 1px solid var(--primary);
+}
+.btn-primary:hover { 
+    background: #e85a4c;
+    box-shadow: 0 0 20px rgba(255, 111, 97, 0.5);
+    transform: translateY(-2px); 
+}
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 1px solid #333333;
+}
+.btn-secondary:hover { 
+    border-color: white; 
+    background: rgba(255,255,255,0.05); 
+}
+
+/* hero */
