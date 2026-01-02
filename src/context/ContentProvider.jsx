@@ -11,11 +11,11 @@ export function ContentProvider({ children }) {
   useEffect(() => {
     const fetchContent = async () => {
       try {
-        const fileNames = ["test", "colors3", "scale", "hierarchy2", "spacing", "contrast", "clamps"];
+        const fileNames = ["intro", "colors", "scaling", "hierarchy", "spacing", "contrast", "clamps"];
         const posts = await Promise.all(
           fileNames.map(fileName =>
             fetch(
-              `https://johnson-berisha.github.io/typography-content/content/posts/${fileName}.json`
+              `https://johnson-berisha.github.io/typography-content/content/articles/${fileName}.json`
             ).then(res => res.json())
           )
         );
