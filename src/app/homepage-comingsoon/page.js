@@ -1,11 +1,29 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import "./styles.css"
+import { useEffect, useState } from "react";
 
 export default function ComingSoonPage() {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 10) {
+                setScrolled(true);
+            } else{
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
         <div className="container">
-            <nav className="homepage-nav">
+            <nav className={`homepage-nav ${scrolled ? "scrolled" : ""}`}>
                 <div className="nav-container">
                 <div className="hn-title">
                 <Image
@@ -31,16 +49,17 @@ export default function ComingSoonPage() {
             <header className="hero">
                 <div className="hero-content">
                     <h1>Typography guide for the<br /> <span className="gradient-text">modern web developer.</span></h1>
-                    <p className="sub-text">
+                    <p className="hero-subtext">
                         Fontiq helps developers and designers test, pair, and deploy fonts 10x faster. 
                 Stop guessing and start designing with precision. (fake text)
                     </p>
-                    <div className="herp-buttons">
+                    <div className="hero-buttons">
                         <Link href={"#"} className="btn btn-primary">Check out Code Snippets</Link>
                         <Link href={"#"} className="btn btn-secondary">Read Documentation</Link>
                     </div>
                 </div>
             </header>
+            
         </div>
     );
 }
