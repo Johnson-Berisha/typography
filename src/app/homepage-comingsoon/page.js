@@ -30,7 +30,7 @@ export default function ComingSoonPage() {
             </nav>
             <header className="hero">
                 <div className="hero-content">
-                    <h1>Typography guide for the<br /> <span className="gradient-text">moder web developer.</span></h1>
+                    <h1>Typography guide for the<br /> <span className="gradient-text">modern web developer.</span></h1>
                     <p className="sub-text">
                         Fontiq helps developers and designers test, pair, and deploy fonts 10x faster. 
                 Stop guessing and start designing with precision. (fake text)
