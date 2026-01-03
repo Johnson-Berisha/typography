@@ -116,8 +116,44 @@ export default function ComingSoonPage() {
                 </div>
 
             </div>
-            <h1>fake content</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum maxime quia autem ut sapiente atque iure sunt ducimus incidunt, consectetur aliquid beatae. Optio suscipit voluptates, ex vitae at odio corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus sint quae consequatur ab! Facere, tenetur! Doloribus voluptatem dignissimos odit nobis quo numquam nihil explicabo suscipit neque autem sed ipsa molestiae ut, laudantium obcaecati, reiciendis accusamus quae voluptas itaque iusto veritatis nisi. Illum quod eveniet praesentium, et doloribus laborum. Quas quos vel neque? Enim illo, sunt error, non quod ad placeat doloremque accusantium qui quaerat cupiditate officiis impedit esse aut quos mollitia iusto dolores inventore natus fugit ipsum. Dolores tempora eligendi laborum ut eius ipsam, voluptatem excepturi aliquam rerum, ipsa dolor cumque eos sed odit! Tenetur repudiandae beatae nemo tempora magni?</p>
+            <section className="facts facts-container">
+                <div className="facts-title">
+                    <h1>Learn. <span className="gradient-text">Everything.</span></h1>
+                    <p className="facts-subtext">Learn how to improve your UI only using typography.</p>
+                </div>
+                <div className="facts-grid">
+                    <div className="fact-card">
+                        <h2>01</h2>
+                        <h3>Font Pairing</h3>
+                        <p>Discover the art of combining fonts to create visually appealing and harmonious designs that captivate your audience.</p>
+                    </div>
+                    <div className="fact-card">
+                        <h2>01</h2>
+                        <h3>Font Pairing</h3>
+                        <p>Discover the art of combining fonts to create visually appealing and harmonious designs that captivate your audience.</p>
+                    </div>
+                    <div className="fact-card">
+                        <h2>01</h2>
+                        <h3>Font Pairing</h3>
+                        <p>Discover the art of combining fonts to create visually appealing and harmonious designs that captivate your audience.</p>
+                    </div>
+                    <div className="fact-card">
+                        <h2>01</h2>
+                        <h3>Font Pairing</h3>
+                        <p>Discover the art of combining fonts to create visually appealing and harmonious designs that captivate your audience.</p>
+                    </div>
+                    <div className="fact-card">
+                        <h2>01</h2>
+                        <h3>Font Pairing</h3>
+                        <p>Discover the art of combining fonts to create visually appealing and harmonious designs that captivate your audience.</p>
+                    </div>
+                    <div className="fact-card">
+                        <h2>01</h2>
+                        <h3>Font Pairing</h3>
+                        <p>Discover the art of combining fonts to create visually appealing and harmonious designs that captivate your audience.</p>
+                    </div>
+                </div>
+            </section>
             </div>
             
     );
