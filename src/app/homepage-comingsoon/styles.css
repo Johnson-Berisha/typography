@@ -172,7 +172,7 @@ ul li .nav-link:hover { color: white; }
 
 /* visualss */
 
-.hero-cards-container, .facts-container, .faq-container {
+.hero-cards-container, .faq-container {
     position: relative;
     width: 100%;
     max-width: 900px;
@@ -402,12 +402,15 @@ ul li .nav-link:hover { color: white; }
     --margin: 50px;
     margin-top: calc(var(--margin) *2);
     margin-bottom: calc(var(--margin) *2);
-    padding-top: var(--margin);
-    padding-bottom: var(--margin);
+    margin-inline: auto;
+    padding: 100px var(--margin);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: var(--margin);
     height: fit-content;
+    max-width: 1200px;
 }
 .facts-title{
     display: flex;
@@ -422,12 +425,13 @@ ul li .nav-link:hover { color: white; }
 
 .facts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
 }
 
 .fact-card{
-    padding: 20px;
+    padding: 40px;
     border-radius: 10px;
     transition: 0.2s;
 
@@ -438,18 +442,19 @@ ul li .nav-link:hover { color: white; }
     border-color: var(--primary);
     box-shadow: 0 0 20px rgba(255, 111, 97, 0.3);
 }
-.fact-card h2 {
+.fact-card h3 {
     font-size: 1.5rem;
     margin-bottom: 12px;
     position: relative;
     z-index: 1;
+    font-weight: 700;
 }
 .fact-card p {
     position: relative;
     z-index: 1;
 }
 
-.fact-card h3 {
+.fact-card span {
     position: absolute;
     font-weight: 700;
     color: hsla(0, 0%, 30%, 0.171);
@@ -459,9 +464,12 @@ ul li .nav-link:hover { color: white; }
     left: 20px;
     transition: 0.3;
 }
-.fact-card:hover h3 {
+.fact-card:hover span {
     color: rgba(255, 110, 97, 0.068);
 }
+
+.fact-card.large {grid-column: span 2;}
+.fact-card.small {grid-column: span 1;}
 
 
 /* faq */
@@ -470,6 +478,9 @@ ul li .nav-link:hover { color: white; }
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    /* remove future */
+    height: 100vh;
 }
 
 .faq-title{

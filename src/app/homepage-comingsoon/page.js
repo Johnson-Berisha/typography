@@ -125,35 +125,40 @@ export default function ComingSoonPage() {
                     <p className="facts-subtext">Learn how to improve your UI only using typography.</p>
                 </div>
                 <div className="facts-grid">
-                    <div className="fact-card example">
-                        <h3>01</h3>
-                        <h2>Font Pairing</h2>
-                        <p>Discover the art of combining fonts to create visually appealing and harmonious designs that captivate your audience.</p>
+                    <div className="fact-card large example">
+                        <span className="fact-icon">1</span>
+                        <h3>Lightning Fast Integration</h3>
+                        <p>Copy-paste ready snippets for React, Vue, and plain HTML/CSS. Optimized for performance and zero Layout Shift.</p>
                     </div>
-                    <div className="fact-card example">
-                        <h3>02</h3>
-                        <h2>Font Pairing</h2>
-                        <p>Discover the art of combining fonts to create visually appealing and harmonious designs that captivate your audience.</p>
+                    <div className="fact-card small example">
+                        <span className="fact-icon">2</span>
+                        <h3>Lightning Fast Integration</h3>
+                        <p>Copy-paste ready snippets for React, Vue, and plain HTML/CSS. Optimized for performance and zero Layout Shift.</p>
                     </div>
-                    <div className="fact-card example">
-                        <h3>03</h3>
-                        <h2>Font Pairing</h2>
-                        <p>Discover the art of combining fonts to create visually appealing and harmonious designs that captivate your audience.</p>
+                    <div className="fact-card small example">
+                        <span className="fact-icon">3</span>
+                        <h3>Lightning Fast Integration</h3>
+                        <p>Copy-paste ready snippets for React, Vue, and plain HTML/CSS. Optimized for performance and zero Layout Shift.</p>
                     </div>
-                    <div className="fact-card example">
-                        <h3>04</h3>
-                        <h2>Font Pairing</h2>
-                        <p>Discover the art of combining fonts to create visually appealing and harmonious designs that captivate your audience.</p>
+                    <div className="fact-card small example">
+                        <span className="fact-icon">4</span>
+                        <h3>Lightning Fast Integration</h3>
+                        <p>Copy-paste ready snippets for React, Vue, and plain HTML/CSS. Optimized for performance and zero Layout Shift.</p>
                     </div>
-                    <div className="fact-card example">
-                        <h3>05</h3>
-                        <h2>Font Pairing</h2>
-                        <p>Discover the art of combining fonts to create visually appealing and harmonious designs that captivate your audience.</p>
+                    <div className="fact-card small example">
+                        <span className="fact-icon">5</span>
+                        <h3>Lightning Fast Integration</h3>
+                        <p>Copy-paste ready snippets for React, Vue, and plain HTML/CSS. Optimized for performance and zero Layout Shift.</p>
                     </div>
-                    <div className="fact-card example">
-                        <h3>06</h3>
-                        <h2>Font Pairing</h2>
-                        <p>Discover the art of combining fonts to create visually appealing and harmonious designs that captivate your audience.</p>
+                    <div className="fact-card small example">
+                        <span className="fact-icon">6</span>
+                        <h3>Lightning Fast Integration</h3>
+                        <p>Copy-paste ready snippets for React, Vue, and plain HTML/CSS. Optimized for performance and zero Layout Shift.</p>
+                    </div>
+                    <div className="fact-card large example">
+                        <span className="fact-icon">7</span>
+                        <h3>Lightning Fast Integration</h3>
+                        <p>Copy-paste ready snippets for React, Vue, and plain HTML/CSS. Optimized for performance and zero Layout Shift.</p>
                     </div>
                 </div>
             </section>
