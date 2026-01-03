@@ -48,6 +48,7 @@ export default function ComingSoonPage() {
             </nav>
             <header className="hero">
                 <div className="hero-content">
+                    <div className="badge">SCSS guide coming soon!</div>
                     <h1>Typography guide for the<br /> <span className="gradient-text">modern web developer.</span></h1>
                     <p className="hero-subtext">
                         Fontiq helps developers and designers test, pair, and deploy fonts 10x faster. 
