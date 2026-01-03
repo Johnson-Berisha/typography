@@ -29,6 +29,11 @@
   box-sizing: border-box;
 }
 
+::selection, ::-moz-selection {
+  color:white;
+  background: var(--primary);
+}
+
 html {
   scroll-behavior: smooth;
 }
