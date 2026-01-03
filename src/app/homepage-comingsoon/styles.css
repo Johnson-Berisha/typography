@@ -462,3 +462,57 @@ ul li .nav-link:hover { color: white; }
 .fact-card:hover h3 {
     color: rgba(255, 110, 97, 0.068);
 }
+
+
+/* faq */
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.faq-title h2 {
+    line-height: 1.2;
+}
+
+.faq p {margin: 0;}
+
+
+.faq-item button {
+    cursor: pointer;
+    padding: 20px 0;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    background-color: transparent;
+    color: white;
+    font-size: 1.25rem;
+    transition: 0.3s;
+}
+
+.faq-item button:not(.faq-item:first-child button) {
+    border-top: 1px solid var(--gray30);
+}
+
+.panel {
+    padding: 5px 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.36s ease;
+}
+
+.acc.active, .acc:hover{
+    color: var(--primary);
+}
+
+.panel p {
+    padding-bottom: 10px;
+}

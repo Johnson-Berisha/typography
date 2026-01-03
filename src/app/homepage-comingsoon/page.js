@@ -3,10 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import "./styles.css"
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function ComingSoonPage() {
     const [scrolled, setScrolled] = useState(false);
+    const [openIndex, setOpenIndex] = useState(null);
+    const panelsRef = useRef([]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -20,6 +22,7 @@ export default function ComingSoonPage() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
 
     return (
         <div className="container">
@@ -155,20 +158,48 @@ export default function ComingSoonPage() {
                 </div>
             </section>
             <section className="section faq faq-container">
+                <div className="faq-title">
                 <h2>FAQ</h2>
+                <p className="faq-subtext">Everything you need to know about Fontiq.</p>
+                </div>
+
                 <div className="faq-items">
-                <div className="faq-item">
-                    <h3>When will the SCSS guide be available?</h3>
-                    <p>Our SCSS guide is currently in development and is expected to be released in Q4 2024. Stay tuned for updates!</p>
-                </div>
-                <div className="faq-item">
-                    <h3>Will there be code examples included?</h3>
-                    <p>Yes, the SCSS guide will include practical code examples to help you implement typography best practices in your projects.</p>
-                </div>
-                <div className="faq-item">
-                    <h3>Can I get notified when it's released?</h3>
-                    <p>Absolutely! You can subscribe to our newsletter or follow us on social media to receive notifications about the release and other updates.</p>
-                </div>
+                {[
+                    {
+                        q: "When will the SCSS guide be available?",
+                        a: "Our SCSS guide is currently in development and is expected to be released in Q4 2024. Stay tuned for updates! will include practical code examples and patterns to help you apply the concepts."
+                    },
+                    {
+                        q: "Will there be code examples included?",
+                        a: "Yes — the guide will include practical code examples and patterns to help you apply the concepts. will include practical code examples and patterns to help you apply the concepts. will include practical code examples and patterns to help you apply the concepts."
+                    },
+                    {
+                        q: "Can I get notified when it's released?",
+                        a: "You can will include practical code examples and patterns to help you apply the concepts. sign up for notifications on the homepage (coming soon). We'll send an update when it's live."
+                    }
+                ].map((item, index) => (
+                    <div className="faq-item" key={index}>
+                        <button
+                            className={`acc ${openIndex === index ? "active" : ""}`}
+                            onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                        >
+                            {item.q}
+                        </button>
+                        <div
+                            className="panel"
+                            ref={el => panelsRef.current[index] = el}
+                            style={{
+                                maxHeight: openIndex === index && panelsRef.current[index]
+                                    ? Math.max(panelsRef.current[index].scrollHeight, 100) + 'px'
+                                    : '0px',
+                                overflow: 'hidden',
+                                transition: 'max-height 0.3s ease'
+                            }}
+                        >
+                            <p>{item.a}</p>
+                        </div>
+                    </div>
+                ))}
                 </div>
 
             </section>
