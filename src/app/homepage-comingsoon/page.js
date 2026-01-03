@@ -55,8 +55,8 @@ export default function ComingSoonPage() {
                 Stop guessing and start designing with precision. (fake text)
                     </p>
                     <div className="hero-buttons">
-                        <Link href={"#"} className="btn btn-primary">Check out Code Snippets</Link>
                         <Link href={"#"} className="btn btn-secondary">Read Documentation</Link>
+                        <Link href={"#"} className="btn btn-primary">Check out Code Snippets</Link>
                     </div>
                 </div>
             </header>
@@ -122,37 +122,55 @@ export default function ComingSoonPage() {
                     <p className="facts-subtext">Learn how to improve your UI only using typography.</p>
                 </div>
                 <div className="facts-grid">
-                    <div className="fact-card">
-                        <h2>01</h2>
-                        <h3>Font Pairing</h3>
+                    <div className="fact-card example">
+                        <h3>01</h3>
+                        <h2>Font Pairing</h2>
                         <p>Discover the art of combining fonts to create visually appealing and harmonious designs that captivate your audience.</p>
                     </div>
-                    <div className="fact-card">
-                        <h2>01</h2>
-                        <h3>Font Pairing</h3>
+                    <div className="fact-card example">
+                        <h3>02</h3>
+                        <h2>Font Pairing</h2>
                         <p>Discover the art of combining fonts to create visually appealing and harmonious designs that captivate your audience.</p>
                     </div>
-                    <div className="fact-card">
-                        <h2>01</h2>
-                        <h3>Font Pairing</h3>
+                    <div className="fact-card example">
+                        <h3>03</h3>
+                        <h2>Font Pairing</h2>
                         <p>Discover the art of combining fonts to create visually appealing and harmonious designs that captivate your audience.</p>
                     </div>
-                    <div className="fact-card">
-                        <h2>01</h2>
-                        <h3>Font Pairing</h3>
+                    <div className="fact-card example">
+                        <h3>04</h3>
+                        <h2>Font Pairing</h2>
                         <p>Discover the art of combining fonts to create visually appealing and harmonious designs that captivate your audience.</p>
                     </div>
-                    <div className="fact-card">
-                        <h2>01</h2>
-                        <h3>Font Pairing</h3>
+                    <div className="fact-card example">
+                        <h3>05</h3>
+                        <h2>Font Pairing</h2>
                         <p>Discover the art of combining fonts to create visually appealing and harmonious designs that captivate your audience.</p>
                     </div>
-                    <div className="fact-card">
-                        <h2>01</h2>
-                        <h3>Font Pairing</h3>
+                    <div className="fact-card example">
+                        <h3>06</h3>
+                        <h2>Font Pairing</h2>
                         <p>Discover the art of combining fonts to create visually appealing and harmonious designs that captivate your audience.</p>
                     </div>
                 </div>
+            </section>
+            <section className="section faq faq-container">
+                <h2>FAQ</h2>
+                <div className="faq-items">
+                <div className="faq-item">
+                    <h3>When will the SCSS guide be available?</h3>
+                    <p>Our SCSS guide is currently in development and is expected to be released in Q4 2024. Stay tuned for updates!</p>
+                </div>
+                <div className="faq-item">
+                    <h3>Will there be code examples included?</h3>
+                    <p>Yes, the SCSS guide will include practical code examples to help you implement typography best practices in your projects.</p>
+                </div>
+                <div className="faq-item">
+                    <h3>Can I get notified when it's released?</h3>
+                    <p>Absolutely! You can subscribe to our newsletter or follow us on social media to receive notifications about the release and other updates.</p>
+                </div>
+                </div>
+
             </section>
             </div>
             
