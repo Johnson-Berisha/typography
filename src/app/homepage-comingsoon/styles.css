@@ -118,6 +118,7 @@ ul li .nav-link:hover {
   box-shadow: 0 0 20px rgba(255, 111, 97, 0.5);
   transform: translateY(-2px);
 }
+
 .btn-secondary {
   background: transparent;
   color: white;
@@ -584,9 +585,16 @@ ul li .nav-link:hover {
   height: 300px;
   background: var(--primary);
   filter: blur(120px);
+  border-radius: 500px;
   opacity: 0.15;
   transform: translate(-50%, -50%);
   pointer-events: none;
+  transition: 0.2s;
+}
+
+.cta-box:has(.btn-primary:hover)::after {
+  filter: blur(30px);
+  top: 75%;
 }
 
 .cta-box h2 {
