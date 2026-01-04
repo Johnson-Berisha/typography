@@ -555,7 +555,7 @@ ul li .nav-link:hover {
 .final-cta {
   padding: 100px 0;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 100px auto;
   padding: 0 24px;
 }
 
@@ -596,4 +596,21 @@ ul li .nav-link:hover {
   color: var(--gray30);
   margin-bottom: 40px;
   font-size: 1.2rem;
+}
+
+/* footer */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 30px;
+  margin-top: 50px;
+  border-top: #333 solid 1px;
+  color: var(--gray50);
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
 }

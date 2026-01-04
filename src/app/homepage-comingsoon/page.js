@@ -273,6 +273,14 @@ export default function ComingSoonPage() {
           </Link>
         </div>
       </section>
+      <footer>
+        <div className="copyright">&copy; Fontiq</div>
+        <div className="footer-links">
+          <Link href={"#"}>Docs</Link>
+          <Link href={"#"}>Github</Link>
+          <Link href={"#"}>Code Snippets</Link>
+        </div>
+      </footer>
     </div>
   );
 }
