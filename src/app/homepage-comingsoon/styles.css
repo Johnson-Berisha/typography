@@ -661,3 +661,7 @@ footer {
   display: flex;
   gap: 24px;
 }
+
+.footer-links a:hover {
+    color: white;
+}
