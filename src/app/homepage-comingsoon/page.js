@@ -75,9 +75,7 @@ export default function ComingSoonPage() {
             <br /> <span className="gradient-text">modern web developer.</span>
           </h1>
           <p className="hero-subtext">
-            Fontiq helps developers and designers test, pair, and deploy fonts
-            10x faster. Stop guessing and start designing with precision. (fake
-            text)
+            Fontiq helps developers learn how to and improve their UIs by only using typography.
           </p>
           <div className="hero-buttons">
             <Link href={"#"} className="btn btn-secondary">
