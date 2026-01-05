@@ -129,6 +129,19 @@ ul li .nav-link:hover {
   background: rgba(255, 255, 255, 0.05);
 }
 
+@media (max-width: 850px) {
+  nav {
+    height: fit-content;
+    padding: 1rem 0;
+  }
+  .nav-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
 /* hero */
 .hero {
   padding-top: 160px;
@@ -141,7 +154,7 @@ ul li .nav-link:hover {
   padding: 0 24px;
 }
 .hero h1 {
-  font-size: clamp(2.5rem, 4vw, 5rem);
+  font-size: clamp(2rem, 4vw, 5rem);
   line-height: 1.1;
   letter-spacing: -2px;
   margin-bottom: 24px;
@@ -166,7 +179,7 @@ ul li .nav-link:hover {
   -webkit-text-fill-color: transparent;
 }
 .hero-subtext {
-  font-size: clamp(0.85rem, 1.2vw, 1.25rem);
+  font-size: clamp(0.75rem, 1.2vw, 1.25rem);
   color: var(--gray70);
   max-width: 600px;
   margin: 0 auto 40px auto;
@@ -418,6 +431,29 @@ ul li .nav-link:hover {
   padding: 0;
   background: var(--primary);
   border: 2px solid rgba(255, 255, 255, 0.1);
+}
+@media (max-width: 850px) {
+  /* On tablets/smaller screens, hide the side cards and just show the main one centered */
+  .card-left,
+  .card-right {
+    display: none;
+  }
+  .hero-cards-container {
+    height: auto; /* Allow height to fit content */
+    margin-bottom: 40px;
+  }
+  .card-main {
+    position: relative; /* No longer absolute */
+    left: auto;
+    bottom: auto;
+    transform: none !important; /* Reset transform */
+    width: 100%; /* Full width */
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .hero-cards-container:hover .card-main {
+    transform: none;
+  }
 }
 
 /* facts */

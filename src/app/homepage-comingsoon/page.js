@@ -219,6 +219,10 @@ export default function ComingSoonPage() {
               q: "Can I get notified when it's released?",
               a: "You can will include practical code examples and patterns to help you apply the concepts. sign up for notifications on the homepage (coming soon). We'll send an update when it's live.",
             },
+            {
+              q: "Can I get notified when it's released?",
+              a: "You can will include practical code examples and patterns to help you apply the concepts. sign up for notifications on the homepage (coming soon). We'll send an update when it's live.",
+            },
           ].map((item, index) => (
             <div className="faq-item" key={index}>
               <button
