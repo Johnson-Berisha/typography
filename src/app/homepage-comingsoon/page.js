@@ -195,22 +195,6 @@ export default function ComingSoonPage() {
               Optimized for performance and zero Layout Shift.
             </p>
           </div>
-          <div className="fact-card small example">
-            <span className="fact-icon">6</span>
-            <h3>Lightning Fast Integration</h3>
-            <p>
-              Copy-paste ready snippets for React, Vue, and plain HTML/CSS.
-              Optimized for performance and zero Layout Shift.
-            </p>
-          </div>
-          <div className="fact-card large example">
-            <span className="fact-icon">7</span>
-            <h3>Lightning Fast Integration</h3>
-            <p>
-              Copy-paste ready snippets for React, Vue, and plain HTML/CSS.
-              Optimized for performance and zero Layout Shift.
-            </p>
-          </div>
         </div>
       </section>
       <section className="section faq faq-container">
