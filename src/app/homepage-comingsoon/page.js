@@ -44,17 +44,17 @@ export default function ComingSoonPage() {
                 </Link>
               </li>
               <li>
-                <Link href={"#"} className="nav-link">
+                <Link href={"/"} className="nav-link">
                   Docs
                 </Link>
               </li>
               <li>
-                <Link href={"#"} className="nav-link">
+                <Link href={"https://github.com/Johnson-Berisha/typography"} className="nav-link">
                   Github ↗
                 </Link>
               </li>
               <li>
-                <Link href={"#"} className="nav-link highlight">
+                <Link href={"/code-snippets-app"} className="nav-link highlight">
                   Code Snippets
                 </Link>
               </li>
@@ -78,10 +78,10 @@ export default function ComingSoonPage() {
             Fontiq helps developers learn how to and improve their UIs by only using typography.
           </p>
           <div className="hero-buttons">
-            <Link href={"#"} className="btn btn-secondary">
+            <Link href={"/"} className="btn btn-secondary">
               Read Documentation
             </Link>
-            <Link href={"#"} className="btn btn-primary">
+            <Link href={"/code-snippet-app"} className="btn btn-primary">
               Check out Code Snippets
             </Link>
           </div>
@@ -252,9 +252,9 @@ export default function ComingSoonPage() {
         <div className="container cta-box">
           <h2>Ready to master your type?</h2>
           <p>
-            Join over 2 developers building beautiful interfaces with Fontiq.
+            Join over 2,000+ developers building beautiful interfaces with Fontiq.
           </p>
-          <Link href="#" className="btn btn-primary">
+          <Link href="/" className="btn btn-primary">
             Get Started
           </Link>
         </div>
@@ -262,9 +262,9 @@ export default function ComingSoonPage() {
       <footer>
         <div className="copyright">&copy; Fontiq</div>
         <div className="footer-links">
-          <Link href={"#"}>Docs</Link>
-          <Link href={"#"}>Github ↗</Link>
-          <Link href={"#"}>Code Snippets</Link>
+          <Link href={"/"}>Docs</Link>
+          <Link href={"https://github.com/Johnson-Berisha/typography"}>Github ↗</Link>
+          <Link href={"/code-snippets-app"}>Code Snippets</Link>
         </div>
       </footer>
     </div>
