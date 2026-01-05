@@ -50,7 +50,7 @@ export default function ComingSoonPage() {
               </li>
               <li>
                 <Link href={"#"} className="nav-link">
-                  Github
+                  Github ↗
                 </Link>
               </li>
               <li>
@@ -265,7 +265,7 @@ export default function ComingSoonPage() {
         <div className="copyright">&copy; Fontiq</div>
         <div className="footer-links">
           <Link href={"#"}>Docs</Link>
-          <Link href={"#"}>Github</Link>
+          <Link href={"#"}>Github ↗</Link>
           <Link href={"#"}>Code Snippets</Link>
         </div>
       </footer>
