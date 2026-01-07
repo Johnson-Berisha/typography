@@ -122,7 +122,7 @@ export default function Home() {
 
 
   return (
-    <div className="container">
+    <div className="container docs-body">
       <span className="hamburger">
         <div className="line"></div>
         <div className="line"></div>

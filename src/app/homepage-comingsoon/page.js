@@ -24,7 +24,7 @@ export default function ComingSoonPage() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container homepage-body">
       <nav className={`homepage-nav ${scrolled ? "scrolled" : ""}`}>
         <div className="nav-container">
           <div className="hn-title">
