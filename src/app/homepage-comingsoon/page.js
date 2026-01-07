@@ -61,7 +61,7 @@ export default function ComingSoonPage() {
             </ul>
           </div>
           <div className="cta">
-            <Link href={"#"} className="getStartedBtn">
+            <Link href={"/"} className="getStartedBtn">
               Get Started
             </Link>
           </div>
