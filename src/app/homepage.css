@@ -573,6 +573,7 @@ ul li .nav-link:hover {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-bottom: 50px;
 }
 
 .faq-title {
@@ -630,9 +631,9 @@ ul li .nav-link:hover {
 }
 
 @media (max-width:850px) {
-  .faq{
-    margin-bottom: 30%;
-  }
+    .faq {
+        margin-bottom: 50%;
+    }
   .faq-item button, .panel {
     width: 80%;
   }
