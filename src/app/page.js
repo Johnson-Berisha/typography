@@ -1,366 +1,277 @@
 "use client";
-import Link from "next/link";
+
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import { useContent } from "../context/ContentProvider";
+import Link from "next/link";
+import "./homepage.css";
+import { useEffect, useState, useRef } from "react";
 
-export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-  const navRef = useRef(null);
-  const navOpenRef = useRef(false);
-  const pillRef = useRef(null);
-  const { actions } = useContent();
-  const content = actions.getContent();
-
-  const renderContent = (arr) => {
-    if (!arr) return null;
-    const out = [];
-    let idx = 0;
-    while (idx < arr.length) {
-      const node = arr[idx];
-      if (typeof node === 'string') {
-        out.push(<p key={`p-${idx}`}>{node}</p>);
-        idx++;
-        continue;
-      }
-      if (node.type === 'codeblock') {
-        out.push(
-          <pre className="code-container" key={`code-${idx}`}>
-            <code>{node.code}</code>
-          </pre>
-        );
-        idx++;
-        continue;
-      }
-      if (Array.isArray(node)) {
-        out.push(
-          <p key={`mix-${idx}`}>
-            {node.map((n, j) => {
-              if (n.type === 'code') return <code key={j}>{n.text}</code>;
-              if (n.type === 'text') return <span key={j}>{n.text}</span>;
-              return null;
-            })}
-          </p>
-        );
-        idx++;
-        continue;
-      }
-      if (node.type === 'li') {
-        const items = [];
-        while (idx < arr.length && arr[idx] && arr[idx].type === 'li') {
-          items.push(arr[idx].content);
-          idx++;
-        }
-        out.push(
-          <ul key={`list-${idx}`}>
-            {items.map((it, j) => (
-              <li key={j}>{it}</li>
-            ))}
-          </ul>
-        );
-        continue;
-      }
-      idx++;
-    }
-    return out;
-  };
+export default function ComingSoonPage() {
+  const [scrolled, setScrolled] = useState(false);
+  const [openIndex, setOpenIndex] = useState(null);
+  const panelsRef = useRef([]);
 
   useEffect(() => {
-    setIsLoading(false); // content is ready
-  }, []);
-
-  useEffect(() => {
-    const nav = navRef.current;
-    const pill = pillRef.current;
-    const links = nav.querySelectorAll("section.nav-section a");
-    const active = links[0]; // first link active by default
-
-    const move = (el) => {
-      const offsetTop = el.offsetTop;
-      const offsetLeft = el.offsetLeft;
-      const width = el.offsetWidth;
-      const height = el.offsetHeight;
-
-      pill.style.width = `${width}px`;
-      pill.style.height = `${height}px`;
-      pill.style.top = `${offsetTop}px`;
-      pill.style.left = `${offsetLeft}px`;
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
     };
 
-    move(active);
-
-    links.forEach(link => {
-      link.addEventListener("mouseenter", () => move(link));
-    });
-
-    // Only move back to active when leaving the entire nav
-    nav.addEventListener("mouseleave", () => move(active));
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-// open nav on click hamburger
-  useEffect (() => {
-    const hamburger = document.querySelector(".hamburger");
-    const nav = navRef.current;
-
-    const toggleNav = () => {
-      if (navOpenRef.current === false) {
-        nav.style.top = "0";
-        navOpenRef.current = true;
-      } else{
-        nav.style.top = "-100%";
-        navOpenRef.current = false;
-      }
-    }
-
-    hamburger.addEventListener("click", toggleNav);
-
-  // Cleanup to avoid memory leaks
-  return () => {
-    hamburger.removeEventListener("click", toggleNav);
-  };
-  }, []);
-
 
   return (
-    <div className="container docs-body">
-      <span className="hamburger">
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
-      </span>
-     <nav ref={navRef} className="nav example">{/* only .example cause it uses the same styles */}
-      <span ref={pillRef} className="pill" />
-      
-      <section className="nav-section">
-        <h2><Image
-          src="/logo-32-transparent.svg"
-          alt="Typography Logo"
-          width={32}
-          height={32} 
-        /> Fontiq</h2>
-        <p>Documentation and guide on typography.</p>
-      </section>
-      <section className="nav-section">
-        <p>Foundation</p>
-        <Link href="#test">
-        <Image
-          src="/home-alt.svg"
-          alt="Introduction"
-          width={20}
-          height={20}
-        />
-        <span>Introduction</span>
-        </Link>
-        <Link href="#colors3">
-        <Image
-          src="/color-bucket.svg"
-          alt="Introduction"
-          width={20}
-          height={20}
-        />
-        <span>Colors</span>
-        </Link>
-        <Link href="#hierarchy2">
-        <Image
-          src="/ruler.svg"
-          alt="Introduction"
-          width={20}
-          height={20}
-        />
-        <span>Scale</span>
-        </Link>
-      </section>
-      <section className="nav-section">
-        <p>Structure</p>
-        <Link href="#scale">
-        <Image
-          src="/push-up.svg"
-          alt="Introduction"
-          width={20}
-          height={20}
-        />
-        <span>Hierarchy</span>
-        </Link>
-        <Link href="#">
-        <Image
-          src="/font-spacing.svg"
-          alt="Introduction"
-          width={20}
-          height={20}
-        />
-        <span>Spacing</span>
-        </Link>
-        <Link href="#">
-        <Image
-          src="/edit-contrast.svg"
-          alt="Introduction"
-          width={20}
-          height={20}
-        />
-        <span>Contrast</span>
-        </Link>
-      </section>
-      <section className="nav-section code-snippets">
-        <Link href="/code-snippet-app">
-        <Image 
-          src="/shortcut.svg"
-          alt="Code Snippets"
-          width={20}
-          height={20}
-        />
-        <span>Code Snippets</span>
-        </Link>
-      </section>
-      <section className="nav-section code-snippets">
-        <Link href="/homepage-comingsoon">
-        <Image 
-          src="/shortcut.svg"
-          alt="Code Snippets"
-          width={20}
-          height={20}
-        />
-        <span>Coming soon homepage</span>
-        </Link>
-      </section>
-    </nav>
-      <div className="content">
-      
-      <div className="guides-demo">
-        <div className="guides" style={{marginTop: 12}}>
-              {content && content[0] && (
-            <article key={content[0].id} id={content[0].id} className="guide-card intro">
-              <div className="guide-header">
-                <h1 style={{margin:0}}>{content[0].title}</h1>
-                <span className="tag">{content[0].category}</span>
-              </div>
-              <p className="guide-intro">{content[0].excerpt}</p>
-              {renderContent(content[0].content)}
-            </article>
-          )}
-        </div>
-      </div>
-
-      <div className="videos example">
-      <div className="video video1">
-        <div className="do">Do!</div>
-        <div className="img"></div>
-        <div className="text">
-          <div className="text-img">
-            <span className="circle"></span>
+    <div className="container homepage-body">
+      <nav className={`homepage-nav ${scrolled ? "scrolled" : ""}`}>
+        <div className="nav-container">
+          <div className="hn-title">
+            <Image
+              src="/logo-32-transparent.svg"
+              alt="Typography Logo"
+              width={32}
+              height={32}
+            />{" "}
+            <span>Fontiq</span>
           </div>
-          <div className="text-info">
-            <h3>Check out my crazyy video now!!!!!</h3>
-            <p>Mr. Random</p>
-            <p>23.4M views  3 months ago</p>
+          <div className="links">
+            <ul>
+              <li>
+                <Link href={"#"} className="nav-link">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href={"/docs"} className="nav-link">
+                  Docs
+                </Link>
+              </li>
+              <li>
+                <Link href={"https://github.com/Johnson-Berisha/typography"} className="nav-link">
+                  Github ↗
+                </Link>
+              </li>
+              <li>
+                <Link href={"/code-snippets-app"} className="nav-link highlight">
+                  Code Snippets
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="cta">
+            <Link href={"/"} className="getStartedBtn">
+              Get Started
+            </Link>
+          </div>
+        </div>
+      </nav>
+      <header className="hero">
+        <div className="hero-content">
+          <div className="badge">SCSS guide coming soon!</div>
+          <h1>
+            Typography guide for the
+            <br /> <span className="gradient-text">modern web developer.</span>
+          </h1>
+          <p className="hero-subtext">
+            Fontiq helps developers learn how to and improve their UIs by only using typography.
+          </p>
+          <div className="hero-buttons">
+            <Link href={"/"} className="btn btn-secondary">
+              Read Documentation
+            </Link>
+            <Link href={"/code-snippet-app"} className="btn btn-primary">
+              Check out Code Snippets
+            </Link>
+          </div>
+        </div>
+      </header>
+      <div className="hero-cards-container">
+        <div className="visual-card card-side card-left">
+          <div className="card-header">
+            <div className="window-controls">
+              <div className="dot bg-red"></div>
+              <div className="dot bg-yellow"></div>
+              <div className="dot bg-green"></div>
+            </div>
+          </div>
+          <div className="card-body minimal-ui">
+            <div className="ui-group">
+              <span className="ui-label">Font Family</span>
+              <div className="ui-input">Inter Tight</div>
+            </div>
+
+            <div className="ui-group">
+              <span className="ui-label">Weight</span>
+              <div className="ui-slider-track">
+                <div className="ui-slider-thumb"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="visual-card card-side card-right">
+          <div className="card-header">
+            <div className="dot bg-muted"></div>
+          </div>
+          <div className="card-body minimal-ui">
+            <div className="ui-block">JSON Output</div>
+            <div className="ui-code">
+              <span style={{ color: "var(--primary)" }}>"font"</span>: "Roboto
+              Mono",
+              <br />
+              <span style={{ color: "var(--primary)" }}>"weight"</span>: 500
+            </div>
+          </div>
+        </div>
+
+        <div className="visual-card card-main">
+          <div className="card-header">
+            <span>Preview: Heading 1</span>
+            <span className="badge-sm">Live</span>
+          </div>
+          <div className="card-body main-preview">
+            <h3>Design with speed.</h3>
+            <p>The quick brown fox jumps over the lazy dog.</p>
+
+            <div className="ui-controls-row">
+              <div className="ui-pill active">Aa 700</div>
+              <div className="ui-pill">48px</div>
+              <div className="ui-pill color-pill"></div>
+            </div>
           </div>
         </div>
       </div>
-
-      <div className="video video2">
-        <div className="dont">Don't!</div>
-        <div className="img"></div>
-        <div className="text">
-          <div className="text-img">
-            <span className="circle"></span>
+      <section className="facts facts-container">
+        <div className="facts-title">
+          <h1>
+            Learn. <span className="gradient-text">Everything.</span>
+          </h1>
+          <p className="facts-subtext">
+            Learn how to improve your UI only using typography.
+          </p>
+        </div>
+        <div className="facts-grid">
+          <div className="fact-card large example">
+            <span className="fact-icon">1</span>
+            <h1>⚡</h1>
+            <h3>Learn Typography basics, fast!</h3>
+            <p>
+              Font-size, line-height, letter-spacing. The rules that actually affect readability. You will learn these in no time!
+            </p>
           </div>
-          <div className="text-info">
-            <h3>Check out my crazyy video now!!!!!</h3>
-            <p>Mr. Random</p>
-            <p>23.4M views  3 months ago</p>
+          <div className="fact-card small example">
+            <span className="fact-icon">2</span>
+            <h1>📱</h1>
+            <h3>Responsive Typography in UI</h3>
+            <p>
+              Learn how to use <code>clamp()</code> and how to make your text responsive without using <code>@media</code> queries!
+            </p>
+          </div>
+          <div className="fact-card small example">
+            <span className="fact-icon">3</span>
+            <h1>🧩</h1>
+            <h3>Quick Code Snippets</h3>
+            <p>
+              Copy-paste ready snippets for React and plain HTML/CSS.
+              Optimized for performance and zero Layout Shift, and you can use the snippets anytime for free!
+            </p>
+          </div>
+          <div className="fact-card small example">
+            <span className="fact-icon">4</span>
+            <h1>✅</h1>
+            <h3>Learn Best Practices</h3>
+            <p>
+              Mistakes to avoid and opinions pros actually agree on.
+            </p>
+          </div>
+          <div className="fact-card small example">
+            <span className="fact-icon">5</span>
+            <h1>🔍</h1>
+            <h3>Accesability Tips</h3>
+            <p>
+              Make text readable for everyone. Contrast, size, line spacing, and screen reader best practices.
+            </p>
           </div>
         </div>
-      </div>
-      </div>
+      </section>
+      <section className="section faq faq-container">
+        <div className="faq-title">
+          <h2>FAQ</h2>
+          <p className="faq-subtext">
+            Everything you need to know about Fontiq.
+          </p>
+        </div>
 
-      {/* <p>By just adding some <code>color</code>, <code>font-weight</code> and <code>line-height</code> you can make text look a lot better, e.g:</p>
-      
-      <div className="flex">
-        <div className="card before">
-          <span>Before</span>
-          <h1>typo.graphy</h1>
-          <p>Documentation</p>
-        </div>
-        <div className="card after">
-          <span>After</span>
-          <h1>typo.graphy</h1>
-          <p>Documentation</p>
-        </div>
-      </div> */}
- <div className="guides-demo">
-        <div className="guides" style={{marginTop: 12}}>
-          {content && content[1] && (
-            <article key={content[1].id} id={content[1].id} className="guide-card">
-              <div className="guide-header">
-                <h2 style={{margin:1}}>{content[1].title}</h2>
-                <span className="tag">{content[1].category}</span>
+        <div className="faq-items">
+          {[
+            {
+              q: "What are Code Snippets?",
+              a: "Code Snippets is the main dish of Fontiq. They are 40+ ready to use snippets that work with any UI. They help you maintain the typography in your UI and all you have to do is just copy and paste!",
+            },
+            {
+              q: "When will the SCSS guide be available?",
+              a: "Our SCSS guide is currently in development and is expected to be released in mid 2026. Stay tuned for updates! will include practical code examples and patterns to help you apply the concepts.",
+            },
+            {
+              q: "I don't really like this guide. Who made this?",
+              a: (
+                <>
+                  Fontiq is made by me, Gjonson (Johnson) Berisha. If you want to improve Fontiq, feel free to contribute to our Github <Link href="/">repo</Link>, a star would be really appreciated!
+                </>
+              ),
+            },
+            {
+              q: "Is this free?",
+              a: "Everything and literally everything is free, 0 ads and completely open-source on Github.",
+            },
+          ].map((item, index) => (
+            <div className="faq-item" key={index}>
+              <button
+                className={`acc ${openIndex === index ? "active" : ""}`}
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+              >
+                {item.q}
+              </button>
+              <div
+                className="panel"
+                ref={(el) => (panelsRef.current[index] = el)}
+                style={{
+                  maxHeight:
+                    openIndex === index && panelsRef.current[index]
+                      ? Math.max(panelsRef.current[index].scrollHeight, 100) +
+                        "px"
+                      : "0px",
+                  overflow: "hidden",
+                  transition: "max-height 0.3s ease",
+                }}
+              >
+                <p>{item.a}</p>
               </div>
-              <p className="guide-intro">{content[1].excerpt}</p>
-              {renderContent(content[1].content)}
-            </article>
-          )}
-        </div>
-      </div>
-      <div className="colors-example example">
-        <div className="color-card good">
-          <div className="do">Do!</div>
-          <h1>typo.graphy</h1>
-          <p>Documentation</p>
-          <span>Foundation</span>
-        </div>
-        <div className="color-card bad">
-          <div className="dont">Don't!</div>
-          <h1>typo.graphy</h1>
-          <p>Documentation</p>
-          <span>Foundation</span>
-        </div>
-      </div>
-      <div className="guides-demo">
-        <div className="guides" style={{marginTop: 12}}>
-          {content && content[2] && (
-            <article key={content[2].id} id={content[2].id} className="guide-card">
-              <div className="guide-header">
-                <h2 style={{margin:1}}>{content[2].title}</h2>
-                <span className="tag">{content[2].category}</span>
-              </div>
-              <p className="guide-intro">{content[2].excerpt}</p>
-              {renderContent(content[2].content)}
-            </article>
-          )}
-        </div>
-      </div>
-      <div className="scale-example example">
-        <p>Keep identical elements the same <code>font-size</code>.</p>
-        <h1>Heading <span>- 1.325rem</span></h1>
-        <h2>Heading 2 <span>- 1rem</span></h2>
-        <h3>Heading 3 <span>- 1rem</span></h3>
-        <p>Paragraph <span>- 1rem</span></p>
-        <p className="p2">Paragraph 2 <span>- 0.875rem</span></p>
-      </div>
-      <div className="codeSnippetAd code-snippets">The code for this is in the <Link href="/code-snippet-app"> Code Snippets</Link></div>
-
-
-  
-
-      <div className="guides-demo">
-        <div className="guides" style={{marginTop: 12}}>
-          {content && content.slice(3).map(item => (
-            <article key={item.id} id={item.id} className="guide-card">
-              <div className="guide-header">
-                <h2 style={{margin:0}}>{item.title}</h2>
-                <span className="tag">{item.category}</span>
-              </div>
-              <p className="guide-intro">{item.excerpt}</p>
-              {renderContent(item.content)}
-
-            </article>
+            </div>
           ))}
         </div>
-      </div>
-
-      {/* css.gg ad */}
-      <div className="cssgg">Icons by <Link href={"https://css.gg/"}>css.gg</Link></div>
-      {/* everthing goes up /\ */}
-      </div>
+      </section>
+      <section className="final-cta">
+        <div className="container cta-box">
+          <h2>Ready to master your type?</h2>
+          <p>
+            Join over 2,000+ developers building beautiful interfaces with Fontiq.
+          </p>
+          <Link href="/" className="btn btn-primary">
+            Get Started
+          </Link>
+        </div>
+      </section>
+      <footer>
+        <div className="copyright">&copy; Fontiq</div>
+        <div className="footer-links">
+          <Link href={"/"}>Docs</Link>
+          <Link href={"https://github.com/Johnson-Berisha/typography"}>Github ↗</Link>
+          <Link href={"/code-snippets-app"}>Code Snippets</Link>
+        </div>
+      </footer>
     </div>
   );
 }
