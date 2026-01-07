@@ -158,8 +158,7 @@ export default function ComingSoonPage() {
             <h1>⚡</h1>
             <h3>Learn Typography basics, fast!</h3>
             <p>
-              Copy-paste ready snippets for React, Vue, and plain HTML/CSS.
-              Optimized for performance and zero Layout Shift.
+              Font-size, line-height, letter-spacing. The rules that actually affect readability.
             </p>
           </div>
           <div className="fact-card small example">
