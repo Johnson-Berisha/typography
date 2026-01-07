@@ -547,6 +547,16 @@ ul li .nav-link:hover {
   grid-column: span 1;
 }
 
+@media (max-width:850px) {
+  .facts-grid{
+    grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, auto);
+  }
+  .fact-card.large {
+    grid-column: span 1;
+  }
+}
+
 /* faq */
 
 .faq {
