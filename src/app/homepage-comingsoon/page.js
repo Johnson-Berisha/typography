@@ -207,20 +207,24 @@ export default function ComingSoonPage() {
         <div className="faq-items">
           {[
             {
+              q: "What are Code Snippets?",
+              a: "Code Snippets is the main dish of Fontiq. They are 40+ ready to use snippets that work with any UI. They help you maintain the typography in your UI and all you have to do is just copy and paste!",
+            },
+            {
               q: "When will the SCSS guide be available?",
-              a: "Our SCSS guide is currently in development and is expected to be released in Q4 2024. Stay tuned for updates! will include practical code examples and patterns to help you apply the concepts.",
+              a: "Our SCSS guide is currently in development and is expected to be released in mid 2026. Stay tuned for updates! will include practical code examples and patterns to help you apply the concepts.",
             },
             {
-              q: "Will there be code examples included?",
-              a: "Yes — the guide will include practical code examples and patterns to help you apply the concepts. will include practical code examples and patterns to help you apply the concepts. will include practical code examples and patterns to help you apply the concepts.",
+              q: "I don't really like this guide. Who made this?",
+              a: (
+                <>
+                  Fontiq is made by me, Gjonson (Johnson) Berisha. If you want to improve Fontiq, feel free to contribute to our Github <Link href="/">repo</Link>, a star would be really appreciated!
+                </>
+              ),
             },
             {
-              q: "Can I get notified when it's released?",
-              a: "You can will include practical code examples and patterns to help you apply the concepts. sign up for notifications on the homepage (coming soon). We'll send an update when it's live.",
-            },
-            {
-              q: "Can I get notified when it's released?",
-              a: "You can will include practical code examples and patterns to help you apply the concepts. sign up for notifications on the homepage (coming soon). We'll send an update when it's live.",
+              q: "Is this free?",
+              a: "Everything and literally everything is free, 0 ads and completely open-source on Github.",
             },
           ].map((item, index) => (
             <div className="faq-item" key={index}>

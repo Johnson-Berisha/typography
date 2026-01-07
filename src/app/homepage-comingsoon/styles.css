@@ -624,6 +624,11 @@ ul li .nav-link:hover {
   padding-bottom: 10px;
 }
 
+.panel a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
 @media (max-width:850px) {
   .faq{
     margin-bottom: 30%;
