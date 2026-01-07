@@ -109,13 +109,13 @@ ul li .nav-link:hover {
 }
 
 .btn-primary {
-  background: var(--primary);
+  background: #ff6e6188;
   color: #fff;
   border: 1px solid var(--primary);
 }
 .btn-primary:hover {
-  background: #e85a4c;
-  box-shadow: 0 0 20px rgba(255, 111, 97, 0.5);
+  background: #e8594cd8;
+  box-shadow: 0 0 20px rgba(255, 110, 97, 0.247);
   transform: translateY(-2px);
 }
 
@@ -140,6 +140,7 @@ ul li .nav-link:hover {
     align-items: center;
     gap: 1rem;
   }
+  
 }
 
 /* hero */
@@ -179,7 +180,7 @@ ul li .nav-link:hover {
   -webkit-text-fill-color: transparent;
 }
 .hero-subtext {
-  font-size: clamp(0.75rem, 1.2vw, 1.25rem);
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
   color: var(--gray70);
   max-width: 600px;
   margin: 0 auto 40px auto;
@@ -190,6 +191,17 @@ ul li .nav-link:hover {
   justify-content: center;
   gap: 16px;
   margin-bottom: 80px;
+}
+
+@media (max-width: 850px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn {width: fit-content;}
+  .hero-subtext {
+    max-width: 400px;
+  }
 }
 
 /* visualss */
