@@ -158,7 +158,7 @@ export default function ComingSoonPage() {
             <h1>⚡</h1>
             <h3>Learn Typography basics, fast!</h3>
             <p>
-              Font-size, line-height, letter-spacing. The rules that actually affect readability.
+              Font-size, line-height, letter-spacing. The rules that actually affect readability. You will learn these in no time!
             </p>
           </div>
           <div className="fact-card small example">
@@ -166,8 +166,7 @@ export default function ComingSoonPage() {
             <h1>📱</h1>
             <h3>Responsive Typography in UI</h3>
             <p>
-              Copy-paste ready snippets for React, Vue, and plain HTML/CSS.
-              Optimized for performance and zero Layout Shift.
+              Learn how to use <code>clamp()</code> and how to make your text responsive without using <code>@media</code> queries!
             </p>
           </div>
           <div className="fact-card small example">
@@ -175,8 +174,8 @@ export default function ComingSoonPage() {
             <h1>🧩</h1>
             <h3>Quick Code Snippets</h3>
             <p>
-              Copy-paste ready snippets for React, Vue, and plain HTML/CSS.
-              Optimized for performance and zero Layout Shift.
+              Copy-paste ready snippets for React and plain HTML/CSS.
+              Optimized for performance and zero Layout Shift, and you can use the snippets anytime for free!
             </p>
           </div>
           <div className="fact-card small example">
@@ -184,8 +183,7 @@ export default function ComingSoonPage() {
             <h1>✅</h1>
             <h3>Learn Best Practices</h3>
             <p>
-              Copy-paste ready snippets for React, Vue, and plain HTML/CSS.
-              Optimized for performance and zero Layout Shift.
+              Mistakes to avoid and opinions pros actually agree on.
             </p>
           </div>
           <div className="fact-card small example">
@@ -193,8 +191,7 @@ export default function ComingSoonPage() {
             <h1>🔍</h1>
             <h3>Accesability Tips</h3>
             <p>
-              Copy-paste ready snippets for React, Vue, and plain HTML/CSS.
-              Optimized for performance and zero Layout Shift.
+              Make text readable for everyone. Contrast, size, line spacing, and screen reader best practices.
             </p>
           </div>
         </div>
