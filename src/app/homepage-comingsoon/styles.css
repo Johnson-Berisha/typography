@@ -528,6 +528,9 @@ ul li .nav-link:hover {
 .fact-card h1 {
   font-size: 2rem;
     margin-bottom: 20px;
+    filter: grayscale(100%);
+
+    transition: 1s;
 }
 
 .fact-card span {
@@ -542,6 +545,9 @@ ul li .nav-link:hover {
 }
 .fact-card:hover span {
   color: rgba(255, 110, 97, 0.068);
+}
+.fact-card:hover h1 {
+  filter: grayscale(0%);
 }
 
 .fact-card.large {
