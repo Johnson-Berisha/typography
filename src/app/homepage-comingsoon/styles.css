@@ -601,6 +601,8 @@ ul li .nav-link:hover {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.36s ease;
+  display: grid;
+  place-items: center;
 }
 
 .acc.active,
@@ -610,6 +612,21 @@ ul li .nav-link:hover {
 
 .panel p {
   padding-bottom: 10px;
+}
+
+@media (max-width:850px) {
+  .faq{
+    margin-bottom: 30%;
+  }
+  .faq-item button, .panel {
+    width: 80%;
+  }
+  .faq-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* final cta */
