@@ -155,7 +155,8 @@ export default function ComingSoonPage() {
         <div className="facts-grid">
           <div className="fact-card large example">
             <span className="fact-icon">1</span>
-            <h3>Lightning Fast Integration</h3>
+            <h1>⚡</h1>
+            <h3>Learn Typography basics, fast!</h3>
             <p>
               Copy-paste ready snippets for React, Vue, and plain HTML/CSS.
               Optimized for performance and zero Layout Shift.
@@ -163,7 +164,8 @@ export default function ComingSoonPage() {
           </div>
           <div className="fact-card small example">
             <span className="fact-icon">2</span>
-            <h3>Lightning Fast Integration</h3>
+            <h1>📱</h1>
+            <h3>Responsive Typography in UI</h3>
             <p>
               Copy-paste ready snippets for React, Vue, and plain HTML/CSS.
               Optimized for performance and zero Layout Shift.
@@ -171,7 +173,8 @@ export default function ComingSoonPage() {
           </div>
           <div className="fact-card small example">
             <span className="fact-icon">3</span>
-            <h3>Lightning Fast Integration</h3>
+            <h1>🧩</h1>
+            <h3>Quick Code Snippets</h3>
             <p>
               Copy-paste ready snippets for React, Vue, and plain HTML/CSS.
               Optimized for performance and zero Layout Shift.
@@ -179,7 +182,8 @@ export default function ComingSoonPage() {
           </div>
           <div className="fact-card small example">
             <span className="fact-icon">4</span>
-            <h3>Lightning Fast Integration</h3>
+            <h1>✅</h1>
+            <h3>Learn Best Practices</h3>
             <p>
               Copy-paste ready snippets for React, Vue, and plain HTML/CSS.
               Optimized for performance and zero Layout Shift.
@@ -187,7 +191,8 @@ export default function ComingSoonPage() {
           </div>
           <div className="fact-card small example">
             <span className="fact-icon">5</span>
-            <h3>Lightning Fast Integration</h3>
+            <h1>🔍</h1>
+            <h3>Accesability Tips</h3>
             <p>
               Copy-paste ready snippets for React, Vue, and plain HTML/CSS.
               Optimized for performance and zero Layout Shift.
