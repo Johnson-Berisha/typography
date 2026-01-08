@@ -9,6 +9,9 @@ export default function ComingSoonPage() {
   const [scrolled, setScrolled] = useState(false);
   const [openIndex, setOpenIndex] = useState(null);
   const panelsRef = useRef([]);
+  const navRef = useRef(null);
+  const hamburgerRef = useRef(null);
+  const openedNavRef = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +24,28 @@ export default function ComingSoonPage() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const hamburger = hamburgerRef.current;
+    const nav = navRef.current;
+
+    const toggleNav = () => {
+      if(openedNavRef.current === false) {
+        nav.style.top = "20px";
+        openedNavRef.current = true;
+      } else {
+        nav.style.top = "-100%";
+        openedNavRef.current = false;
+      }
+    }
+
+    hamburger.addEventListener("click", toggleNav);
+
+    // clean up after yo things
+    return() => {
+      hamburger.removeEventListener("click", toggleNav);
+    }
   }, []);
 
   return (
@@ -66,7 +91,48 @@ export default function ComingSoonPage() {
             </Link>
           </div>
         </div>
+        
       </nav>
+      <div className="nav-mobile-hamburger" ref={hamburgerRef}>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+      </div>
+      <div className="nav-mobile" ref={navRef}>
+          <div className="hn-title">
+            <Image
+              src="/logo-32-transparent.svg"
+              alt="Typography Logo"
+              width={32}
+              height={32}
+            />{" "}
+            <span>Fontiq</span>
+          </div>
+          <div className="links">
+            <ul>
+              <li>
+                <Link href={"#"} className="nav-link">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href={"/docs"} className="nav-link">
+                  Docs
+                </Link>
+              </li>
+              <li>
+                <Link href={"https://github.com/Johnson-Berisha/typography"} className="nav-link">
+                  Github ↗
+                </Link>
+              </li>
+              <li>
+                <Link href={"/code-snippets-app"} className="nav-link highlight">
+                  Code Snippets
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
       <header className="hero">
         <div className="hero-content">
           <div className="badge">SCSS guide coming soon!</div>
