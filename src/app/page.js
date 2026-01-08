@@ -259,7 +259,7 @@ export default function ComingSoonPage() {
           <p>
             Join over 2,000+ developers building beautiful interfaces with Fontiq.
           </p>
-          <Link href="/" className="btn btn-primary">
+          <Link href="/docs" className="btn btn-primary">
             Get Started
           </Link>
         </div>
@@ -267,7 +267,7 @@ export default function ComingSoonPage() {
       <footer>
         <div className="copyright">&copy; Fontiq</div>
         <div className="footer-links">
-          <Link href={"/"}>Docs</Link>
+          <Link href={"/docs"}>Docs</Link>
           <Link href={"https://github.com/Johnson-Berisha/typography"}>Github ↗</Link>
           <Link href={"/code-snippets-app"}>Code Snippets</Link>
         </div>
