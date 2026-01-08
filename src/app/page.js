@@ -61,7 +61,7 @@ export default function ComingSoonPage() {
             </ul>
           </div>
           <div className="cta">
-            <Link href={"/"} className="getStartedBtn">
+            <Link href={"/docs"} className="getStartedBtn">
               Get Started
             </Link>
           </div>
@@ -78,7 +78,7 @@ export default function ComingSoonPage() {
             Fontiq helps developers learn how to and improve their UIs by only using typography.
           </p>
           <div className="hero-buttons">
-            <Link href={"/"} className="btn btn-secondary">
+            <Link href={"/docs"} className="btn btn-secondary">
               Read Documentation
             </Link>
             <Link href={"/code-snippet-app"} className="btn btn-primary">
