@@ -131,6 +131,7 @@ ul li .nav-link:hover {
   cursor: pointer;
   transition: 0.1s transform;
   z-index: 1000;
+  display: none;
 }
 .nav-mobile-hamburger:active {
   transform: scale(0.8);
@@ -179,7 +180,9 @@ ul li .nav-link:hover {
   nav.homepage-nav {
     display: none;
   }
-  
+  .nav-mobile-hamburger {
+    display: grid
+  }
 }
 
 /* hero */
