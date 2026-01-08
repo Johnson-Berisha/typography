@@ -1,5 +1,4 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { ContentProvider } from "../context/ContentProvider";
 
@@ -23,7 +22,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ContentProvider>{children}</ContentProvider>
-        <Analytics />
       </body>
     </html>
   );
