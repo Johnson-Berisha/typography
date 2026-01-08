@@ -4,6 +4,7 @@
 ![Stars](https://img.shields.io/github/stars/Johnson-Berisha/typography)
 ![Last Commit](https://img.shields.io/github/last-commit/Johnson-Berisha/typography)
 ![Commits](https://img.shields.io/github/commit-activity/t/Johnson-Berisha/typography)
+![License](https://img.shields.io/badge/license-MIT-green)
 <br>
 ![Next.js](https://img.shields.io/badge/Next.js-black?logo=next.js)
 ![CSS](https://img.shields.io/badge/CSS-blue?logo=css)
