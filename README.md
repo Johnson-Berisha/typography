@@ -20,3 +20,13 @@ Most typography resources are bloated or outdated. Fontiq stays practical: real 
 - Ready-to-use CSS snippets 🔥
 - Beginner-friendly, still useful for pros 🔥
 - Fast, no clutter, no nonsense 🔥
+
+## Contributing
+PRs, suggestions, and bug reports are welcome!  
+Please fork the repo, create a branch, and submit a pull request.
+
+
+### Roadmap / Future
+- Add more code snippets 🔥
+- Community contributions / PRs
+- Advanced typography guides
