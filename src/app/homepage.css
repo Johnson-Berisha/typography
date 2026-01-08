@@ -539,6 +539,9 @@ ul li .nav-link:hover {
 .facts-title h1 {
   line-height: 0.1;
 }
+.facts-title p {
+  text-align: center;
+}
 
 .facts-grid {
   display: grid;
