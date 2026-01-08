@@ -31,7 +31,7 @@ export default function ComingSoonPage() {
     const nav = navRef.current;
 
     const toggleNav = () => {
-      if(openedNavRef.current === false) {
+      if (openedNavRef.current === false) {
         nav.style.top = "20px";
         openedNavRef.current = true;
       } else {
@@ -43,7 +43,7 @@ export default function ComingSoonPage() {
     hamburger.addEventListener("click", toggleNav);
 
     // clean up after yo things
-    return() => {
+    return () => {
       hamburger.removeEventListener("click", toggleNav);
     }
   }, []);
@@ -91,7 +91,7 @@ export default function ComingSoonPage() {
             </Link>
           </div>
         </div>
-        
+
       </nav>
       <div className="nav-mobile-hamburger" ref={hamburgerRef}>
         <div className="line"></div>
@@ -99,40 +99,40 @@ export default function ComingSoonPage() {
         <div className="line"></div>
       </div>
       <div className="nav-mobile" ref={navRef}>
-          <div className="hn-title">
-            <Image
-              src="/logo-32-transparent.svg"
-              alt="Typography Logo"
-              width={32}
-              height={32}
-            />{" "}
-            <span>Fontiq</span>
-          </div>
-          <div className="links">
-            <ul>
-              <li>
-                <Link href={"#"} className="nav-link">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href={"/docs"} className="nav-link">
-                  Docs
-                </Link>
-              </li>
-              <li>
-                <Link href={"https://github.com/Johnson-Berisha/typography"} className="nav-link">
-                  Github ↗
-                </Link>
-              </li>
-              <li>
-                <Link href={"/code-snippets-app"} className="nav-link highlight">
-                  Code Snippets
-                </Link>
-              </li>
-            </ul>
-          </div>
+        <div className="hn-title">
+          <Image
+            src="/logo-32-transparent.svg"
+            alt="Typography Logo"
+            width={32}
+            height={32}
+          />{" "}
+          <span>Fontiq</span>
         </div>
+        <div className="links">
+          <ul>
+            <li>
+              <Link href={"#"} className="nav-link">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href={"/docs"} className="nav-link">
+                Docs
+              </Link>
+            </li>
+            <li>
+              <Link href={"https://github.com/Johnson-Berisha/typography"} className="nav-link">
+                Github ↗
+              </Link>
+            </li>
+            <li>
+              <Link href={"/code-snippets-app"} className="nav-link highlight">
+                Code Snippets
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
       <header className="hero">
         <div className="hero-content">
           <div className="badge">SCSS guide coming soon!</div>
@@ -307,7 +307,7 @@ export default function ComingSoonPage() {
                   maxHeight:
                     openIndex === index && panelsRef.current[index]
                       ? Math.max(panelsRef.current[index].scrollHeight, 100) +
-                        "px"
+                      "px"
                       : "0px",
                   overflow: "hidden",
                   transition: "max-height 0.3s ease",
