@@ -43,9 +43,26 @@ export default function CodeSnippetApp() {
       </aside>
       <main className="main-content">
         <header className="top-bar">
-          <div className="search-bar"></div>
+          <div className="search-bar">
+            <Image
+              src={"/search.svg"}
+              width={19}
+              height={19}
+              alt='search-icon'
+            />
+            <input type="text" id="searchInput" placeholder="Search by name or property..."></input>
+          </div>
           <div className="new-snippet-btn">
-            <button>New Snippet</button>
+
+            <button>
+              <Image
+                src={"/math-plus.svg"}
+                height={19}
+                width={19}
+                alt='add-snippet'
+              />
+              New Snippet
+            </button>
           </div>
         </header>
       </main>
