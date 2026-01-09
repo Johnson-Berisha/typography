@@ -41,7 +41,14 @@ export default function CodeSnippetApp() {
           <p>I havent decided what to put here yet</p>
         </div>
       </aside>
-      hello
+      <main className="main-content">
+        <header className="top-bar">
+          <div className="search-bar"></div>
+          <div className="new-snippet-btn">
+            <button>New Snippet</button>
+          </div>
+        </header>
+      </main>
     </div>
   )
 }
