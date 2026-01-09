@@ -79,7 +79,7 @@ export default function ComingSoonPage() {
                 </Link>
               </li>
               <li>
-                <Link href={"/code-snippets-app"} className="nav-link highlight">
+                <Link href={"/code-snippet-app"} className="nav-link highlight">
                   Code Snippets
                 </Link>
               </li>
