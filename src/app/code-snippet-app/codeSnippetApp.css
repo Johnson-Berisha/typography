@@ -188,3 +188,95 @@ main.main-content {
 .active {
   color: var(--primary);
 }
+
+.snippets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  padding-bottom: 50px;
+}
+
+.snippet {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: 0.3s;
+  position: relative;
+}
+
+.snippet:hover {
+  border-color: var(--text-muted);
+  transform: translateY(-4px);
+}
+
+.card-preview {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-sidebar);
+  border-bottom: 1px solid var(--border);
+  padding: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.card-header h3 {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.action-row {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-btn {
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: 0.2s;
+  background: none;
+  border: none;
+  font-size: 1rem;
+}
+
+.icon-btn:hover {
+  color: var(--text-main);
+}
+
+.icon-btn.active {
+  color: var(--primary);
+}
+
+.icon-btn.delete:hover {
+  color: #ff4757;
+}
+
+.code-block {
+  background: #000;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: #e6edf3;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.code-block:hover {
+  border-color: var(--text-muted);
+}

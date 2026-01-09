@@ -69,7 +69,65 @@ export default function CodeSnippetApp() {
           <div className="total-snippets">12 Snippets</div>
           <div className="view-toggle">
             <span>List</span>
-            <span>Grid</span>
+            <span className="active">Grid</span>
+          </div>
+        </div>
+        <div className="snippets-grid">
+          <div className="snippet">
+            <div class="card-preview">
+              Elegant Header
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3>Elegant Header</h3>
+              </div>
+              <div class="code-block">
+                text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61; color: white;
+              </div>
+            </div>
+
+          </div>
+          <div className="snippet">
+            <div class="card-preview">
+              Elegant Header
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3>Elegant Header</h3>
+              </div>
+              <div class="code-block">
+                text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61; color: white;
+              </div>
+            </div>
+
+          </div>
+          <div className="snippet">
+            <div class="card-preview">
+              Elegant Header
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3>Elegant Header</h3>
+              </div>
+              <div class="code-block">
+                text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61; color: white;
+              </div>
+            </div>
+
+          </div>
+          <div className="snippet">
+            <div class="card-preview">
+              Elegant Header
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3>Elegant Header</h3>
+              </div>
+              <div class="code-block">
+                text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61; color: white;
+              </div>
+            </div>
+
           </div>
         </div>
       </main>
