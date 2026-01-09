@@ -168,3 +168,23 @@ main.main-content {
   box-shadow: 0 4px 15px #ff6e6141;
   transform: translateY(-2px);
 }
+
+/* stats */
+
+.stats {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.stats .view-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.active {
+  color: var(--primary);
+}
