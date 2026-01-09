@@ -65,6 +65,13 @@ export default function CodeSnippetApp() {
             </button>
           </div>
         </header>
+        <div className="stats">
+          <div className="total-snippets">12 Snippets</div>
+          <div className="view-toggle">
+            <span>List</span>
+            <span>Grid</span>
+          </div>
+        </div>
       </main>
     </div>
   )
