@@ -9,7 +9,7 @@ import "./codeSnippetApp.css";
 export default function CodeSnippetApp() {
 
   return (
-    <div className="container">
+    <div className="container snippets-container">
       <aside className="sidebar">
         <div className="brand">
           <div className="brand-title">
@@ -74,56 +74,56 @@ export default function CodeSnippetApp() {
         </div>
         <div className="snippets-grid">
           <div className="snippet">
-            <div class="card-preview">
+            <div className="card-preview">
               Elegant Header
             </div>
-            <div class="card-body">
-              <div class="card-header">
+            <div className="card-body">
+              <div className="card-header">
                 <h3>Elegant Header</h3>
               </div>
-              <div class="code-block">
+              <div className="code-block">
                 text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61; color: white;
               </div>
             </div>
 
           </div>
           <div className="snippet">
-            <div class="card-preview">
+            <div className="card-preview">
               Elegant Header
             </div>
-            <div class="card-body">
-              <div class="card-header">
+            <div className="card-body">
+              <div className="card-header">
                 <h3>Elegant Header</h3>
               </div>
-              <div class="code-block">
+              <div className="code-block">
                 text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61; color: white;
               </div>
             </div>
 
           </div>
           <div className="snippet">
-            <div class="card-preview">
+            <div className="card-preview">
               Elegant Header
             </div>
-            <div class="card-body">
-              <div class="card-header">
+            <div className="card-body">
+              <div className="card-header">
                 <h3>Elegant Header</h3>
               </div>
-              <div class="code-block">
+              <div className="code-block">
                 text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61; color: white;
               </div>
             </div>
 
           </div>
           <div className="snippet">
-            <div class="card-preview">
+            <div className="card-preview">
               Elegant Header
             </div>
-            <div class="card-body">
-              <div class="card-header">
+            <div className="card-body">
+              <div className="card-header">
                 <h3>Elegant Header</h3>
               </div>
-              <div class="code-block">
+              <div className="code-block">
                 text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61; color: white;
               </div>
             </div>

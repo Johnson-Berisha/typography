@@ -5,6 +5,10 @@
 body {
   margin: 0;
   padding: 0;
+
+}
+
+.homepage-body {
   background-image: radial-gradient(#ff6e611f 1px, transparent 0);
   background-size: 20px 20px;
 }

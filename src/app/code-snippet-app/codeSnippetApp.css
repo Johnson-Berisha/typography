@@ -20,6 +20,9 @@
 }
 
 
+.snippets-container {
+  display: flex !important;
+}
 
 aside.sidebar {
   width: 260px;
