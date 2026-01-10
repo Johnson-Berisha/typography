@@ -37,6 +37,20 @@
   background: var(--primary);
 }
 
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
 html {
   scroll-behavior: smooth;
 }
