@@ -11,7 +11,7 @@ export function SnippetProvider({ children }) {
     useEffect(() => {
         const fetchSnippets = async () => {
             try {
-                const fileNames = ["elegantheader", "test"];
+                const fileNames = ["elegantheader", "test", "fake-snippet"];
                 const fetchedSnippets = await Promise.all(
                     fileNames.map(fileName =>
                         fetch(

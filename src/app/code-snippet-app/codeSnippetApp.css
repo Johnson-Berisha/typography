@@ -278,6 +278,8 @@ main.main-content {
   position: relative;
   cursor: pointer;
   border: 1px solid transparent;
+  height: 150px;
+  overflow-y: scroll;
 }
 
 .code-block:hover {
