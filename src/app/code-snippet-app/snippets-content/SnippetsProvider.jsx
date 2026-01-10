@@ -19,8 +19,15 @@ export function SnippetProvider({ children }) {
                         ).then(res => res.json())
                     )
                 );
+                const cleaned = fetchedSnippets.map(snippet => ({
+                    ...snippet,
+                    code: snippet.code
+                        ? snippet.code.replace(/```[\w]*\n?|```/g, "").trim()
+                        : ""
+                }));
 
-                setSnippets(fetchedSnippets);
+
+                setSnippets(cleaned);
             } catch (err) {
                 console.error("Failed to fetch snippets:", err);
                 setSnippets([]);
