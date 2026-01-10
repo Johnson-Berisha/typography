@@ -8,6 +8,7 @@ body {
   background-image: radial-gradient(#ff6e611f 1px, transparent 0);
   background-size: 20px 20px;
 }
+
 a {
   color: inherit;
   text-decoration: none;
@@ -43,13 +44,15 @@ nav.scrolled {
   height: 100%;
 }
 
-.nav-container ul, .nav-mobile ul {
+.nav-container ul,
+.nav-mobile ul {
   list-style: none;
   display: flex;
   gap: 32px;
   margin: 0;
   padding: 0 20px;
 }
+
 .nav-container ul li .nav-link {
   text-decoration: none;
   font-size: 0.95rem;
@@ -70,6 +73,7 @@ ul li .nav-link:hover {
   border: 1px solid transparent;
   transition: 0.2s;
 }
+
 .highlight:hover {
   background-color: rgba(255, 111, 97, 0.25);
   border-color: rgba(255, 111, 97, 0.3);
@@ -98,7 +102,7 @@ ul li .nav-link:hover {
 }
 
 /* mobile nav */
-.nav-mobile{
+.nav-mobile {
   background-color: #111111b0;
   width: fit-content;
   padding: 1rem;
@@ -114,6 +118,7 @@ ul li .nav-link:hover {
   border: #333 1px solid;
   transition: 0.6s;
 }
+
 .nav-mobile ul {
   flex-direction: column;
   padding-left: 0;
@@ -133,6 +138,7 @@ ul li .nav-link:hover {
   z-index: 1000;
   display: none;
 }
+
 .nav-mobile-hamburger:active {
   transform: scale(0.8);
 }
@@ -160,6 +166,7 @@ ul li .nav-link:hover {
   color: #fff;
   border: 1px solid var(--primary);
 }
+
 .btn-primary:hover {
   background: #e8594cd8;
   box-shadow: 0 0 20px rgba(255, 110, 97, 0.247);
@@ -171,6 +178,7 @@ ul li .nav-link:hover {
   color: white;
   border: 1px solid #333333;
 }
+
 .btn-secondary:hover {
   border-color: white;
   background: rgba(255, 255, 255, 0.05);
@@ -180,6 +188,7 @@ ul li .nav-link:hover {
   nav.homepage-nav {
     display: none;
   }
+
   .nav-mobile-hamburger {
     display: grid
   }
@@ -191,11 +200,13 @@ ul li .nav-link:hover {
   padding-bottom: 80px;
   text-align: center;
 }
+
 .hero-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
 }
+
 .hero h1 {
   font-size: clamp(2rem, 4vw, 5rem);
   line-height: 1.1;
@@ -221,6 +232,7 @@ ul li .nav-link:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .hero-subtext {
   font-size: clamp(1rem, 1.2vw, 1.25rem);
   color: var(--gray70);
@@ -236,14 +248,19 @@ ul li .nav-link:hover {
 }
 
 @media (max-width: 850px) {
-  .hero{
+  .hero {
     padding-top: 100px;
   }
+
   .hero-buttons {
     flex-direction: column;
     align-items: center;
   }
-  .btn {width: fit-content;}
+
+  .btn {
+    width: fit-content;
+  }
+
   .hero-subtext {
     max-width: 400px;
   }
@@ -256,7 +273,8 @@ ul li .nav-link:hover {
   position: relative;
   width: 100%;
   max-width: 900px;
-  height: 350px; /* Fixed height to contain the absolute elements */
+  height: 350px;
+  /* Fixed height to contain the absolute elements */
   margin: 0 auto;
   /* outline: 1px dashed red; */
 }
@@ -277,10 +295,14 @@ ul li .nav-link:hover {
   width: 320px;
   height: 220px;
   background: #121212;
-  top: 0; /* Higher up vertically */
-  z-index: 1; /* Behind main card */
-  opacity: 0.6; /* Faded */
-  filter: blur(1px); /* Subtle blur for depth */
+  top: 0;
+  /* Higher up vertically */
+  z-index: 1;
+  /* Behind main card */
+  opacity: 0.6;
+  /* Faded */
+  filter: blur(1px);
+  /* Subtle blur for depth */
 }
 
 .card-left {
@@ -300,13 +322,17 @@ ul li .nav-link:hover {
   width: 450px;
   height: 280px;
   background: #171717;
-  z-index: 10; /* In front */
+  z-index: 10;
+  /* In front */
   /* Centered horizontally */
   left: 50%;
   transform: translateX(-50%);
-  bottom: 0; /* Lower down vertically */
-  border-color: rgba(255, 111, 97, 0.3); /* Subtle accent border */
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 111, 97, 0.15); /* Stronger shadow + glow */
+  bottom: 0;
+  /* Lower down vertically */
+  border-color: rgba(255, 111, 97, 0.3);
+  /* Subtle accent border */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 111, 97, 0.15);
+  /* Stronger shadow + glow */
 }
 
 /* Hover effect: bring side cards forward slightly */
@@ -314,29 +340,35 @@ ul li .nav-link:hover {
   opacity: 0.8;
   filter: blur(0);
   transform: perspective(1000px) rotateY(0) rotateZ(0) scale(0.95);
-  top: 20px; /* Move down slightly on hover */
-}
-.hero-cards-container:hover .card-main {
-  transform: translateX(-50%) translateY(-10px); /* Lift main card */
+  top: 20px;
+  /* Move down slightly on hover */
 }
 
-.card-header {
+.hero-cards-container:hover .card-main {
+  transform: translateX(-50%) translateY(-10px);
+  /* Lift main card */
+}
+
+.visual-card .card-header {
   padding: 12px 16px;
   border-bottom: 1px solid #333333;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 40px; /* Enforce height */
+  height: 40px;
+  /* Enforce height */
   background: rgba(255, 255, 255, 0.02);
 }
-.card-header span {
+
+.visual-card .card-header span {
   font-weight: 600;
 }
 
 /* Fix for the dots alignment */
 .window-controls {
   display: flex;
-  gap: 8px; /* Space between dots */
+  gap: 8px;
+  /* Space between dots */
   align-items: center;
 }
 
@@ -350,12 +382,15 @@ ul li .nav-link:hover {
 .bg-red {
   background: #ff5f56;
 }
+
 .bg-yellow {
   background: #ffbd2e;
 }
+
 .bg-green {
   background: #27c93f;
 }
+
 .bg-muted {
   background: #333333;
 }
@@ -365,6 +400,7 @@ ul li .nav-link:hover {
   display: flex;
   flex-direction: column;
 }
+
 .card-body h3 {
   font-weight: 700;
   font-size: 1.5rem;
@@ -374,6 +410,7 @@ ul li .nav-link:hover {
   color: var(--gray70);
   margin-top: 10px;
 }
+
 /* Fix for Broken Text (Left Card) */
 .minimal-ui {
   font-size: 0.8rem;
@@ -463,7 +500,8 @@ ul li .nav-link:hover {
   display: flex;
   gap: 8px;
   align-items: center;
-  margin-top: auto; /* Push to bottom if flex container has height */
+  margin-top: auto;
+  /* Push to bottom if flex container has height */
   padding-top: 20px;
 }
 
@@ -489,25 +527,34 @@ ul li .nav-link:hover {
   background: var(--primary);
   border: 2px solid rgba(255, 255, 255, 0.1);
 }
+
 @media (max-width: 850px) {
+
   /* On tablets/smaller screens, hide the side cards and just show the main one centered */
   .card-left,
   .card-right {
     display: none;
   }
+
   .hero-cards-container {
-    height: auto; /* Allow height to fit content */
+    height: auto;
+    /* Allow height to fit content */
     margin-bottom: 40px;
   }
+
   .card-main {
-    position: relative; /* No longer absolute */
+    position: relative;
+    /* No longer absolute */
     left: auto;
     bottom: auto;
-    transform: none !important; /* Reset transform */
-    width: 100%; /* Full width */
+    transform: none !important;
+    /* Reset transform */
+    width: 100%;
+    /* Full width */
     max-width: 500px;
     margin: 0 auto;
   }
+
   .hero-cards-container:hover .card-main {
     transform: none;
   }
@@ -529,6 +576,7 @@ ul li .nav-link:hover {
   height: fit-content;
   max-width: 1200px;
 }
+
 .facts-title {
   display: flex;
   flex-direction: column;
@@ -539,6 +587,7 @@ ul li .nav-link:hover {
 .facts-title h1 {
   line-height: 0.1;
 }
+
 .facts-title p {
   text-align: center;
 }
@@ -562,6 +611,7 @@ ul li .nav-link:hover {
   border-color: var(--primary);
   box-shadow: 0 0 20px rgba(255, 111, 97, 0.3);
 }
+
 .fact-card h3 {
   font-size: 1.5rem;
   margin-bottom: 12px;
@@ -569,16 +619,18 @@ ul li .nav-link:hover {
   z-index: 1;
   font-weight: 700;
 }
+
 .fact-card p {
   position: relative;
   z-index: 1;
 }
+
 .fact-card h1 {
   font-size: 2rem;
-    margin-bottom: 20px;
-    filter: grayscale(100%);
+  margin-bottom: 20px;
+  filter: grayscale(100%);
 
-    transition: 1s;
+  transition: 1s;
 }
 
 .fact-card span {
@@ -591,9 +643,11 @@ ul li .nav-link:hover {
   left: 20px;
   transition: 0.3;
 }
+
 .fact-card:hover span {
   color: rgba(255, 110, 97, 0.068);
 }
+
 .fact-card:hover h1 {
   filter: grayscale(0%);
 }
@@ -601,15 +655,17 @@ ul li .nav-link:hover {
 .fact-card.large {
   grid-column: span 2;
 }
+
 .fact-card.small {
   grid-column: span 1;
 }
 
 @media (max-width:850px) {
-  .facts-grid{
+  .facts-grid {
     grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(1, auto);
+    grid-template-rows: repeat(1, auto);
   }
+
   .fact-card.large {
     grid-column: span 1;
   }
@@ -630,6 +686,7 @@ ul li .nav-link:hover {
   align-items: center;
   flex-direction: column;
 }
+
 .faq-title h2 {
   line-height: 1.2;
 }
@@ -679,12 +736,15 @@ ul li .nav-link:hover {
 }
 
 @media (max-width:850px) {
-    .faq {
-        margin-bottom: 50%;
-    }
-  .faq-item button, .panel {
+  .faq {
+    margin-bottom: 50%;
+  }
+
+  .faq-item button,
+  .panel {
     width: 80%;
   }
+
   .faq-item {
     display: flex;
     flex-direction: column;
@@ -741,6 +801,7 @@ ul li .nav-link:hover {
   margin-bottom: 16px;
   letter-spacing: -2px;
 }
+
 .cta-box p {
   color: var(--gray30);
   margin-bottom: 40px;
@@ -766,5 +827,5 @@ footer {
 }
 
 .footer-links a:hover {
-    color: white;
+  color: white;
 }
