@@ -74,7 +74,7 @@ export default function CodeSnippetApp() {
             <span className="active">Grid</span>
           </div>
         </div>
-        <div className="snippets-grid">
+        <div className="snippets-grid-container">
           <SnippetProvider>
             <SnippetList />
           </SnippetProvider>

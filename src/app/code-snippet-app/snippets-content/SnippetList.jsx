@@ -10,7 +10,7 @@ export default function SnippetList() {
     if (loading) return <p>Loading snippets...</p>;
 
     return (
-        <div className="snippets">
+        <div className="snippets-grid">
             {snippets.map((snippet) => (
                 <div key={snippet.title} className="snippet">
                     {/* Preview / Title */}
