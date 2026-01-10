@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useSnippets } from "../context/SnippetProvider";
+import { useSnippets } from "./SnippetsProvider";
 
 export default function SnippetList() {
     const { actions, loading } = useSnippets();
@@ -15,7 +15,7 @@ export default function SnippetList() {
                 <div key={snippet.title} className="snippet">
                     {/* Preview / Title */}
                     <div className="card-preview">
-                        {snippet.title}
+                        {snippet.example}
                     </div>
 
                     {/* Body */}
@@ -30,13 +30,6 @@ export default function SnippetList() {
                                 <code>{snippet.code}</code>
                             </pre>
                         </div>
-
-                        {/* Example if exists */}
-                        {snippet.example && (
-                            <div className="snippet-example">
-                                <strong>Example:</strong> {snippet.example}
-                            </div>
-                        )}
                     </div>
                 </div>
             ))}

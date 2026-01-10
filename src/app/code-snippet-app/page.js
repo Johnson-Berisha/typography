@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import "./codeSnippetApp.css";
+import { SnippetProvider } from './snippets-content/SnippetsProvider';
+import SnippetList from './snippets-content/SnippetList';
 
 export default function CodeSnippetApp() {
 
@@ -66,69 +68,16 @@ export default function CodeSnippetApp() {
           </div>
         </header>
         <div className="stats">
-          <div className="total-snippets">12 Snippets</div>
+          <div className="total-snippets">0 Snippets</div>
           <div className="view-toggle">
             <span>List</span>
             <span className="active">Grid</span>
           </div>
         </div>
         <div className="snippets-grid">
-          <div className="snippet">
-            <div className="card-preview">
-              Elegant Header
-            </div>
-            <div className="card-body">
-              <div className="card-header">
-                <h3>Elegant Header</h3>
-              </div>
-              <div className="code-block">
-                text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61; color: white;
-              </div>
-            </div>
-
-          </div>
-          <div className="snippet">
-            <div className="card-preview">
-              Elegant Header
-            </div>
-            <div className="card-body">
-              <div className="card-header">
-                <h3>Elegant Header</h3>
-              </div>
-              <div className="code-block">
-                text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61; color: white;
-              </div>
-            </div>
-
-          </div>
-          <div className="snippet">
-            <div className="card-preview">
-              Elegant Header
-            </div>
-            <div className="card-body">
-              <div className="card-header">
-                <h3>Elegant Header</h3>
-              </div>
-              <div className="code-block">
-                text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61; color: white;
-              </div>
-            </div>
-
-          </div>
-          <div className="snippet">
-            <div className="card-preview">
-              Elegant Header
-            </div>
-            <div className="card-body">
-              <div className="card-header">
-                <h3>Elegant Header</h3>
-              </div>
-              <div className="code-block">
-                text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61; color: white;
-              </div>
-            </div>
-
-          </div>
+          <SnippetProvider>
+            <SnippetList />
+          </SnippetProvider>
         </div>
       </main>
     </div>
