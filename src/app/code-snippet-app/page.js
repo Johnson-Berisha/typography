@@ -9,6 +9,8 @@ import { SnippetProvider } from './snippets-content/SnippetsProvider';
 import SnippetList from './snippets-content/SnippetList';
 
 export default function CodeSnippetApp() {
+  const [activeType, setActiveType] = useState("Header");
+
 
   return (
     <div className="container snippets-container">
@@ -27,12 +29,12 @@ export default function CodeSnippetApp() {
         </div>
         <nav className="snippets-nav">
           <p className="nav-label">Library</p>
-          {["allSnippets", "headers", "bodyText"].map(type => (
+          {["All Snippets", "Header", "test"].map(type => (
             <button
               key={type}
               onClick={() => setActiveType(type)}
               className={activeType === type ? "active" : ""}
-            >{type.toUpperCase()}</button>
+            >{type}</button>
           ))}
         </nav>
         <div className="sidebar-footer">
@@ -72,7 +74,7 @@ export default function CodeSnippetApp() {
         </div>
         <div className="snippets-grid-container">
           <SnippetProvider>
-            <SnippetList />
+            <SnippetList activeType={activeType} />
           </SnippetProvider>
         </div>
       </main>

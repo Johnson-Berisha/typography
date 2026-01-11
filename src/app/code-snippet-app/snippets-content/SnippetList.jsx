@@ -3,10 +3,9 @@
 import React, { useState } from "react";
 import { useSnippets } from "./SnippetsProvider";
 
-export default function SnippetList() {
+export default function SnippetList({ activeType }) {
     const { actions, loading } = useSnippets();
     const snippets = actions.getSnippets() || [];
-    const [activeType, setActiveType] = useState("allSnippets");
 
     const filteredSnippets = snippets.filter(
         s => s.type === activeType
@@ -16,7 +15,7 @@ export default function SnippetList() {
 
     return (
         <div className="snippets-grid">
-            {snippets.map((snippet) => (
+            {filteredSnippets.map((snippet) => (
                 <div key={snippet.title} className="snippet">
                     {/* Preview / Title */}
                     <div className="card-preview">
