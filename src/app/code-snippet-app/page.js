@@ -27,17 +27,13 @@ export default function CodeSnippetApp() {
         </div>
         <nav className="snippets-nav">
           <p className="nav-label">Library</p>
-          <ul>
-            <li className="active">All Snippets</li>
-            <li>Favorites</li>
-          </ul>
-
-          <p className="nav-label">Categories</p>
-          <ul>
-            <li>Headings</li>
-            <li>Body Text</li>
-            <li>Utilities</li>
-          </ul>
+          {["allSnippets", "headers", "bodyText"].map(type => (
+            <button
+              key={type}
+              onClick={() => setActiveType(type)}
+              className={activeType === type ? "active" : ""}
+            >{type.toUpperCase()}</button>
+          ))}
         </nav>
         <div className="sidebar-footer">
           <p>I havent decided what to put here yet</p>

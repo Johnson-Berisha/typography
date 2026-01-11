@@ -27,6 +27,7 @@ export function SnippetProvider({ children }) {
                 }));
 
 
+
                 setSnippets(cleaned);
             } catch (err) {
                 console.error("Failed to fetch snippets:", err);

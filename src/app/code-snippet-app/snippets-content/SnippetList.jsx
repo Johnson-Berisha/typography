@@ -1,11 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useSnippets } from "./SnippetsProvider";
 
 export default function SnippetList() {
     const { actions, loading } = useSnippets();
     const snippets = actions.getSnippets() || [];
+    const [activeType, setActiveType] = useState("allSnippets");
+
+    const filteredSnippets = snippets.filter(
+        s => s.type === activeType
+    );
 
     if (loading) return <p>Loading snippets...</p>;
 
