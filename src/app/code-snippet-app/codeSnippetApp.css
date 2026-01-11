@@ -76,29 +76,28 @@ nav.snippets-nav {
   color: var(--text-muted);
 }
 
-.snippets-nav ul {
-  margin-top: 0;
-  margin-left: 0;
-  list-style: none;
-}
 
-.snippets-nav ul li {
+
+.snippets-nav button {
   padding: 7px 14px;
   border-radius: 8px;
   margin-bottom: 5px;
   width: 70%;
   color: var(--text-muted);
+  background-color: transparent;
+  border: none;
   cursor: pointer;
   font-size: .95rem;
   transition: .2s;
+  text-align: left;
 }
 
-.snippets-nav ul li.active {
+.snippets-nav button.active {
   background-color: var(--primary-dim);
   color: var(--primary);
 }
 
-.snippets-nav ul li:not(.snippets-nav ul li.active):hover {
+.snippets-nav button:not(.snippets-nav button.active):hover {
   background-color: var(--bg-card);
   color: var(--text-main);
 }
