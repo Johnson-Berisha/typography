@@ -43,7 +43,7 @@ function PageContent({ activeType, setActiveType }) {
         </div>
         <nav className="snippets-nav">
           <p className="nav-label">Library</p>
-          {["All Snippets", "Header", "test"].map(type => (
+          {["All Snippets", "Header", "test", "Config"].map(type => (
             <button
               key={type}
               onClick={() => setActiveType(type)}
