@@ -42,6 +42,7 @@ function PageContent({ activeType, setActiveType }) {
           <p className="brand-subtext">Code Snippets App</p>
         </div>
         <nav className="snippets-nav">
+          <p className="nav-label">Library</p>
           {["All Snippets", "Header", "test"].map(type => (
             <button
               key={type}
