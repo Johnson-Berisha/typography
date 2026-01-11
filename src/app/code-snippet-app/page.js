@@ -1,16 +1,22 @@
 "use client";
 
-import React from 'react'
-import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import "./codeSnippetApp.css";
-import { SnippetProvider, useSnippets } from './snippets-content/SnippetsProvider';
-import SnippetList from './snippets-content/SnippetList';
-
+import { SnippetProvider, useSnippets } from "./snippets-content/SnippetsProvider";
+import SnippetList from "./snippets-content/SnippetList";
 
 export default function CodeSnippetApp() {
   const [activeType, setActiveType] = useState("All Snippets");
+
+  return (
+    <SnippetProvider>
+      <PageContent activeType={activeType} setActiveType={setActiveType} />
+    </SnippetProvider>
+  );
+}
+
+function PageContent({ activeType, setActiveType }) {
   const { actions, loading } = useSnippets();
   const snippets = actions.getSnippets() || [];
 
@@ -18,6 +24,7 @@ export default function CodeSnippetApp() {
     s => activeType === "All Snippets" || s.type === activeType
   );
 
+  const total = filteredSnippets.length;
 
   return (
     <div className="container snippets-container">
@@ -35,19 +42,21 @@ export default function CodeSnippetApp() {
           <p className="brand-subtext">Code Snippets App</p>
         </div>
         <nav className="snippets-nav">
-          <p className="nav-label">Library</p>
           {["All Snippets", "Header", "test"].map(type => (
             <button
               key={type}
               onClick={() => setActiveType(type)}
               className={activeType === type ? "active" : ""}
-            >{type}</button>
+            >
+              {type}
+            </button>
           ))}
         </nav>
         <div className="sidebar-footer">
           <p>I havent decided what to put here yet</p>
         </div>
       </aside>
+
       <main className="main-content">
         <header className="top-bar">
           <div className="search-bar">
@@ -73,18 +82,15 @@ export default function CodeSnippetApp() {
           </div>
         </header>
         <div className="stats">
-          <div className="total-snippets">0 Snippets</div>
-          <div className="view-toggle">
-            <span>List</span>
-            <span className="active">Grid</span>
-          </div>
+          <div className="total-snippets">{total} Snippets</div>
         </div>
-        <div className="snippets-grid-container">
-          <SnippetProvider>
-            <SnippetList activeType={activeType} />
-          </SnippetProvider>
-        </div>
+
+        {loading ? (
+          <p>Loading snippets...</p>
+        ) : (
+          <SnippetList snippets={filteredSnippets} />
+        )}
       </main>
     </div>
-  )
+  );
 }
