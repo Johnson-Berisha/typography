@@ -5,11 +5,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import "./codeSnippetApp.css";
-import { SnippetProvider } from './snippets-content/SnippetsProvider';
+import { SnippetProvider, useSnippets } from './snippets-content/SnippetsProvider';
 import SnippetList from './snippets-content/SnippetList';
 
+
 export default function CodeSnippetApp() {
-  const [activeType, setActiveType] = useState("Header");
+  const [activeType, setActiveType] = useState("All Snippets");
+  const { actions, loading } = useSnippets();
+  const snippets = actions.getSnippets() || [];
+
+  const filteredSnippets = snippets.filter(
+    s => activeType === "All Snippets" || s.type === activeType
+  );
 
 
   return (

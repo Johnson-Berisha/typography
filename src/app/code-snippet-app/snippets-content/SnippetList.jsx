@@ -8,8 +8,10 @@ export default function SnippetList({ activeType }) {
     const snippets = actions.getSnippets() || [];
 
     const filteredSnippets = snippets.filter(
-        s => s.type === activeType
+        s => activeType === "All Snippets" || s.type === activeType
     );
+
+
 
     if (loading) return <p>Loading snippets...</p>;
 
