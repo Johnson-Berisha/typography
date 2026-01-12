@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./codeSnippetApp.css";
 import { SnippetProvider, useSnippets } from "./snippets-content/SnippetsProvider";
 import SnippetList from "./snippets-content/SnippetList";
@@ -34,6 +34,19 @@ function PageContent({ activeType, setActiveType }) {
   );
 
   const total = filteredSnippets.length;
+
+  useEffect(() => {
+    const handler = (e) => {
+      if (e.key === "/" && !e.target.matches("input, textarea")) {
+        e.preventDefault();
+        document.getElementById("searchInput")?.focus();
+
+      }
+    };
+
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
 
   return (
     <div className="container snippets-container">
@@ -76,7 +89,8 @@ function PageContent({ activeType, setActiveType }) {
               height={19}
               alt='search-icon'
             />
-            <input type="text" id="searchInput" value={query} placeholder="Search by name or property..." onChange={e => setQuery(e.target.value)}></input>
+            <input type="text" id="searchInput" value={query} placeholder="Search by name or code..." onChange={e => setQuery(e.target.value)} />
+            <span className="keyboard-shortcut">/</span>
           </div>
           <div className="new-snippet-btn">
 

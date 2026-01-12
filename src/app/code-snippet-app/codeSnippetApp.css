@@ -128,6 +128,8 @@ main.main-content {
 
 .search-bar {
   width: 400px;
+  display: flex;
+  align-items: center;
 }
 
 .search-bar img {
@@ -151,6 +153,19 @@ main.main-content {
 .search-bar input:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 4px var(--primary-dim);
+}
+
+.keyboard-shortcut {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  /* background-color: var(--bg-sidebar); */
+  border-radius: 50%;
+  transform: translateX(-35px) rotateZ(10deg);
+  display: grid;
+  place-items: center;
+  font-weight: bold;
 }
 
 .new-snippet-btn button {
