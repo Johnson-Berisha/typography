@@ -36,11 +36,15 @@ function PageContent({ activeType, setActiveType }) {
   const total = filteredSnippets.length;
 
   useEffect(() => {
+    const searchBar = document.getElementById("searchInput");
     const handler = (e) => {
-      if (e.key === "/" && !e.target.matches("input, textarea")) {
+      if (e.key === "/" && searchBar && document.activeElement !== searchBar) {
         e.preventDefault();
-        document.getElementById("searchInput")?.focus();
+        searchBar.focus();
+      }
 
+      if (e.key === "Escape" && document.activeElement === searchBar) {
+        searchBar.blur();
       }
     };
 
