@@ -19,8 +19,12 @@ export default function CodeSnippetApp() {
 function PageContent({ activeType, setActiveType }) {
   const { actions, loading } = useSnippets();
   const snippets = actions.getSnippets() || [];
+  // search bar
+  const [query, setQuery] = useState("");
 
   const filteredSnippets = snippets.filter(
+
+
     s => activeType === "All Snippets" || s.type === activeType
   );
 
