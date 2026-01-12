@@ -96,18 +96,6 @@ function PageContent({ activeType, setActiveType }) {
             <input type="text" id="searchInput" value={query} placeholder="Search by name or code..." onChange={e => setQuery(e.target.value)} />
             <span className="keyboard-shortcut">/</span>
           </div>
-          <div className="new-snippet-btn">
-
-            <button>
-              <Image
-                src={"/math-plus.svg"}
-                height={19}
-                width={19}
-                alt='add-snippet'
-              />
-              New Snippet
-            </button>
-          </div>
         </header>
         <div className="stats">
           <div className="total-snippets">{total} Snippets</div>
