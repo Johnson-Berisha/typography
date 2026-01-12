@@ -22,10 +22,15 @@ function PageContent({ activeType, setActiveType }) {
   // search bar
   const [query, setQuery] = useState("");
 
-  const filteredSnippets = snippets.filter(
+  const filteredSnippets = snippets.filter(s => {
+    const matchesType = activeType === "All Snippets" || s.type === activeType;
 
+    const matchesSearch =
+      s.title.toLowerCase().includes(query.toLowerCase()) ||
+      s.code.toLowerCase().includes(query.toLowerCase());
 
-    s => activeType === "All Snippets" || s.type === activeType
+    return matchesType && matchesSearch;
+  }
   );
 
   const total = filteredSnippets.length;
@@ -71,7 +76,7 @@ function PageContent({ activeType, setActiveType }) {
               height={19}
               alt='search-icon'
             />
-            <input type="text" id="searchInput" placeholder="Search by name or property..."></input>
+            <input type="text" id="searchInput" value={query} placeholder="Search by name or property..." onChange={e => setQuery(e.target.value)}></input>
           </div>
           <div className="new-snippet-btn">
 
