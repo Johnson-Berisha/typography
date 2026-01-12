@@ -168,25 +168,6 @@ main.main-content {
   font-weight: bold;
 }
 
-.new-snippet-btn button {
-  background-color: var(--primary);
-  border: none;
-  padding: 10px 24px;
-  /* font-weight: 600; */
-  cursor: pointer;
-  border-radius: 100px;
-  color: white;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-
-  transition: .3s;
-}
-
-.new-snippet-btn button:hover {
-  box-shadow: 0 4px 15px #ff6e6141;
-  transform: translateY(-2px);
-}
 
 /* stats */
 
