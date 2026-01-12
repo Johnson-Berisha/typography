@@ -106,6 +106,26 @@ nav.snippets-nav {
   margin-top: auto;
 }
 
+.sidebar-footer a {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: .2s;
+}
+
+.sidebar-footer a:hover {
+  background-color: var(--bg-card);
+}
+
+.sidebar-footer a img {
+  transform: translateY(-2px);
+}
+
 /* main content */
 main.main-content {
   padding: 0 40px;

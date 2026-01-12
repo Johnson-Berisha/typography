@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import "./codeSnippetApp.css";
 import { SnippetProvider, useSnippets } from "./snippets-content/SnippetsProvider";
 import SnippetList from "./snippets-content/SnippetList";
+import Link from "next/link";
 
 export default function CodeSnippetApp() {
   const [activeType, setActiveType] = useState("All Snippets");
@@ -80,7 +81,13 @@ function PageContent({ activeType, setActiveType }) {
           ))}
         </nav>
         <div className="sidebar-footer">
-          <p>I havent decided what to put here yet</p>
+          <Link href={"/"}>
+            <Image
+              src={"/home-alt.svg"}
+              alt="go home"
+              width={23}
+              height={23}
+            />Home</Link>
         </div>
       </aside>
 
