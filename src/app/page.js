@@ -335,7 +335,7 @@ export default function ComingSoonPage() {
         <div className="footer-links">
           <Link href={"/docs"}>Docs</Link>
           <Link href={"https://github.com/Johnson-Berisha/typography"}>Github ↗</Link>
-          <Link href={"/code-snippets-app"}>Code Snippets</Link>
+          <Link href={"/code-snippet-app"}>Code Snippets</Link>
         </div>
       </footer>
     </div>
