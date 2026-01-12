@@ -312,6 +312,6 @@ main.main-content {
   background: #666;
 }
 
-#basic-config {
+.card-preview[data-snippet="basic-config"] {
   color: blue;
 }
