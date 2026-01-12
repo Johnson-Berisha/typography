@@ -1,4 +1,4 @@
-# Contributing to Fontiq
+# Contributing to Fontiq 🤝✨
 Thank you very much for contributing, please read the rules below!
 
 ## Setup
@@ -29,4 +29,4 @@ Use conventional commits:
 Fontiq focuses on typography and helping devs make better UI with typography.
 Unrelated features will be unfortunately rejected.
 
-Once again, I thank you very much for being interested on the growth of Fontiq <3
+Once again, I thank you very much for being interested on the growth of Fontiq 💙🚀
