@@ -104,6 +104,11 @@ function PageContent({ activeType, setActiveType }) {
             <input type="text" id="searchInput" value={query} placeholder="Search by name or code..." onChange={e => setQuery(e.target.value)} />
             <span className="keyboard-shortcut">/</span>
           </div>
+          <div className="nav-hamburger">
+            <div className="hamburger-line"></div>
+            <div className="hamburger-line"></div>
+            <div className="hamburger-line"></div>
+          </div>
         </header>
         <div className="stats">
           <div className="total-snippets">{total} Snippets</div>
