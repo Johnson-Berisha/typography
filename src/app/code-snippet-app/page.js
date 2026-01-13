@@ -110,7 +110,7 @@ function PageContent({ activeType, setActiveType }) {
         </div>
 
         {loading ? (
-          Array.from({ length: 6 }).map((_, i) => <SnippetSkeleton key={i} />)
+          Array.from({ length: 3 }).map((_, i) => <SnippetSkeleton key={i} />)
         ) : (
           <SnippetList snippets={filteredSnippets} />
         )}

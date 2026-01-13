@@ -32,7 +32,7 @@ export function SnippetProvider({ children }) {
                 setSnippets(cleaned);
 
                 const elapsed = Date.now() - start;
-                const minTime = 1000; // 500ms minimum
+                const minTime = 500; // 500ms minimum
                 setTimeout(() => setLoading(false), Math.max(0, minTime - elapsed));
             } catch (err) {
                 console.error("Failed to fetch snippets:", err);

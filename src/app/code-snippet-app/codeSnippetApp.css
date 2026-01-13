@@ -319,7 +319,7 @@ main.main-content {
 
 .shimmer {
   background: linear-gradient(90deg,
-      #2a2a2a 25%,
+      #1a1a1a 25%,
       #3a3a3a 37%,
       #2a2a2a 63%);
   background-size: 400% 100%;
