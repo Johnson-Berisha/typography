@@ -345,16 +345,30 @@ main.main-content {
   }
 }
 
-.line {
+.card-body.line {
   height: 12px;
   margin-top: 8px;
 }
 
-.line.short {
+.card-body.line.short {
   width: 60%;
 }
 
 /* responsiveness */
+.nav-hamburger {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.nav-hamburger .hamburger-line {
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+  background-color: var(--text-main);
+}
 
 @media (max-width:750px) {
   aside.sidebar {
@@ -371,6 +385,8 @@ main.main-content {
     width: 100%;
     /* padding-top: 20px; */
   }
+
+
 
   .search-bar {
     width: 300px;
