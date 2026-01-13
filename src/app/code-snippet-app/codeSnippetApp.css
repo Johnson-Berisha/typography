@@ -311,7 +311,3 @@ main.main-content {
 .code-block::-webkit-scrollbar-thumb:hover {
   background: #666;
 }
-
-.card-preview[data-snippet="basic-config"] {
-  color: blue;
-}
