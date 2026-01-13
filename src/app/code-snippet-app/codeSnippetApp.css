@@ -322,6 +322,10 @@ main.main-content {
   opacity: 0.7;
 }
 
+.snippet.skeleton {
+  height: 200px;
+}
+
 .shimmer {
   background: linear-gradient(90deg,
       #1a1a1a 25%,
