@@ -353,3 +353,26 @@ main.main-content {
 .line.short {
   width: 60%;
 }
+
+/* responsiveness */
+
+@media (max-width:750px) {
+  aside.sidebar {
+    position: absolute;
+    z-index: 1000;
+    display: none;
+  }
+
+  main.main-content {
+    padding: 0 20px;
+  }
+
+  .top-bar {
+    width: 100%;
+    padding-top: 20px;
+  }
+
+  .search-bar {
+    width: 300px;
+  }
+}
