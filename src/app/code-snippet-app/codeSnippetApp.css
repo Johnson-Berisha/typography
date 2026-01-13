@@ -254,7 +254,7 @@ main.main-content {
 }
 
 .card-header h3 {
-  font-size: 1.1rem;
+  font-size: 1.1rem !important;
   color: var(--text-main);
   font-weight: 700;
 }
