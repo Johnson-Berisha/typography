@@ -11,6 +11,7 @@ export function SnippetProvider({ children }) {
     useEffect(() => {
         const fetchSnippets = async () => {
             try {
+                const start = Date.now();
                 const fileNames = ["elegantheader", "fake-snippet", "basic-config"];
                 const fetchedSnippets = await Promise.all(
                     fileNames.map(fileName =>
@@ -29,10 +30,13 @@ export function SnippetProvider({ children }) {
 
 
                 setSnippets(cleaned);
+
+                const elapsed = Date.now() - start;
+                const minTime = 1000; // 500ms minimum
+                setTimeout(() => setLoading(false), Math.max(0, minTime - elapsed));
             } catch (err) {
                 console.error("Failed to fetch snippets:", err);
                 setSnippets([]);
-            } finally {
                 setLoading(false);
             }
         };

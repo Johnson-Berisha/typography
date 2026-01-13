@@ -311,3 +311,36 @@ main.main-content {
 .code-block::-webkit-scrollbar-thumb:hover {
   background: #666;
 }
+
+/* snippets loading screen */
+.skeleton {
+  opacity: 0.7;
+}
+
+.shimmer {
+  background: linear-gradient(90deg,
+      #2a2a2a 25%,
+      #3a3a3a 37%,
+      #2a2a2a 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.line {
+  height: 12px;
+  margin-top: 8px;
+}
+
+.line.short {
+  width: 60%;
+}

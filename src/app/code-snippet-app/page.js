@@ -6,6 +6,7 @@ import "./codeSnippetApp.css";
 import { SnippetProvider, useSnippets } from "./snippets-content/SnippetsProvider";
 import SnippetList from "./snippets-content/SnippetList";
 import Link from "next/link";
+import SnippetSkeleton from "./components/snippetsSkeleton";
 
 export default function CodeSnippetApp() {
   const [activeType, setActiveType] = useState("All Snippets");
@@ -109,10 +110,11 @@ function PageContent({ activeType, setActiveType }) {
         </div>
 
         {loading ? (
-          <p>Loading snippets...</p>
+          Array.from({ length: 6 }).map((_, i) => <SnippetSkeleton key={i} />)
         ) : (
           <SnippetList snippets={filteredSnippets} />
         )}
+
       </main>
     </div>
   );
