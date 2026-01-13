@@ -215,9 +215,14 @@ main.main-content {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow: hidden;
+  overflow: scroll;
   transition: 0.3s;
   position: relative;
+  height: 300px;
+}
+
+.snippet::-webkit-scrollbar {
+  display: none;
 }
 
 .snippet:hover {
