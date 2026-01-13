@@ -357,7 +357,6 @@ main.main-content {
 /* responsiveness */
 .nav-hamburger {
   width: 30px;
-  height: 30px;
   display: flex;
   flex-direction: column;
   gap: 7px;
