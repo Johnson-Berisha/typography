@@ -403,8 +403,13 @@ main.main-content {
   }
 }
 
-.card-preview[data-snippet="gradient-header"] {
-  font-weight: bold;
+.card-preview h1 {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.card-preview[data-snippet="gradient-header"] h1 {
+  font-weight: 700;
   background: linear-gradient(90deg, #ff3c00, #ffdd00);
   -webkit-background-clip: text;
   background-clip: text;
