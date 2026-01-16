@@ -376,6 +376,7 @@ main.main-content {
     z-index: 1000;
     height: 100%;
     left: -100%;
+    top: 0;
     /* display: none; */
   }
 

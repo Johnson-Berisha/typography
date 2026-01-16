@@ -66,7 +66,7 @@ function PageContent({ activeType, setActiveType }) {
 
     const toggleNav = () => {
       if (openedNavRef.current === false) {
-        nav.style.left = "20px";
+        nav.style.left = "0";
         openedNavRef.current = true;
       } else {
         nav.style.left = "-100%";

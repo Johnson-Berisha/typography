@@ -32,7 +32,7 @@ export default function ComingSoonPage() {
 
     const toggleNav = () => {
       if (openedNavRef.current === false) {
-        nav.style.top = "default";
+        nav.style.top = "20px";
         openedNavRef.current = true;
       } else {
         nav.style.top = "-100%";
