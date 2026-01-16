@@ -31,3 +31,5 @@ Please fork the repo, create a branch, and submit a pull request.
 - Add more code snippets 🔥
 - Community contributions / PRs
 - Advanced typography guides
+
+Have fun with Fontiq!
