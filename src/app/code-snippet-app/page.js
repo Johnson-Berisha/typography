@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./codeSnippetApp.css";
 import { SnippetProvider, useSnippets } from "./snippets-content/SnippetsProvider";
 import SnippetList from "./snippets-content/SnippetList";
@@ -10,6 +10,7 @@ import SnippetSkeleton from "./components/snippetsSkeleton";
 
 export default function CodeSnippetApp() {
   const [activeType, setActiveType] = useState("All Snippets");
+
 
   return (
     <SnippetProvider>
@@ -23,6 +24,9 @@ function PageContent({ activeType, setActiveType }) {
   const snippets = actions.getSnippets() || [];
   // search bar
   const [query, setQuery] = useState("");
+  const navRef = useRef(null);
+  const hamburgerRef = useRef(null);
+  const openedNavRef = useRef(false);
 
   const filteredSnippets = snippets.filter(s => {
     const matchesType = activeType === "All Snippets" || s.type === activeType;
@@ -54,9 +58,33 @@ function PageContent({ activeType, setActiveType }) {
     return () => window.removeEventListener("keydown", handler);
   }, []);
 
+  // making nav responsive
+
+  useEffect(() => {
+    const hamburger = hamburgerRef.current;
+    const nav = navRef.current;
+
+    const toggleNav = () => {
+      if (openedNavRef.current === false) {
+        nav.style.left = "20px";
+        openedNavRef.current = true;
+      } else {
+        nav.style.left = "-100%";
+        openedNavRef.current = false;
+      }
+    }
+
+    hamburger.addEventListener("click", toggleNav);
+
+    // clean up after yo things
+    return () => {
+      hamburger.removeEventListener("click", toggleNav);
+    }
+  }, []);
+
   return (
     <div className="container snippets-container">
-      <aside className="sidebar">
+      <aside className="sidebar" ref={navRef}>
         <div className="brand">
           <div className="brand-title">
             <Image
@@ -104,7 +132,7 @@ function PageContent({ activeType, setActiveType }) {
             <input type="text" id="searchInput" value={query} placeholder="Search by name or code..." onChange={e => setQuery(e.target.value)} />
             <span className="keyboard-shortcut">/</span>
           </div>
-          <div className="nav-hamburger">
+          <div className="nav-hamburger" ref={hamburgerRef}>
             <div className="hamburger-line"></div>
             <div className="hamburger-line"></div>
             <div className="hamburger-line"></div>

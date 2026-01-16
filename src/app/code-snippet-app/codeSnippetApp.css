@@ -31,6 +31,7 @@ aside.sidebar {
   padding: 24px;
   display: flex;
   flex-direction: column;
+  transition: .2s;
 }
 
 .brand {
@@ -373,7 +374,9 @@ main.main-content {
   aside.sidebar {
     position: absolute;
     z-index: 1000;
-    display: none;
+    height: 100%;
+    left: -100%;
+    /* display: none; */
   }
 
   main.main-content {
