@@ -31,7 +31,7 @@ aside.sidebar {
   padding: 24px;
   display: flex;
   flex-direction: column;
-  transition: .2s;
+  transition: .4s;
 }
 
 .brand {
