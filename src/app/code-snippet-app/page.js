@@ -27,6 +27,7 @@ function PageContent({ activeType, setActiveType }) {
   const navRef = useRef(null);
   const hamburgerRef = useRef(null);
   const openedNavRef = useRef(false);
+  const linkRef = useRef([])
 
   const filteredSnippets = snippets.filter(s => {
     const matchesType = activeType === "All Snippets" || s.type === activeType;
@@ -62,6 +63,7 @@ function PageContent({ activeType, setActiveType }) {
 
   useEffect(() => {
     const hamburger = hamburgerRef.current;
+    const link = linkRef.current;
     const nav = navRef.current;
 
     const toggleNav = () => {
@@ -75,10 +77,16 @@ function PageContent({ activeType, setActiveType }) {
     }
 
     hamburger.addEventListener("click", toggleNav);
+    link.forEach(el => {
+      if (el) el.addEventListener("click", toggleNav)
+    })
 
     // clean up after yo things
     return () => {
       hamburger.removeEventListener("click", toggleNav);
+      link.forEach(el => {
+        if (el) el.removeEventListener("click", toggleNav)
+      })
     }
   }, []);
 
@@ -99,11 +107,12 @@ function PageContent({ activeType, setActiveType }) {
         </div>
         <nav className="snippets-nav">
           <p className="nav-label">Library</p>
-          {["All Snippets", "Header", "test", "Config"].map(type => (
+          {["All Snippets", "Header", "test", "Config"].map((type, index) => (
             <button
               key={type}
               onClick={() => setActiveType(type)}
               className={activeType === type ? "active" : ""}
+              ref={el => linkRef.current[index] = el}
             >
               {type}
             </button>
