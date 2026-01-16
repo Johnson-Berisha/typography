@@ -361,6 +361,11 @@ main.main-content {
   display: none;
   flex-direction: column;
   gap: 7px;
+  transition: 0.1s;
+}
+
+.nav-hamburger:active {
+  transform: scale(0.8);
 }
 
 .nav-hamburger .hamburger-line {
