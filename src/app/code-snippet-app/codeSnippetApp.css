@@ -402,3 +402,11 @@ main.main-content {
     width: 300px;
   }
 }
+
+.card-preview[data-snippet="gradient-header"] {
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff3c00, #ffdd00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
