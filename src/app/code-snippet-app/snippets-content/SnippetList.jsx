@@ -7,7 +7,7 @@ export default function SnippetList({ snippets }) {
         <div className="snippets-grid">
             {snippets.map(snippet => (
                 <div key={snippet.title} className="snippet">
-                    <div className="card-preview" data-snippet={snippet.id}>{snippet.example}</div>
+                    <div className="card-preview" data-snippet={snippet.id}><h1>{snippet.example}</h1></div>
 
                     <div className="card-body">
                         <div className="card-header">
