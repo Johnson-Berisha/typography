@@ -59,10 +59,10 @@ For a further understanding on how everything works take a look at the project s
 └─ package.json
 ```
 ### Testing out the changes
-1. To make sure all the changes work, please rebuild using `npm run build`.
-2. Commit and push your code
-3. Make a PR following the rules above
-4. Wait for me or a mod to merge your PR
+1. **To make sure all the changes work, please rebuild using `npm run build`.**
+2. **Commit and push your code**
+3. **Make a PR following the rules above**
+4. **Wait for me or a mod to merge your PR**
    
 Thank you for understanding, we are just trying to keep everything clean, so help us continue that!
 
