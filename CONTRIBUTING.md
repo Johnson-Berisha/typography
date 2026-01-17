@@ -2,10 +2,19 @@
 Thank you very much for contributing, please read the rules below!
 
 ## Setup
-Fontiq does not require local installation.
-
-- Browse the code directly on GitHub
-- Logic changes must be clearly explained in the PR
+1. Fork the repo
+2. Clone your fork
+```bash
+git clone https://github.com/your-username/repo-name.git
+```
+3. Install all packages
+```bash
+npm install
+```
+4. Lastky, start a dev server
+```bash
+npm run dev
+```
 
 ## Code Guidelines
 - Tailwind CSS is discouraged
