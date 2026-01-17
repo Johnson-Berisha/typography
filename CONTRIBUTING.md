@@ -11,7 +11,7 @@ git clone https://github.com/your-username/repo-name.git
 ```bash
 npm install
 ```
-4. Lastky, start a dev server
+4. Lastly, start a dev server
 ```bash
 npm run dev
 ```
