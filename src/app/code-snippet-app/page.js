@@ -93,7 +93,7 @@ function PageContent({ activeType, setActiveType }) {
   useEffect(() => {
     const linkCSS = document.createElement("link");
     linkCSS.rel = "stylesheet";
-    linkCSS.href = "https://raw.githubusercontent.com/Johnson-Berisha/typography-snippets/snippets.css";
+    linkCSS.href = "https://johnson-berisha.github.io/typography-snippets/snippets.css";
     document.head.appendChild(linkCSS);
   }, []);
 
