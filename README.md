@@ -9,7 +9,7 @@
 ![Next.js](https://img.shields.io/badge/Next.js-black?logo=next.js)
 ![CSS](https://img.shields.io/badge/CSS-blue?logo=css)
 <br>
-![Snippets](https://img.shields.io/badge/code_snippets-12-green)
+![Snippets](https://img.shields.io/badge/code_snippets-4-green)
 ![Articles](https://img.shields.io/badge/articles-6-blue)
 <br>
 # ~ [Fontiq](https://fontiq.vercel.app/) ~
