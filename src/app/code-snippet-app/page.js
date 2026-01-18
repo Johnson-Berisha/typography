@@ -90,6 +90,13 @@ function PageContent({ activeType, setActiveType }) {
     }
   }, []);
 
+  useEffect(() => {
+    const linkCSS = document.createElement("link");
+    linkCSS.rel = "stylesheet";
+    linkCSS.href = "https://raw.githubusercontent.com/Johnson-Berisha/typography-snippets/snippets.css";
+    document.head.appendChild(linkCSS);
+  }, []);
+
   return (
     <div className="container snippets-container">
       <aside className="sidebar" ref={navRef}>
