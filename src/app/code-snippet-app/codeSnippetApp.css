@@ -407,3 +407,25 @@ main.main-content {
   font-weight: 700;
   font-size: 24px;
 }
+
+
+
+.tooltip {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.tooltip.show {
+  opacity: 1;
+  transform: translateY(0);
+}

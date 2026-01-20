@@ -6,7 +6,7 @@ export default function SnippetList({ snippets }) {
     const [copied, setCopied] = useState(null);
     if (!snippets.length) return <p>No snippets found</p>;
 
-    const copy = async (text) => {
+    const copy = async (text, id) => {
         await navigator.clipboard.writeText(text);
         setCopied(id);
         setTimeout(() => setCopied(null), 1000);
@@ -21,10 +21,13 @@ export default function SnippetList({ snippets }) {
                         <div className="card-header">
                             <h3>{snippet.title}</h3>
                         </div>
-                        <div className="code-block">
+                        <div className="code-block" onClick={() => copy(snippet.code, snippet.title)}>
                             <pre onClick={() => copy(snippet.code)}>
                                 <code>{snippet.code}</code>
                             </pre>
+                            <span className={`tooltip ${copied === snippet.title ? "show" : ""}`}>
+                                Copied!
+                            </span>
                         </div>
                     </div>
                 </div>
