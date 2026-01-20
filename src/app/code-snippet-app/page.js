@@ -97,6 +97,8 @@ function PageContent({ activeType, setActiveType }) {
     document.head.appendChild(linkCSS);
   }, []);
 
+
+
   return (
     <div className="container snippets-container">
       <aside className="sidebar" ref={navRef}>
