@@ -227,7 +227,7 @@ main.main-content {
 }
 
 .snippet:hover {
-  border-color: var(--text-muted);
+  /* border-color: var(--text-muted); */
   transform: translateY(-4px);
 }
 
@@ -298,6 +298,11 @@ main.main-content {
   border: 1px solid transparent;
   height: 150px;
   overflow-y: scroll;
+  transition: .2s;
+}
+
+.code-block:hover {
+  border: 1px solid var(--primary);
 }
 
 .code-block::-webkit-scrollbar {
