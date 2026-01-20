@@ -306,17 +306,7 @@ main.main-content {
 }
 
 .code-block::-webkit-scrollbar {
-  height: 6px;
-  width: 6px;
-}
-
-.code-block::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.code-block::-webkit-scrollbar-thumb {
-  background: #444;
-  border-radius: 10px;
+  display: none;
 }
 
 .code-block::-webkit-scrollbar-thumb:hover {
