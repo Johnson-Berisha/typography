@@ -313,7 +313,7 @@ main.main-content {
 }
 
 .code-block:hover {
-  border: 1px solid var(--primary);
+  border: 1px solid #ff6e616b;
 }
 
 .code-block::-webkit-scrollbar {
