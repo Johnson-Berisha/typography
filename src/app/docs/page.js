@@ -87,10 +87,8 @@ export default function Home() {
         </div>
         <nav className="snippets-nav">
           <p className="nav-label">Library</p>
-          {["All Snippets", "Header", "test", "Config"].map((type) => (
-            <button
-              key={type}
-            >
+          {["Introduction", "Colors", "Scaling", "Hierarchy", "Spacing", "Contrast", "Clamps"].map((type) => (
+            <button key={type}>
               {type}
             </button>
           ))}
