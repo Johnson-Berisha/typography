@@ -7,8 +7,6 @@ import { useContent } from "../../context/ContentProvider";
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const navRef = useRef(null);
-  const navOpenRef = useRef(false);
-  const pillRef = useRef(null);
   const { actions } = useContent();
   const content = actions.getContent();
 
@@ -69,56 +67,7 @@ export default function Home() {
     setIsLoading(false); // content is ready
   }, []);
 
-  useEffect(() => {
-    const nav = navRef.current;
-    const pill = pillRef.current;
-    const links = nav.querySelectorAll("section.nav-section a");
-    const active = links[0]; // first link active by default
 
-    const move = (el) => {
-      const offsetTop = el.offsetTop;
-      const offsetLeft = el.offsetLeft;
-      const width = el.offsetWidth;
-      const height = el.offsetHeight;
-
-      pill.style.width = `${width}px`;
-      pill.style.height = `${height}px`;
-      pill.style.top = `${offsetTop}px`;
-      pill.style.left = `${offsetLeft}px`;
-    };
-
-    move(active);
-
-    links.forEach(link => {
-      link.addEventListener("mouseenter", () => move(link));
-    });
-
-    // Only move back to active when leaving the entire nav
-    nav.addEventListener("mouseleave", () => move(active));
-  }, []);
-
-  // open nav on click hamburger
-  useEffect(() => {
-    const hamburger = document.querySelector(".hamburger");
-    const nav = navRef.current;
-
-    const toggleNav = () => {
-      if (navOpenRef.current === false) {
-        nav.style.top = "0";
-        navOpenRef.current = true;
-      } else {
-        nav.style.top = "-100%";
-        navOpenRef.current = false;
-      }
-    }
-
-    hamburger.addEventListener("click", toggleNav);
-
-    // Cleanup to avoid memory leaks
-    return () => {
-      hamburger.removeEventListener("click", toggleNav);
-    };
-  }, []);
 
 
   return (
