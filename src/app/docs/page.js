@@ -103,7 +103,7 @@ export default function Home() {
             />Home</Link>
         </div>
       </aside>
-      <div className="content">
+      <main className="content">
 
         <div className="guides-demo">
           <div className="guides" style={{ marginTop: 12 }}>
@@ -240,7 +240,7 @@ export default function Home() {
         {/* css.gg ad */}
         <div className="cssgg">Icons by <Link href={"https://css.gg/"} target="_blank">css.gg</Link></div>
         {/* everthing goes up /\ */}
-      </div>
+      </main>
     </div>
   );
 }

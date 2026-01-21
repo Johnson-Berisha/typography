@@ -84,7 +84,7 @@ h3 {
 p {
   font: var(--p);
   color: var(--gray80);
-  max-width: 800px;
+  max-width: 90%;
   margin-top: var(--spacing);
 }
 
@@ -98,6 +98,7 @@ p.p2 {
 .container {
   display: flex;
   height: 100%;
+  margin-left: 260px;
 }
 
 /* nav */
@@ -108,13 +109,18 @@ aside.sidebar {
   --primary-dim: rgba(255, 111, 97, 0.15);
   --bg-card: #181b1f;
 
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 260px;
+  height: 100vh;
   background-color: var(--bg-sidebar);
   border-right: var(--border) 1px solid;
   padding: 24px;
   display: flex;
   flex-direction: column;
   transition: .4s;
+  overflow-y: auto;
 }
 
 .brand {
@@ -224,11 +230,7 @@ nav.snippets-nav {
   opacity: 0;
 }
 
-@media (max-width: 768px) {
-  .content {
-    padding-left: 10px;
-  }
-}
+
 
 @keyframes fadeIn {
   to {
@@ -337,6 +339,7 @@ article {
 
   .container {
     flex-direction: column;
+    margin-left: 0;
   }
 
   .content {
