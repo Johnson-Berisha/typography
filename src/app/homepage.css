@@ -178,14 +178,14 @@ ul li .nav-link:hover {
 }
 
 .btn-secondary {
-  background: transparent;
+  background: hsl(0, 0, 5%);
   color: white;
   border: 1px solid #333333;
 }
 
 .btn-secondary:hover {
   border-color: white;
-  background: rgba(255, 255, 255, 0.05);
+  background: hsl(0, 0%, 10%);
 }
 
 @media (max-width: 850px) {
