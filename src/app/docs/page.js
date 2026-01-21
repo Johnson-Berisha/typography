@@ -238,7 +238,7 @@ export default function Home() {
         </div>
 
         {/* css.gg ad */}
-        <div className="cssgg">Icons by <Link href={"https://css.gg/"}>css.gg</Link></div>
+        <div className="cssgg">Icons by <Link href={"https://css.gg/"} target="_blank">css.gg</Link></div>
         {/* everthing goes up /\ */}
       </div>
     </div>
