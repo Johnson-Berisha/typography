@@ -548,9 +548,9 @@ article {
 }
 
 .guide-card:not(.intro) {
-  border-top: 1px solid var(--gray30);
-  margin-top: 45px;
-  padding-top: 45px;
+  border-top: 1px solid hsl(0, 0, 20%);
+  margin-top: 75px;
+  padding-top: 75px;
 }
 
 .guide-card {
