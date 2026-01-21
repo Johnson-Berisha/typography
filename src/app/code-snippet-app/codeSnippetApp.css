@@ -216,7 +216,7 @@ main.main-content {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow: scroll;
+  overflow: hidden;
   transition: 0.3s;
   position: relative;
   height: 300px;
@@ -308,7 +308,6 @@ main.main-content {
   cursor: pointer;
   border: 1px solid transparent;
   height: 150px;
-  overflow-y: scroll;
   transition: .2s;
 }
 
