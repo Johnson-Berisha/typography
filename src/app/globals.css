@@ -84,7 +84,7 @@ h3 {
 p {
   font: var(--p);
   color: var(--gray80);
-  max-width: 90%;
+  /* max-width: 90%; */
   margin-top: var(--spacing);
 }
 
@@ -571,7 +571,7 @@ ul {
   color: var(--gray80);
 }
 
-@media (max-width:1024px) {
+@media (max-width:768px) {
   .guide-card {
     max-width: 90%;
   }
