@@ -101,6 +101,12 @@ p.p2 {
   margin-left: 260px;
 }
 
+@media (max-width: 1024px) {
+  .container:not(.homepage-body, .cta-box) {
+    margin-left: var(--nav-space);
+  }
+}
+
 /* nav */
 aside.sidebar {
   --text-muted: #8b949e;
@@ -222,6 +228,7 @@ nav.snippets-nav {
 .content {
   flex: 1;
   padding-left: calc(var(--spacing) * 4);
+  padding-top: calc(var(--spacing) * 2);
   animation-name: fadeIn;
   animation-duration: .3s;
   animation-fill-mode: forwards;
@@ -299,7 +306,7 @@ article {
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   :root {
-    --spacing: 16px;
+    --spacing: 20px;
     --nav-space: 260px;
     --h1: bold 24px/1.3em var(--ff);
     --h2: bold 1rem/1.3em var(--ff);
