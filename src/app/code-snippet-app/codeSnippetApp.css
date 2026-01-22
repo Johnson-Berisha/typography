@@ -207,6 +207,7 @@ main.main-content {
   border: 1px solid transparent;
   height: 150px;
   transition: .2s;
+  overflow: hidden;
 }
 
 .code-block:hover {
