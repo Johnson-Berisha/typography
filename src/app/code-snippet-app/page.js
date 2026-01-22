@@ -66,7 +66,14 @@ function PageContent({ activeType, setActiveType }) {
     const link = linkRef.current;
     const nav = navRef.current;
 
+    const isHamburgerVisible = () => {
+      return hamburger && window.getComputedStyle(hamburger).display !== 'none';
+    };
+
     const toggleNav = () => {
+      // Only toggle on mobile when hamburger is visible
+      if (!isHamburgerVisible()) return;
+
       if (openedNavRef.current === false) {
         nav.style.left = "0";
         openedNavRef.current = true;

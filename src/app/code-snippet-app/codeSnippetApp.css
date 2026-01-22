@@ -280,12 +280,14 @@ main.main-content {
 
 @media (max-width:750px) {
   aside.sidebar {
-    position: fixed;
-    z-index: 1000;
-    height: 100vh;
+    z-index: 200;
     left: -100%;
     top: 0;
     /* display: none; */
+  }
+
+  .snippets-container {
+    margin-left: 0 !important;
   }
 
   main.main-content {
