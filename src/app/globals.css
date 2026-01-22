@@ -95,7 +95,7 @@ p.p2 {
 
 
 
-.container {
+.container:not(.homepage-body, .cta-box) {
   display: flex;
   height: 100%;
   margin-left: 260px;
