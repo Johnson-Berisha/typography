@@ -260,27 +260,15 @@ main.main-content {
 }
 
 /* responsiveness */
-.nav-hamburger {
-  width: 30px;
-  display: none;
-  flex-direction: column;
-  gap: 7px;
-  transition: 0.1s;
-}
 
-.nav-hamburger:active {
-  transform: scale(0.8);
-}
-
-.nav-hamburger .hamburger-line {
-  width: 100%;
-  height: 3px;
-  border-radius: 5px;
-  background-color: var(--text-main);
-}
 
 @media (max-width:750px) {
-
+  aside.sidebar {
+    z-index: 200;
+    left: -100%;
+    top: 0;
+    /* display: none; */
+  }
 
   .snippets-container {
     margin-left: 0 !important;
@@ -295,9 +283,7 @@ main.main-content {
     padding: 30px 5px;
   }
 
-  .nav-hamburger {
-    display: flex;
-  }
+
 
   .search-bar {
     width: 300px;
