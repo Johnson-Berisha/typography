@@ -20,7 +20,7 @@ export default function SnippetList({ snippets }) {
                     <div className="card-body">
                         <div className="card-header">
                             <p>Click code to copy!</p>
-                            <h3>{snippet.title}</h3>
+                            <h1>{snippet.title}</h1>
                         </div>
                         <div className="code-block" onClick={() => copy(snippet.code, snippet.title)}>
                             <pre onClick={() => copy(snippet.code)}>
