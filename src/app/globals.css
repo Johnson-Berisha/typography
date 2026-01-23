@@ -3,7 +3,7 @@
 :root {
   --spacing: 20px;
   /* everything based pn this */
-  --background: hsl(0, 0%, 5%);
+  --background: #0b0d0f;
   --foreground: hsl(0, 0%, 100%);
   --primary: #ff6f61;
 
@@ -592,9 +592,4 @@ ul {
 
 .cssgg a {
   color: var(--primary);
-  text-decoration: none;
 }
-
-/* #hierarchy {
-  margin-top: calc(var(--spacing) * 4);
-} */
