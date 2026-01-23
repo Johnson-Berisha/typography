@@ -118,6 +118,7 @@ aside.sidebar {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 200;
   width: 260px;
   height: 100vh;
   background-color: var(--bg-sidebar);
@@ -331,13 +332,12 @@ article {
     padding-top: calc(var(--spacing) * 1);
   }
 
-  nav {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    top: -100%;
-    border-radius: 0;
-    padding: calc(var(--spacing));
+
+
+  aside.sidebar {
+    z-index: 200;
+    left: -100%;
+    top: 0;
   }
 
   .hamburger {

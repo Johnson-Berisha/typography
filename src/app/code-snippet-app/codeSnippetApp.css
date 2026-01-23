@@ -280,12 +280,7 @@ main.main-content {
 }
 
 @media (max-width:750px) {
-  aside.sidebar {
-    z-index: 200;
-    left: -100%;
-    top: 0;
-    /* display: none; */
-  }
+
 
   .snippets-container {
     margin-left: 0 !important;
