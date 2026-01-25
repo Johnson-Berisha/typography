@@ -71,3 +71,7 @@ Fontiq focuses on typography and helping devs make better UI with typography.
 Unrelated features will be unfortunately rejected.
 
 Once again, I thank you very much for being interested on the growth of Fontiq 💙🚀
+
+And if you want to, please star this repo!
+
+[Fontiq](https://fontiq.vercel.app/)
