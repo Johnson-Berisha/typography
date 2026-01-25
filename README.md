@@ -23,8 +23,7 @@ Most typography resources are bloated or outdated. Fontiq stays practical: real 
 - Fast, no clutter, no nonsense 🔥
 
 ## Contributing
-PRs, suggestions, and bug reports are welcome!  
-Please fork the repo, create a branch, and submit a pull request.
+Check out [CONTRIBUTING.md](CONTRIBUTING.md)
 
 
 ### Roadmap / Future
@@ -32,4 +31,5 @@ Please fork the repo, create a branch, and submit a pull request.
 - Community contributions / PRs
 - Advanced typography guides
 
-Have fun with Fontiq!
+Have fun with Fontiq! <br>
+[Fontiq](https://fontiq.vercel.app/)
