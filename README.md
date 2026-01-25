@@ -31,4 +31,5 @@ Check out [CONTRIBUTING.md](CONTRIBUTING.md)
 - Community contributions / PRs
 - Advanced typography guides
 
-Have fun with Fontiq!
+Have fun with Fontiq! <br>
+[Fontiq](https://fontiq.vercel.app/)
