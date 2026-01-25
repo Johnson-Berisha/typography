@@ -12,7 +12,7 @@ export function SnippetProvider({ children }) {
         const fetchSnippets = async () => {
             try {
                 const start = Date.now();
-                const fileNames = ["elegantheader", "fake-snippet", "basic-config", "gradient-header"];
+                const fileNames = ["elegantheader", "fake-snippet", "basic-config", "gradient-header", "readablep", "letterspacing", "responsive-header"];
                 const fetchedSnippets = await Promise.all(
                     fileNames.map(fileName =>
                         fetch(
