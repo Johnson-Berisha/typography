@@ -5,7 +5,7 @@ import Image from "next/image"
 import { useEffect, useRef } from "react"
 
 const navLinks = {
-    "Introduction": "/docs-pages",
+    "Introduction": "/docs/docs-pages",
     "Colors": "/colors",
     "Scaling": "/scaling",
     "Hierarchy": "/hierarchy",
