@@ -1,6 +1,16 @@
 import Link from "next/link"
 import Image from "next/image"
 
+const navLinks = {
+    "Introduction": "/docs-pages",
+    "Colors": "/colors",
+    "Scaling": "/scaling",
+    "Hierarchy": "/hierarchy",
+    "Spacing": "/spacing",
+    "Contrast": "/contrast",
+    "Clamps": "/clamps",
+}
+
 export function Header() {
     return (
         <aside className="sidebar">
@@ -18,10 +28,10 @@ export function Header() {
             </div>
             <nav className="snippets-nav">
                 <p className="nav-label">Library</p>
-                {["Introduction", "Colors", "Scaling", "Hierarchy", "Spacing", "Contrast", "Clamps"].map((type, index) => (
-                    <button key={type}>
+                {Object.entries(navLinks).map(([type, href]) => (
+                    <Link href={href} key={type}>
                         {type}
-                    </button>
+                    </Link>
                 ))}
             </nav>
             <div className="sidebar-footer">
