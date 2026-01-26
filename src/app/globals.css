@@ -162,10 +162,11 @@ nav.snippets-nav {
   transform: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-label {
-
   text-transform: uppercase;
   font-size: 0.75rem;
   letter-spacing: 1px;
@@ -176,7 +177,8 @@ nav.snippets-nav {
 
 
 
-.snippets-nav button {
+.snippets-nav button,
+.snippets-nav a {
   padding: 10px 14px;
   border-radius: 8px;
   margin-bottom: 5px;
@@ -188,14 +190,21 @@ nav.snippets-nav {
   font-size: .95rem;
   transition: .2s;
   text-align: left;
+  text-decoration: none;
 }
 
-.snippets-nav button.active {
+.snippets-nav a {
+  padding: 7px 14px;
+}
+
+.snippets-nav button.active,
+.snippets-nav a.active {
   background-color: var(--primary-dim);
   color: var(--primary);
 }
 
-.snippets-nav button:not(.snippets-nav button.active):hover {
+.snippets-nav button:not(.snippets-nav button.active):hover,
+.snippets-nav a:not(.snippets-nav a.active):hover {
   background-color: var(--bg-card);
   color: white;
 }
