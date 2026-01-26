@@ -46,6 +46,8 @@ For a further understanding on how everything works take a look at the project s
 │  ├─ app/
 │  │  ├─ code-snippet-app/   # Code snippets feature routes
 │  │  ├─ docs/               # Documentation pages/routes
+|  |  |  ├─ docs-page/       # Individual docs pages
+|  |  |  └─ page.js          # Intro to docs   
 │  │  ├─ page.js             # Homepage
 │  │  ├─ layout.js           # Root layout
 │  │  ├─ globals.css         # Global styles
