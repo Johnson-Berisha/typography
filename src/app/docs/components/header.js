@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link"
 import Image from "next/image"
+import { useEffect, useRef } from "react"
 
 const navLinks = {
     "Introduction": "/docs-pages",
@@ -11,9 +14,49 @@ const navLinks = {
     "Clamps": "/clamps",
 }
 
+
+
 export function Header() {
+    const navRef = useRef(null);
+    const hamburgerRef = useRef(null);
+    const openedNavRef = useRef(false);
+    const linkRef = useRef([]);
+    // making nav responsive
+    useEffect(() => {
+        const hamburger = hamburgerRef.current;
+        const nav = navRef.current;
+
+        if (!hamburger || !nav) return;
+
+        const isHamburgerVisible = () => window.getComputedStyle(hamburger).display !== 'none';
+
+        const toggleNav = () => {
+            // Only toggle on mobile when hamburger is visible
+            if (!isHamburgerVisible()) return;
+            if (!nav) return;
+
+            if (openedNavRef.current === false) {
+                nav.style.left = "0";
+                openedNavRef.current = true;
+            } else {
+                nav.style.left = "-100%";
+                openedNavRef.current = false;
+            }
+        }
+
+        hamburger.addEventListener("click", toggleNav);
+
+        const links = Array.from(nav.querySelectorAll('a'));
+        links.forEach(el => el.addEventListener("click", toggleNav));
+
+        // clean up after yo things
+        return () => {
+            hamburger.removeEventListener("click", toggleNav);
+            links.forEach(el => el.removeEventListener("click", toggleNav));
+        }
+    }, []);
     return (
-        <aside className="sidebar">
+        <aside className="sidebar" ref={navRef}>
             <div className="brand">
                 <div className="brand-title">
                     <Image
@@ -42,6 +85,11 @@ export function Header() {
                         width={23}
                         height={23}
                     />Home</Link>
+            </div>
+            <div className="nav-hamburger docs-hamburger" ref={hamburgerRef}>
+                <div className="hamburger-line"></div>
+                <div className="hamburger-line"></div>
+                <div className="hamburger-line"></div>
             </div>
         </aside>
     )

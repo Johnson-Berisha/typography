@@ -71,42 +71,7 @@ export default function Home() {
     setIsLoading(false); // content is ready
   }, []);
 
-  // making nav responsive
-  useEffect(() => {
-    const hamburger = hamburgerRef.current;
-    const link = linkRef.current;
-    const nav = navRef.current;
 
-    const isHamburgerVisible = () => {
-      return hamburger && window.getComputedStyle(hamburger).display !== 'none';
-    };
-
-    const toggleNav = () => {
-      // Only toggle on mobile when hamburger is visible
-      if (!isHamburgerVisible()) return;
-
-      if (openedNavRef.current === false) {
-        nav.style.left = "0";
-        openedNavRef.current = true;
-      } else {
-        nav.style.left = "-100%";
-        openedNavRef.current = false;
-      }
-    }
-
-    hamburger.addEventListener("click", toggleNav);
-    link.forEach(el => {
-      if (el) el.addEventListener("click", toggleNav)
-    })
-
-    // clean up after yo things
-    return () => {
-      hamburger.removeEventListener("click", toggleNav);
-      link.forEach(el => {
-        if (el) el.removeEventListener("click", toggleNav)
-      })
-    }
-  }, []);
 
   return (
     <div className="container docs-body">
@@ -143,11 +108,7 @@ export default function Home() {
         </div>
       </aside> */}
       <main className="content">
-        <div className="nav-hamburger docs-hamburger" ref={hamburgerRef}>
-          <div className="hamburger-line"></div>
-          <div className="hamburger-line"></div>
-          <div className="hamburger-line"></div>
-        </div>
+
 
         <div className="guides-demo">
           <div className="guides" style={{ marginTop: 12 }}>
