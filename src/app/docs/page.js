@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useContent } from "../../context/ContentProvider";
+import { Header } from "./components/header";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -109,7 +110,8 @@ export default function Home() {
 
   return (
     <div className="container docs-body">
-      <aside className="sidebar" ref={navRef}>
+      <Header />
+      {/* <aside className="sidebar" ref={navRef}>
         <div className="brand">
           <div className="brand-title">
             <Image
@@ -139,7 +141,7 @@ export default function Home() {
               height={23}
             />Home</Link>
         </div>
-      </aside>
+      </aside> */}
       <main className="content">
         <div className="nav-hamburger docs-hamburger" ref={hamburgerRef}>
           <div className="hamburger-line"></div>
