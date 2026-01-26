@@ -260,12 +260,6 @@ nav.snippets-nav {
   flex: 1;
   padding-left: calc(var(--spacing) * 4);
   padding-top: calc(var(--spacing) * 2);
-  /* animation-name: fadeIn;
-  animation-duration: .3s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in;
-  animation-delay: .6s;
-  opacity: 0; */
 }
 
 
