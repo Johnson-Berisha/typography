@@ -5,7 +5,7 @@ Thank you very much for contributing, please read the rules below!
 1. **Fork the repo**
 2. **Clone your fork**
 ```bash
-git clone https://github.com/your-username/repo-name.git
+git clone https://github.com/Johnson-Berisha/typography.git
 ```
 3. **Install all packages**
 ```bash
