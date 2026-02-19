@@ -832,6 +832,7 @@ footer {
 
 /* 3D bg */
 .bg-3D {
+  opacity: 0.5;
   position: fixed;
   top: 10%;
   left: 25%;

@@ -41,7 +41,7 @@ export default function ModelViewer() {
         <Canvas camera={{ position: [0, 1, 3] }}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[5, 5, 5]} />
-            <Model url="/f-letter/source/letterF.glb" color="orange" scrollY={scrollY} />
+            <Model url="/f-letter/source/letterF.glb" color="#ed7e34" scrollY={scrollY} />
         </Canvas>
     )
 }
