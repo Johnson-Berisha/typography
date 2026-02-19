@@ -7,10 +7,6 @@ import { Header } from "./components/header";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-  const navRef = useRef(null);
-  const hamburgerRef = useRef(null);
-  const openedNavRef = useRef(false);
-  const linkRef = useRef([]);
   const { actions } = useContent();
   const content = actions.getContent();
 
