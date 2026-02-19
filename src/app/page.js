@@ -5,6 +5,8 @@ import Link from "next/link";
 import "./homepage.css";
 import { useEffect, useState, useRef } from "react";
 
+import ModelViewer from "./docs/components/ModelViewer";
+
 export default function ComingSoonPage() {
   const [scrolled, setScrolled] = useState(false);
   const [openIndex, setOpenIndex] = useState(null);
@@ -134,6 +136,9 @@ export default function ComingSoonPage() {
         </div>
       </div>
       <header className="hero">
+        <div className="3D-bg" style={{ width: '100vh', height: '100vw' }}>
+          <ModelViewer />
+        </div>
         <div className="hero-content">
           <div className="badge">SCSS guide coming soon!</div>
           <h1>
