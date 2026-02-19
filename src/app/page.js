@@ -136,7 +136,7 @@ export default function ComingSoonPage() {
         </div>
       </div>
       <header className="hero">
-        <div className="3D-bg" style={{ width: '100vh', height: '100vw' }}>
+        <div className="bg-3D">
           <ModelViewer />
         </div>
         <div className="hero-content">

@@ -5,7 +5,6 @@ body {
 }
 
 .homepage-body {
-  background-image: radial-gradient(#ff6e611f 1px, transparent 0);
   background-size: 20px 20px;
   display: block;
 }
@@ -829,4 +828,14 @@ footer {
 
 .footer-links a:hover {
   color: white;
+}
+
+/* 3D bg */
+.bg-3D {
+  position: fixed;
+  top: 10%;
+  left: 25%;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
 }
