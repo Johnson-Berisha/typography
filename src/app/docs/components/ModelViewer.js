@@ -13,8 +13,8 @@ function Model({ url, color, scrollY }) {
 
     useFrame(() => {
         if (ref.current) {
-            // rotate left a bit based on scroll
-            ref.current.rotation.y = 50 - scrollY / 5000 // tweak divisor for speed
+            ref.current.rotation.y = 50 - scrollY / 5000
+            ref.current.position.y = Math.sin(scrollY / 500) * 0.5 //  up and down blyat
         }
     })
 
